@@ -1,4 +1,7 @@
 base_url = "https://toku-sa-n.github.io/"
+title = "備忘録やめた"
+description = "toku-sa-nによる個人ブログ"
+default_language = "ja"
 compile_sass = true
 build_search_index = true
 
