@@ -30,6 +30,7 @@ jobs:
 
       - name: Commit and push
         run: |
+          git pull
           git checkout gh-pages
           git add -f public/
           git commit -m 'Deploy the website'
