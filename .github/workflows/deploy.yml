@@ -28,13 +28,22 @@ jobs:
           git config --global user.name 'Hiroki Tokunaga'
           git config --global user.email 'toku-sa-n@users.noreply.github.com'
 
-      - name: Commit and push
+      - name: Checkout to the `gh-pages` branch
         run: |
           git pull
           git checkout gh-pages
+
+      - name: Move all public files to the project root directory
+        run: |
           export dir=$(mktemp -d)
           mv public $dir/
           rm -rf *
           mv $dir/public/* .
+
+      - name: Commit
+        run: |
+          git add .
           git commit -m 'Deploy the website'
-          git push
+
+      - name: Push
+        run: git push
