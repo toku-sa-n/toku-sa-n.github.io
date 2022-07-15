@@ -1,0 +1,33 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    steps:
+      - uses: actions/checkout@v2
+
+      # The Zola executable built by `cargo install zola` cannot support Japanese.
+      # We build a Zola executable from source code.
+      - name: Fetch the Zola source code
+        run: git clone https://github.com/getzola/zola
+
+      - name: Build a Zola executable
+        run: cargo install --path . --features search/indexing-ja
+        working-directory: zola
+
+      - name: Build the webpage
+        run: zola build
+
+      - name: Set the committer information
+        run: |
+          git config --global user.name 'Hiroki Tokunaga'
+          git config --global user.email 'toku-sa-n@users.noreply.github.com'
+
+      - name: Commit and push
+        run: |
+          git add public/
+          git commit -m 'Deploy the website'
+          git push
