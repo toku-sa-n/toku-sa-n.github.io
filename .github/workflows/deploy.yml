@@ -32,6 +32,9 @@ jobs:
         run: |
           git pull
           git checkout gh-pages
-          git add -f public/
+          export dir=$(mktemp -d)
+          mv public $dir/
+          rm -rf *
+          mv $dir/public/* .
           git commit -m 'Deploy the website'
           git push
