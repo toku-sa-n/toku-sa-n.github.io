@@ -30,6 +30,6 @@ jobs:
 
       - name: Commit and push
         run: |
-          git add public/
+          git add -f public/
           git commit -m 'Deploy the website'
           git push
