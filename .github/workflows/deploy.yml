@@ -19,6 +19,18 @@ jobs:
       - name: Build the webpage
         run: zola build
 
+      - name: Upload as an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: webpage
+          path: public/*
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    steps:
       - name: Set the committer information
         run: |
           git config --global user.name 'Hiroki Tokunaga'
@@ -29,12 +41,13 @@ jobs:
           git pull
           git checkout gh-pages
 
-      - name: Move all public files to the project root directory
-        run: |
-          export dir=$(mktemp -d)
-          mv public $dir/
-          rm -rf *
-          mv $dir/public/* .
+      - name: Clean up the directory
+        run: rm -rf *
+
+      - name: Download the artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: webpage
 
       - name: Commit
         run: |
