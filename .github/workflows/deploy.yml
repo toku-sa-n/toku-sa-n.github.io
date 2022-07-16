@@ -23,18 +23,19 @@ jobs:
           name: webpage
           path: public/*
 
+  # There is an action called `reviewdog/action-stylelint`. However, it requires `package.json` even if a project is not managed by npm.
+  # That is why I install and run stylelint manually.
   check_css:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install stylelint
+        run: npm install -g stylelint postcss-sass
+
       - name: Run stylelint
-        uses: reviewdog/action-stylelint@v1.14.0
-        with:
-          fail_on_error: true
-          packages: 'postcss-sass'
-          reporter: github-pr-review
+        run: stylelint sass/**/*
 
   check_zola:
     runs-on: ubuntu-latest
