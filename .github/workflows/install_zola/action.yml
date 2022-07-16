@@ -13,6 +13,6 @@ runs:
       shell: bash
 
     - name: Build a Zola executable
-      run: cargo install --release --path . --features search/indexing-ja
+      run: cargo install --path . --features search/indexing-ja
       shell: bash
       working-directory: zola
