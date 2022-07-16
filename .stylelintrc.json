@@ -1,0 +1,6 @@
+{
+    "customSyntax": "postcss-sass",
+    "rules": {
+        "indentation": 4
+    }
+}
