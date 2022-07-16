@@ -23,7 +23,30 @@ jobs:
           name: webpage
           path: public/*
 
-  check:
+  # There is an action called `reviewdog/action-stylelint`. However, it requires `package.json` even if a project is not managed by npm.
+  # That is why I install and run stylelint manually.
+  check_css:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Get the npm cache directory
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+
+      - uses: actions/cache@v3
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-stylelint
+
+      - name: Install stylelint
+        run: npm install stylelint postcss-sass --location=global
+
+      - name: Run stylelint
+        run: stylelint sass/**/*
+
+  check_zola:
     runs-on: ubuntu-latest
 
     steps:
@@ -37,7 +60,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    needs: [build, check]
+    needs: [build, check_css, check_zola]
 
     if: github.ref == 'refs/heads/main'
 
