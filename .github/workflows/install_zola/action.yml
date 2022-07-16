@@ -5,6 +5,13 @@ runs:
   using: "composite"
 
   steps:
+    # We build a Zola executable from the source code for these reasons:
+    # - The Zola executable built by `cargo install zola` is too old. See https://github.com/getzola/zola/issues/1919.
+    # - Zola executables released in https://github.com/getzola/zola/releases do not support Japaneses.
+    - name: Fetch the Zola source code
+      run: git clone https://github.com/getzola/zola
+      shell: bash
+
     - uses: actions/cache@v3
       with:
         path: |
@@ -14,13 +21,6 @@ runs:
           ~/.cargo/git/db
           zola/target/
         key: ${{ runner.os }}-zola-${{ hashFiles('zola/Cargo.lock') }}
-
-    # We build a Zola executable from the source code for these reasons:
-    # - The Zola executable built by `cargo install zola` is too old. See https://github.com/getzola/zola/issues/1919.
-    # - Zola executables released in https://github.com/getzola/zola/releases do not support Japaneses.
-    - name: Fetch the Zola source code
-      run: git clone https://github.com/getzola/zola
-      shell: bash
 
     - name: Build a Zola executable
       run: cargo install --path . --features search/indexing-ja
