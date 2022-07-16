@@ -3,13 +3,15 @@
 {% block content %}
 
 <h1>
-  {{ section.title }}
+    {{ section.title }}
 </h1>
 
 <ul>
-  {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-  {% endfor %}
+    {% for page in section.pages %}
+    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+    {% endfor %}
 </ul>
+
+<p><a href="{{ get_url(path="/") }}">トップへ戻る</a></p>
 
 {% endblock content %}
