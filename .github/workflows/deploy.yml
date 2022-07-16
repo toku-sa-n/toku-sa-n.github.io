@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: .github/workflows/install_zola
+      - uses: ./.github/workflows/install_zola
 
       - name: Check source files
         run: zola check
