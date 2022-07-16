@@ -39,6 +39,8 @@ jobs:
     needs: [build, check]
 
     steps:
+      - uses: actions/checkout@v2
+
       - name: Set the committer information
         run: |
           git config --global user.name 'Hiroki Tokunaga'
