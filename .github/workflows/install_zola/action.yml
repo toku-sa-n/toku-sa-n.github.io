@@ -12,6 +12,16 @@ runs:
       run: git clone https://github.com/getzola/zola
       shell: bash
 
+    - uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/bin
+          ~/.cargo/registry/index/
+          ~/.cargo/regisry/cache
+          ~/.cargo/git/db
+          zola/target/
+        key: ${{ runner.os }}-zola-${{ hashFiles('zola/Cargo.lock') }}
+
     - name: Build a Zola executable
       run: cargo install --path . --features search/indexing-ja
       shell: bash
