@@ -5,6 +5,16 @@ runs:
   using: "composite"
 
   steps:
+    - uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/bin
+          ~/.cargo/registry/index/
+          ~/.cargo/regisry/cache
+          ~/.cargo/git/db
+          zola/target/
+        key: ${{ runner.os }}-zola-${{ hashFiles('zola/Cargo.lock') }}
+
     # We build a Zola executable from the source code for these reasons:
     # - The Zola executable built by `cargo install zola` is too old. See https://github.com/getzola/zola/issues/1919.
     # - Zola executables released in https://github.com/getzola/zola/releases do not support Japaneses.
