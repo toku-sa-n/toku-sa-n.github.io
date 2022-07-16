@@ -6,4 +6,6 @@
 <p><strong>{{ page.date }}</strong></p>
 
 {{ page.content | safe }}
+
+<p><a href="{{ get_url(path="@/blog/_index.md") }}">記事一覧へ戻る</a></p>
 {% endblock content %}
