@@ -65,7 +65,7 @@ jobs:
       - name: Commit
         run: |
           git add .
-          git commit -m 'Deploy the website'
+          git diff-index --quiet HEAD || git commit -m 'Deploy the website'
 
       - name: Push
         run: git push
