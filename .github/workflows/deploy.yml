@@ -11,14 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # The Zola executable built by `cargo install zola` cannot support Japanese.
-      # We build a Zola executable from source code.
-      - name: Fetch the Zola source code
-        run: git clone https://github.com/getzola/zola
-
-      - name: Build a Zola executable
-        run: cargo install --path . --features search/indexing-ja
-        working-directory: zola
+      - uses: ./.github/workflows/install_zola
 
       - name: Check source files
         run: zola check
