@@ -23,7 +23,20 @@ jobs:
           name: webpage
           path: public/*
 
-  check:
+  check_css:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run stylelint
+        uses: reviewdog/action-stylelint@v1
+        with:
+          fail_on_error: true
+          packages: 'postcss-sass'
+          reporter: github-pr-review
+
+  check_zola:
     runs-on: ubuntu-latest
 
     steps:
@@ -37,7 +50,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    needs: [build, check]
+    needs: [build, check_css, check_zola]
 
     if: github.ref == 'refs/heads/main'
 
