@@ -31,6 +31,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Get the npm cache directory
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+
+      - uses: actions/cache@v3
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-stylelint
+
       - name: Install stylelint
         run: npm install -g stylelint postcss-sass
 
