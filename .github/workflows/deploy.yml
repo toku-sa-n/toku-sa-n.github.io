@@ -41,7 +41,7 @@ jobs:
           key: ${{ runner.os }}-stylelint
 
       - name: Install stylelint
-        run: npm install -g stylelint postcss-sass
+        run: npm install stylelint postcss-sass --location=global
 
       - name: Run stylelint
         run: stylelint sass/**/*
