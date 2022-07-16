@@ -30,7 +30,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run stylelint
-        uses: reviewdog/action-stylelint@v1
+        uses: reviewdog/action-stylelint@v1.14.0
         with:
           fail_on_error: true
           packages: 'postcss-sass'
