@@ -3,7 +3,7 @@ title = "hindentをghc-lib-parserで書き換える"
 date = 2022-07-16
 +++
 
-### `hindent`とは
+### Haskellフォーマッタについて
 
 [`hindent`](https://github.com/mihaimaruseac/hindent)はHaskellのフォーマッタの一つである．
 
