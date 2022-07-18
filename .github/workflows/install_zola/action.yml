@@ -23,6 +23,6 @@ runs:
         key: ${{ runner.os }}-zola-${{ hashFiles('zola/Cargo.lock') }}
 
     - name: Build a Zola executable
-      run: cargo install --path . --features search/indexing-ja --force
+      run: cargo install --path . --features indexing-ja --force
       shell: bash
       working-directory: zola
