@@ -33,3 +33,78 @@ Haskellのフォーマッタは以下のようにいくつかある．
 ## メモ一覧
 
 ### 個別にインポートした識別子も`ImportDecl`の`ideclHiding`に格納される
+
+以下のコードを考える．ファイル名は`app/Main.hs`である．
+
+```haskell
+{-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE RankNTypes       #-}
+
+module Main
+  ( main
+  ) where
+
+import           Generics.SYB                                        (listify)
+import           GHC.Data.EnumSet
+import           GHC.Data.FastString
+import           GHC.Data.StringBuffer
+import           GHC.Driver.Ppr
+import           GHC.Driver.Session
+import           GHC.Hs
+import           GHC.Parser
+import           GHC.Parser.Lexer
+import           GHC.Stack
+import           GHC.Types.SrcLoc
+import           GHC.Utils.Outputable                                hiding
+                                                                     (empty)
+import           Language.Haskell.GhclibParserEx.GHC.Settings.Config
+
+--- main function
+main :: IO ()
+main = do
+  src <- readFile filename
+  --- module
+  let m = unwrapParseResult $ runParser parserOpts src parseModule
+  printOutputable $ ideclHiding <$> listify only m
+
+only :: ImportDecl GhcPs -> Bool
+only = const True
+
+runParser :: ParserOpts -> String -> P a -> ParseResult a
+runParser opts str parser = unP parser parserState
+  where
+    parserState = initParserState opts b location
+    b = stringToStringBuffer str
+    location = mkRealSrcLoc (mkFastString filename) 1 1
+
+unwrapParseResult :: HasCallStack => ParseResult a -> a
+unwrapParseResult (POk _ m)  = m
+unwrapParseResult PFailed {} = error "Parse failed."
+
+printOutputable :: Outputable a => a -> IO ()
+printOutputable = putStrLn . showOutputable
+
+showOutputable :: Outputable a => a -> String
+showOutputable = showPpr dynFlags
+
+parserOpts :: ParserOpts
+parserOpts = mkParserOpts empty empty False True True True
+
+dynFlags :: DynFlags
+dynFlags = defaultDynFlags fakeSettings fakeLlvmConfig
+
+filename :: FilePath
+filename = "app/Main.hs"
+```
+
+実行結果は以下のようになる．
+
+```sh
+%cabal run
+Up to date
+[Just (False, [listify]), Nothing, Nothing, Nothing, Nothing,
+ Nothing, Nothing, Nothing, Nothing, Nothing, Nothing,
+ Just (True, [empty]), Nothing]
+```
+
+`ideclHiding`という名前で紛らわしいが，個別にインポートする場合もこのフィールドに情報が保存される．タプルの第一項が`False`の場合は個別にインポートし，`True`の場合は逆にそれだけを隠すということになる．
