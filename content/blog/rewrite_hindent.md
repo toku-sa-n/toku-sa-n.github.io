@@ -22,3 +22,14 @@ Haskellのフォーマッタは以下のようにいくつかある．
 `hindent`は[`haskell-src-exts`](https://github.com/haskell-suite/haskell-src-exts)を使用している．残念ながら，このライブラリは更新が止まっている．特に問題となるのが，GHCの更新によって新しい拡張機能が追加された場合，それに対応することが不可能となることである．
 
 この問題は[`hindent`のissue](https://github.com/mihaimaruseac/hindent/issues/587)で報告した．そしてこの記事は，この問題を解決する過程で起こった様々なメモである．
+
+## バージョン情報
+
+| ソフトウェア・ライブラリ | バージョン情報 |
+|--------------------------|----------------|
+| GHC                      | 9.2.2          |
+| ghc-lib-parser           | 9.2.3.20220709 |
+
+## メモ一覧
+
+### 個別にインポートした識別子も`ImportDecl`の`ideclHiding`に格納される
