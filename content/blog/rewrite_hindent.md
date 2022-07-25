@@ -108,3 +108,20 @@ Up to date
 ```
 
 `ideclHiding`という名前で紛らわしいが，個別にインポートする場合もこのフィールドに情報が保存される．タプルの第一項が`False`の場合は個別にインポートし，`True`の場合は逆にそれだけを隠すということになる．
+
+### `StarIsType`
+
+[TESTS.md](https://github.com/mihaimaruseac/hindent/blob/4c2ea034f4365cd784539f223282907c9e734fba/TESTS.md)に存在する以下のコードが`ghc-lib-parser`の`parseModule`でパースできなかった．
+
+```haskell
+data Ty :: (* -> *) where
+  TCon
+    :: { field1 :: Int
+       , field2 :: Bool}
+    -> Ty Bool
+  TCon' :: (a :: *) -> a -> Ty a
+```
+
+どうも[`StarIsType`](https://ghc.gitlab.haskell.org/ghc/doc/users_guide/exts/poly_kinds.html)という拡張機能をオプションとして渡していなかったためで，これを渡すとパースできた．この拡張機能は`*`を[`Data.Kind.Type`](https://hackage.haskell.org/package/base-4.16.2.0/docs/Data-Kind.html#t:Type)として扱うもので，つまるところ上記コードの`Ty :: (* -> *)`を有効なHaskellコードと認識させるために必要だった．ちなみに既定では有効になっている．
+
+`haskell-src-exts`の[`KnownExtensions`](https://hackage.haskell.org/package/haskell-src-exts-1.23.1/docs/Language-Haskell-Exts-Extension.html#v:knownExtensions)にはこの拡張機能が存在しなかったが，`haskell-src-exts`の`parseModuleWithComments`では，これが有効になっていることを前提としてパースされていたのではないかと思う．
