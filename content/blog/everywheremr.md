@@ -3,9 +3,9 @@ title = "`everywhereMr'`を定義する"
 date = 2022-08-21
 +++
 
-### `everywhereM`について
+### [`everywhereM`](https://hackage.haskell.org/package/syb-0.7.2.1/docs/Data-Generics-Schemes.html#v:everywhereM)について
 
-[`everywhereM`](https://hackage.haskell.org/package/syb-0.7.2.1/docs/Data-Generics-Schemes.html#v:everywhereM)と型は同じだが，トップダウンで動作し，更にデータ構造の後ろから変形を行っていく関数．
+[`everywhere`](https://hackage.haskell.org/package/syb-0.7.2.1/docs/Data-Generics-Schemes.html#v:everywhere)とほとんど同じことをやるが，モナド値に対応している．
 
 次のようなデータ構造があるとする．
 
