@@ -83,3 +83,40 @@ Foo
     , qux = 6
     }
 ```
+
+### ほしい関数
+
+`everywhereM`と似ているけれども，右から変形していく`everywhereMr`がほしい．
+
+```haskell
+incrementR :: Foo -> State Int Foo
+incrementR = everywhereMr (mkM f)
+  where
+    f _ = do
+      n <- get
+      modify (+ 1)
+      return n
+
+main :: IO ()
+main = pPrint $ evalState (incrementR zeroes) 0
+```
+
+出力が以下のようになってほしい．
+
+```
+Foo
+    { bar = Bar
+        { quux = 6
+        , corge = Corge
+            { fred = 5
+            , plugh = 4
+            }
+        , grault = 3
+        }
+    , baz = Baz
+        { garply = 2
+        , waldo = 1
+        }
+    , qux = 0
+    }
+```
