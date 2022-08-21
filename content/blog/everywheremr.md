@@ -121,7 +121,9 @@ Foo
     }
 ```
 
-### `everywhereM`の実装を確認する．
+### `everywhereM`の仕組みを調べる
+
+#### `everywhereM`の実装
 
 [`everywhereM`の実装](https://hackage.haskell.org/package/syb-0.7.2.1/docs/src/Data.Generics.Schemes.html#everywhereM)を確認する．
 
@@ -139,6 +141,8 @@ everywhereM f = go
       x' <- gmapM go x
       f x'
 ```
+
+#### [`gmapM`](https://hackage.haskell.org/package/base-4.16.2.0/docs/Data-Data.html#v:gmapM)の実装
 
 ### 付録
 
