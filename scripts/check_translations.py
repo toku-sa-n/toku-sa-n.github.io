@@ -3,7 +3,7 @@
 import os
 import subprocess
 
-translation_exts = [".en.md"]
+translation_exts = [".en.body.md"]
 
 
 def run_mdbook_transcheck(jp, translated):
@@ -16,7 +16,7 @@ def main():
             for ext in translation_exts:
                 if file.endswith(ext):
                     translated_path = os.path.join(root, file)
-                    jp_path = translated_path.replace(ext, ".md")
+                    jp_path = translated_path.replace(ext, ".body.md")
                     run_mdbook_transcheck(jp_path, translated_path)
 
 
