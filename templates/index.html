@@ -3,9 +3,7 @@
 {% block content %}
 <h1>{{ config.title }}</h1>
 
-<p>
-<a href="{{ get_url(path="@/blog/_index.md", lang = lang) }}">{{ trans(key = "article_list", lang = lang) }}</a>
-</p>
+<p><a href="{{ get_url(path="@/blog/_index.md", lang = lang) }}">{{ trans(key = "article_list", lang = lang) }}</a></p>
 
 <h2>{{ trans(key = "languages", lang = lang) }}</h2>
 <ul>
