@@ -8,12 +8,20 @@ title = "備忘録やめた"
 description = "toku-sa-nによる個人ブログ"
 [languages.ja.translations]
 article_list = "ブログ記事一覧"
+back_to_article_list = "記事一覧へ戻る"
+back_to_top = "トップへ戻る"
+lang_name = "日本語"
+languages = "言語一覧"
 
 [languages.en]
 title = "I've quit using this blog as a memo."
 description = "A personal blog by toku-sa-n."
 [languages.en.translations]
 article_list = "List of articles"
+back_to_article_list = "Back to list of articles"
+back_to_top = "Back to the top page"
+lang_name = "English"
+languages = "Languages"
 
 [markdown]
 highlight_code = true

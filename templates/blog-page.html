@@ -7,5 +7,5 @@
 
 {{ page.content | safe }}
 
-<p><a href="{{ get_url(path="@/blog/_index.md") }}">記事一覧へ戻る</a></p>
+<p><a href="{{ get_url(path="@/blog/_index.md", lang = lang) }}">{{ trans(key = "back_to_article_list", lang = lang) }}</a></p>
 {% endblock content %}
