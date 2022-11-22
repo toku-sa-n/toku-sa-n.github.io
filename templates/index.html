@@ -3,6 +3,6 @@
 {% block content %}
 <h1>{{ config.title }}</h1>
 
-<p><a href="{{ get_url(path="@/blog/_index.md") }}">ブログ記事一覧</a></p>
+<p><a href="{{ get_url(path="@/blog/_index.md") }}">{{ trans(key = "article_list", lang = lang) }}</a></p>
 
 {% endblock content %}
