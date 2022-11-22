@@ -3,4 +3,28 @@ title = "My first article"
 date = 2022-07-16
 +++
 
-{{ include "index.en.body.md" }}
+<!--
+おほほー．
+-->
+
+Yeahhhhhhh
+
+<!--
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    puts("hello world");
+}
+```
+-->
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    puts("hello world");
+}
+```

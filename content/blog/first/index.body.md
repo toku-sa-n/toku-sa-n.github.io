@@ -8,4 +8,3 @@ int main(void)
     puts("hello world");
 }
 ```
-
