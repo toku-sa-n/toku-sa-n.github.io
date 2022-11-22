@@ -89,7 +89,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    needs: [build, check_css, check_zola, run_test_scripts]
+    needs: [build, check_css, check_translations, check_zola, run_test_scripts]
 
     if: github.ref == 'refs/heads/main'
 
