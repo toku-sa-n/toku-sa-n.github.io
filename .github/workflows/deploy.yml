@@ -57,10 +57,19 @@ jobs:
       - name: Check source files
         run: zola check
 
+  run_test_scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run test scripts
+        run: find content/blog/* -type d -exec bash -c 'cd "$0" && ./test_script.sh' {} \;
+
   deploy:
     runs-on: ubuntu-latest
 
-    needs: [build, check_css, check_zola]
+    needs: [build, check_css, check_zola, run_test_scripts]
 
     if: github.ref == 'refs/heads/main'
 
