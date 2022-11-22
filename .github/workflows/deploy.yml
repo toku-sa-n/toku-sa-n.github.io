@@ -46,6 +46,26 @@ jobs:
       - name: Run stylelint
         run: stylelint sass/**/*
 
+  check_translations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache
+          key: mdbook-transcheck
+
+      - name: Install mdbook-transcheck
+        run: cargo install mdbook-transcheck
+
+      - name: Check if translations are up-to-date.
+        run: scripts/check_translations.py
+
   check_zola:
     runs-on: ubuntu-latest
 
