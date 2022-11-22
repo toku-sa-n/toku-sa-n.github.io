@@ -8,7 +8,8 @@ date = 2022-07-16
 ```c
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
     puts("hello world");
 }
 ```
