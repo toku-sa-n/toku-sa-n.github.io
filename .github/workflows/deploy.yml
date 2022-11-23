@@ -4,6 +4,8 @@ on:
   push:
     branches: [ main ]
   pull_request:
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   build:
@@ -69,8 +71,12 @@ jobs:
             ~/.cargo/registry/cache
           key: mdbook-transcheck
 
+      # The binary may exist due to the cache, but we ignore it and try to
+      # install the latest version anyway with the `--force` flag. Ignoring the
+      # return code is not a good way since `cargo install` may fail with other
+      # reasons.
       - name: Install mdbook-transcheck
-        run: cargo install mdbook-transcheck
+        run: cargo install mdbook-transcheck --force
 
       - name: Check if translations are up-to-date.
         run: scripts/check_translations.py
