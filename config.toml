@@ -2,7 +2,7 @@ base_url = "https://toku-sa-n.github.io/"
 default_language = "ja"
 compile_sass = true
 build_search_index = true
-ignored_content = ["*.body.md"]
+ignored_content = ["*.header.md", "*.body.md"]
 
 [languages.ja]
 title = "備忘録やめた"
