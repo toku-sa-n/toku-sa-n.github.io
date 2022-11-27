@@ -6,7 +6,7 @@ lang_exts = ["", ".en"]  # "" for Japanese.
 
 
 def assert_all_files_exist(basename):
-    extensions = [".md", ".header.md", ".body.md"]
+    extensions = [".header.md", ".body.md"]
     for ext in extensions:
         if not os.path.isfile(basename + ext):
             print(basename + ext + " does not exist.")
