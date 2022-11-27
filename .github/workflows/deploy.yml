@@ -106,7 +106,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install Zsh
+        run: sudo apt install zsh
+
       - name: Run test scripts
+        shell: bash -e {0}
         run: find content/blog/* -type d -exec bash -c 'cd "$0" && ./test_script.sh' {} \;
 
   deploy:
