@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://toku-sa-n.github.io/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://toku-sa-n.github.io/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://toku-sa-n.github.io/favicons/favicon-16x16.png">
+  <link rel="manifest" href="https://toku-sa-n.github.io/favicons/site.webmanifest">
+
+  <link rel="stylesheet" href="https://toku-sa-n.github.io/base.css">
+
+  <title>備忘録やめた</title>
+</head>
+
+<body>
+  
+<h1>はてなブログから移行した</h1>
+
+<p><strong>2022-11-23</strong></p>
+
+<p>個人ブログを<a href="https://tokuchan3515.hatenablog.com/">はてなブログ</a>からGitHub Pagesに移行することにした．はてなブログに不満はないし，実際おすすめするブログサービスを訊かれたら多分はてなブログと答えるが，3つの理由があって切り替えることにした．</p>
+<p>1つ目の理由は，記事の検証スクリプトを実装したかったからである．本やウェブサイトの内容が古く，コードを写経して実行しようとするとエラーが出たという経験が過去に何回かある．記事内のコードが正しく動作するかを検証するスクリプトを用意し，GitHub Actionsを用いてcronで定期的にそのスクリプトを実行すれば，コードがいざ実行できなくなった際に気付くことができる．もちろんスクリプトが実際の記事の内容を反映していないと意味を成さないし，APIがdeprecatedになった場合や，もっと良い代替法が提案されたなどといった場合は検証スクリプトでは検知できないが，それでもコードが常に動くということを保証できるのは良いと考えた．</p>
+<p>2つ目の理由は，記事を簡単に手元のマシンに置けることである．はてなブログの内容は<a href="https://help.hatenablog.com/entry/export">エクスポートできる</a>が，形式が常にHTMLに固定され，更にブラウザ上で操作をしなければならない．その点マークダウンで記事の内容を残すことができ，かつコマンド一つで手元にコピーできるこちらの方が楽だと感じた．万一の際に楽に保存できる機能は欲しい．</p>
+<p>3つ目の理由は，自分でHTMLやらCSSやらJSを試してみたかったからである．もちろんはてなブログの方でもある程度試すことはできるが，こちらの方が幅広く扱うことができるので良いと思った．</p>
+<p>以上の理由である．</p>
+<p>使うツールは<a href="https://www.getzola.org/">Zola</a>にした．静的なウェブサイトを製作するツールはおそらく他にもあると思うが，よく閲覧していた<a href="https://os.phil-opp.com/">Writing an OS in Rust</a>でZolaが使われている，ソースコードが公開されている位の理由でこれを選択した．</p>
+
+
+<p><a href="https://toku-sa-n.github.io/blog/">記事一覧へ戻る</a></p>
+
+</body>
+
+</html>
