@@ -111,7 +111,7 @@ jobs:
 
       - name: Run test scripts
         shell: bash -e {0}
-        run: find content/blog/* -type d -exec bash -c 'cd "$0" && ./test_script.sh' {} \;
+        run: find content/blog/* -type d -exec bash -c 'cd "$0" && ./test_script.sh || exit 255' {} \;
 
   deploy:
     runs-on: ubuntu-latest
