@@ -32,4 +32,4 @@ That's all.
 使うツールは[Zola](https://www.getzola.org/)にした．静的なウェブサイトを製作するツールはおそらく他にもあると思うが，よく閲覧していた[Writing an OS in Rust](https://os.phil-opp.com/)でZolaが使われている，ソースコードが公開されている位の理由でこれを選択した．
 -->
 
-I have decided to use [Zola](https://www.getzola.org/). I think there are other tools to create a static website, but I have chose it because [Writing an OS in Rust](https://os.phil-opp.com/) which I often browsed uses used it, and because its source code is publicly available.
+I have decided to use [Zola](https://www.getzola.org/). I think there are other tools to create a static website, but I have chose it because [Writing an OS in Rust](https://os.phil-opp.com/) which I often browsed used it, and because its source code is publicly available.
