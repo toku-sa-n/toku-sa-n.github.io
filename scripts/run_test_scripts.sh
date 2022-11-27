@@ -1,0 +1,9 @@
+#!/bin/zsh -xe
+
+# Do not use `find` with the `-exec` option because it will not fail even if a
+# command fails. See
+# https://apple.stackexchange.com/questions/49042/how-do-i-make-find-fail-if-exec-fails.
+for dir in content/blog/*(/)
+do
+    (cd $dir && ./test_script.sh)
+done
