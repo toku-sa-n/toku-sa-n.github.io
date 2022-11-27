@@ -110,9 +110,7 @@ jobs:
         run: sudo apt install zsh
 
       - name: Run test scripts
-        shell: bash -e {0}
-        # `xargs` never fails unless a program finishes with an exit code 255. See `man xargs`.
-        run: find content/blog/* -type d -exec bash -c 'cd "$0" && ./test_script.sh || exit 255' {} \;
+        run: scripts/run_test_scripts.sh
 
   deploy:
     runs-on: ubuntu-latest
