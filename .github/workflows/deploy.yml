@@ -110,9 +110,8 @@ jobs:
         run: sudo apt install zsh
 
       - name: Run test scripts
-        run: |
-          set -e
-          find content/blog/* -type d -exec bash -c 'cd "$0" && ./test_script.sh' {} \;
+        shell: bash -e {0}
+        run: find content/blog/* -type d -exec bash -c 'cd "$0" && ./test_script.sh' {} \;
 
   deploy:
     runs-on: ubuntu-latest
