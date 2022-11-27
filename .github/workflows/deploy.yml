@@ -106,7 +106,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: Install Zsh
+      - name: Install Zsh
         run: sudo apt install zsh
 
       - name: Run test scripts
