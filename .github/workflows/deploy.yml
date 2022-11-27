@@ -111,6 +111,7 @@ jobs:
 
       - name: Run test scripts
         shell: bash -e {0}
+        # See `man xargs` for `exit 255`.
         run: find content/blog/* -type d -exec bash -c 'cd "$0" && ./test_script.sh || exit 255' {} \;
 
   deploy:
