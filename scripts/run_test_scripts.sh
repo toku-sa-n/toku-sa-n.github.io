@@ -5,5 +5,7 @@
 # https://apple.stackexchange.com/questions/49042/how-do-i-make-find-fail-if-exec-fails.
 for dir in content/blog/*(/)
 do
+    # The commands are enclosed in parentheses to prevent `cd` from affecting
+    # other successive test scripts.
     (cd $dir && ./test_script.sh)
 done
