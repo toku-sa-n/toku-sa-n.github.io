@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<h1>
+<h2>
     {{ section.title }}
-</h1>
+</h2>
 
 <ul>
     {% for page in section.pages %}
@@ -12,6 +12,6 @@
     {% endfor %}
 </ul>
 
-<p><a href="{{ get_url(path="/") }}">トップへ戻る</a></p>
+<p><a href="{{ get_url(path="/", lang = lang) }}">{{ trans(key = "back_to_top", lang = lang) }}</a></p>
 
 {% endblock content %}

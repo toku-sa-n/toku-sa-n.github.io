@@ -1,7 +1,6 @@
 +++
-title = "ブログ記事一覧"
+title = "List of articles"
 sort_by = "date"
 template = "blog.html"
 page_template = "blog-page.html"
 +++
-

@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>備忘録やめた</h1>
+<p><a href="{{ get_url(path="@/blog/_index.md", lang = lang) }}">{{ trans(key = "article_list", lang = lang) }}</a></p>
 
-<p><a href="{{ get_url(path="@/blog/_index.md") }}">ブログ記事一覧</a></p>
+<h2>{{ trans(key = "languages", lang = lang) }}</h2>
+<ul>
+    {% for translation in section.translations %}
+    <li><a href = "{{ translation.permalink }}">{{ trans(key = "lang_name", lang = translation.lang) }}</a></li>
+    {% endfor %}
+</ul>
 
 {% endblock content %}
