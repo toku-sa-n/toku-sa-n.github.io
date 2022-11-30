@@ -12,6 +12,13 @@
     {% endfor %}
 </ul>
 
+<h2>{{ trans(key = "languages", lang = lang) }}</h2>
+<ul>
+    {% for translation in section.translations %}
+    <li><a href = "{{ translation.permalink }}">{{ trans(key = "lang_name", lang = translation.lang) }}</a></li>
+    {% endfor %}
+</ul>
+
 <p><a href="{{ get_url(path="/", lang = lang) }}">{{ trans(key = "back_to_top", lang = lang) }}</a></p>
 
 {% endblock content %}

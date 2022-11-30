@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ page.title }}</h2>
+
+<p><strong>{{ page.date }}</strong></p>
+
+{{ page.content | safe }}
+
+<h2>{{ trans(key = "languages", lang = lang) }}</h2>
+<ul>
+  {% for translation in page.translations %}
+  <li><a href="{{ translation.permalink }}">{{ trans(key = "lang_name", lang = translation.lang) }}</a></li>
+  {% endfor %}
+</ul>
+
+<p><a href="{{ get_url(path = "@/blog/_index.md", lang = lang) }}">{{ trans(key = "back_to_article_list", lang = lang) }}</a></p>
+
+{% endblock content %}
