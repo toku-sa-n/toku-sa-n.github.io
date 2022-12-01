@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <p><a href="{{ get_url(path="@/blog/_index.md", lang = lang) }}">{{ trans(key = "article_list", lang = lang) }}</a></p>
+
+{% endblock content %}
+
+{% block sidemenu %}
 
 <h2>{{ trans(key = "languages", lang = lang) }}</h2>
 <ul>
@@ -10,4 +15,4 @@
     {% endfor %}
 </ul>
 
-{% endblock content %}
+{% endblock %}

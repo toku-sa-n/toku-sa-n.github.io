@@ -17,10 +17,17 @@
   <body>
     <h1><a href="{{ get_url(path="/", lang = lang) }}">{{ config.title }}</a></h1>
 
-    <main>
-      {% block content %}
-      {% endblock %}
-    </main>
+    <div class="container">
+      <main>
+        {% block content %}
+        {% endblock %}
+      </main>
+
+      <nav>
+        {% block sidemenu %}
+        {% endblock %}
+      </nav>
+    </div>
   </body>
 
 </html>
