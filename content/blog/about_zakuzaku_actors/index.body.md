@@ -16,7 +16,7 @@
 
 ![ざくざくアクターズVer1.82を初回起動した直後のスクリーンショット](top_screenshot.png)
 
-[ざくざくアクターズ](https://www.vector.co.jp/soft/winnt/game/se508809.html)は，[はむすた](https://www.vector.co.jp/vpack/browse/person/an051865.html)氏によって[RPGVXAce](https://rpgmakerofficial.com/product/products/rpgvxace/index/)で制作されたRPGゲームです．
+[ざくざくアクターズ](https://www.vector.co.jp/soft/winnt/game/se508809.html)は，[はむすた](https://www.vector.co.jp/vpack/browse/person/an051865.html)氏によって[RPGVXAce](https://rpgmakerofficial.com/product/products/rpgvxace/index/)で制作されたRPGゲームです．縮めてざくアクとも呼ばれています．
 
 ### Linuxでのプレイに関して
 
