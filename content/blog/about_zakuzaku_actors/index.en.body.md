@@ -90,7 +90,7 @@ While Zakuaku can be played on Linux with [Wine](https://www.winehq.org/), I've 
 Zakuaku uses [WMA format](https://ja.wikipedia.org/wiki/Windows_Media_Audio) for some BGMs, but I couldn't play them on Linux. Because Wine has just started to develop a WMA decoder since [version 7.2](https://www.winehq.org/announce/7.2) which was released on February 11th, 2022, it's just a guess, but WMA files can't be played directly yet. Therefore, I think simply running the game on Windows is the best way.
 
 <!--
-幸いにして電通大の学生は[無料で個人PCにWindowsをインストールすることができます](https://www.cc.uec.ac.jp/ug/ja/license/ms/personal/kivuto/index.html)．これを利用するのも一つの手です．実際これ以外にも，例えば授業中にWindowsでしか動かないソフトウェアの利用を強いられることがありますし，Windowsマシンは一台あったほうが良いです．
+幸いにして，電通大の学生は[無料で個人PCにWindowsをインストールすることができます](https://www.cc.uec.ac.jp/ug/ja/license/ms/personal/kivuto/index.html)．これを利用するのも一つの手です．実際これ以外にも，例えば授業中にWindowsでしか動かないソフトウェアの利用を強いられることがありますし，Windowsマシンは一台あったほうが良いです．
 -->
 
 Fortunately, UEC students [can install Windows on a personal PC for free](https://www.cc.uec.ac.jp/ug/ja/license/ms/personal/kivuto/index.html). This is also a way to play the game. In fact, you should have at least one Windows machine becuase you may be forced to use a software which only runs on Windows in a class.
