@@ -69,3 +69,9 @@ This article includes spoilers that are revealed after playing Zakuzaku Actors 1
 -->
 
 While Zakuaku can be played on Linux with [Wine](https://www.winehq.org/), I've ended up running it on Windows because I couldn't make some BGMs play on Linux.
+
+<!--
+ざくアクには[WMA形式](https://ja.wikipedia.org/wiki/Windows_Media_Audio)の音源が用いられていますが，この形式で保存されているBGMを鳴らすことができませんでした．Wineでは2022年2月11日に公開された[バージョン7.2](https://www.winehq.org/announce/7.2)でWMAデコーダの開発が開始されたばかりなため，あくまで推測ですが，まだWMAを直接鳴らすことが出来ないのかなと考えています．従って素直にWindows上でプレイするほうが得策だと思います．
+-->
+
+Zakuaku uses [WMA format](https://ja.wikipedia.org/wiki/Windows_Media_Audio) for some BGMs, but I couldn't play them on Linux. Because Wine has just started to develop a WMA decoder since [version 7.2](https://www.winehq.org/announce/7.2) which was released on February 11th, 2022, it's just a guess, but WMA files can't be played directly yet. Therefore, I think simply running the game on Windows is the best way.
