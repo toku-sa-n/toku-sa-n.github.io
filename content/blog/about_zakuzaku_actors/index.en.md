@@ -43,7 +43,7 @@ I'm [toku\_san](https://keybase.io/toku_san/), a M1 student at UEC.
 この記事にはざくざくアクターズを始めからプレイして15分くらいすればわかるネタバレと，ゲームのストーリーには全く関係のない技術的なネタバレが存在します．でもそんなものはやネタバレではないので気にせず読み続けてください．
 -->
 
-This article includes spoilers that are revealed after playing Zakuzaku Actors 15 minutes, and technical spoilers that are totally not related to the game's story, but continue reading the article anyway as these are no longer spoilers.
+This article includes spoilers that are revealed after playing Zakuzaku Actors 15 minutes, and technical spoilers that are totally not related to the game's story, but continue reading the article anyway as these are no longer spoilers. Also, character names, game titles, and novel titles are translated by me, not by creaters.
 
 <!--
 ### 概要
@@ -61,7 +61,20 @@ This article includes spoilers that are revealed after playing Zakuzaku Actors 1
 [ざくざくアクターズ](https://www.vector.co.jp/soft/winnt/game/se508809.html)は，[はむすた](https://www.vector.co.jp/vpack/browse/person/an051865.html)氏によって[RPGVXAce](https://rpgmakerofficial.com/product/products/rpgvxace/index/)で制作されたRPGゲームです．縮めてざくアクとも呼ばれています．
 -->
 
-[Zakuzaku Actors (ざくざくアクターズ, Zakuzaku Akuta&#772;zu) ](https://www.vector.co.jp/soft/winnt/game/se508809.html)is an RPG game created by [Hamusuta (はむすた) ](https://www.vector.co.jp/vpack/browse/person/an051865.html)with [RPGVXAce](https://rpgmakerofficial.com/product/products/rpgvxace/index/). The game is also called as Zakuaku (ざくアク).
+[Zakuzaku Actors (ざくざくアクターズ, Zakuzaku Akuta&#772;zu) ](https://www.vector.co.jp/soft/winnt/game/se508809.html)is an RPG game created by [Hamusuta (はむすた)](https://www.vector.co.jp/vpack/browse/person/an051865.html) with [RPGVXAce](https://rpgmakerofficial.com/product/products/rpgvxace/index/). The game is also called as Zakuaku (ざくアク).
+
+
+<!--
+作者ブログによれば，2012年6月19日にバージョン0.71aが公開されました．これがこのゲームの初めての公開となります．その後更新を続け，メインストーリーが完結したあともコンテンツの追加が続き，この記事の執筆当時最新版であるバージョン1.82が2022年10月24日に公開されました．なお，作者ブログにはゲームのネタバレに相当するコンテンツを含まれているため，リンクはこの記事の下部にあります．
+-->
+
+According to the creater's blog, version 0.71a is released on June 19th, 2012. It is the very first release of the game. After that, the game has been continually updated, contents been added even if the main story is concluded, and version 1.82 which is the newest version at the time of this writing is released on October 24th, 2022. Note that the link to the blog is on the lower part of this blog becuase it contains the game's spoilers.
+
+<!--
+製作者のはむすた氏はざくアクの他に，[らんだむダンジョン](https://www.vector.co.jp/soft/winnt/game/se482804.html)というRPGゲームを過去に製作しているほか，[逆さま世界の私達へ](https://www.pixiv.net/novel/series/1449123)という小説も執筆しています．
+-->
+
+Hamusuta, the creater of the game, also creates an RPG game called [Random Dungeon (らんだむダンジョン, Randamu Danjon)](https://www.vector.co.jp/soft/winnt/game/se482804.html) previously, and writes a novel called [To us in the upside-down world (逆さま世界の私達へ, Sakasama sekai no watashi tachie)](https://www.pixiv.net/novel/series/1449123).
 
 <!--
 ### Linuxでのプレイに関して
