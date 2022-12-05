@@ -65,5 +65,7 @@ This article includes spoilers that are revealed after playing Zakuzaku Actors 1
 ### Playing on Linux
 
 <!--
-[Wine](https://www.winehq.org/)を用いればざくざくアクターズをLinuxでプレイすることはできますが，私自身は一部のBGMを再生させることができず，結局Windows上で動かすことにしました．
+[Wine](https://www.winehq.org/)を用いればざくアクをLinuxでプレイすることはできますが，私自身は一部のBGMを再生させることができず，結局Windows上で動かすことにしました．
 -->
+
+While Zakuaku can be played on Linux with [Wine](https://www.winehq.org/), I ended up running it on Windows because I couldn't make some BGMs play on Linux.
