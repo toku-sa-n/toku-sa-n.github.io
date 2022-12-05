@@ -39,3 +39,15 @@ I'm [toku\_san](https://keybase.io/toku_san/), a M1 student at UEC.
 -->
 
 This article includes spoilers that are revealed after playing Zakuzaku Actors 15 minutes, and technical spoilers that are totally not related to the game's story, but continue reading the article anyway as these are no longer spoilers.
+
+<!--
+### 概要
+-->
+
+### Overview
+
+<!--
+![ざくざくアクターズVer1.82を初回起動した直後のスクリーンショット](top_screenshot.png)
+-->
+
+![A screenshot of Zakuzaku Actors Ver 1.82 on the first launch](top_screenshot.png)
