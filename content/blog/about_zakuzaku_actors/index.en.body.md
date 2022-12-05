@@ -53,13 +53,17 @@ This article includes spoilers that are revealed after playing Zakuzaku Actors 1
 ![A screenshot of Zakuzaku Actors Ver 1.82 on the first launch](top_screenshot.png)
 
 <!--
-[ざくざくアクターズ](https://www.vector.co.jp/soft/winnt/game/se508809.html)は，[はむすた](https://www.vector.co.jp/vpack/browse/person/an051865.html)氏によって[RPGVXAce](https://rpgmakerofficial.com/product/products/rpgvxace/index/)で制作されたRPGゲームです．
+[ざくざくアクターズ](https://www.vector.co.jp/soft/winnt/game/se508809.html)は，[はむすた](https://www.vector.co.jp/vpack/browse/person/an051865.html)氏によって[RPGVXAce](https://rpgmakerofficial.com/product/products/rpgvxace/index/)で制作されたRPGゲームです．縮めてざくアクとも呼ばれています．
 -->
 
-[Zakuzaku Actors (ざくざくアクターズ, Zakuzaku Akuta&#772;zu) ](https://www.vector.co.jp/soft/winnt/game/se508809.html)is an RPG game created by [Hamusuta (はむすた) ](https://www.vector.co.jp/vpack/browse/person/an051865.html)with [RPGVXAce](https://rpgmakerofficial.com/product/products/rpgvxace/index/).
+[Zakuzaku Actors (ざくざくアクターズ, Zakuzaku Akuta&#772;zu) ](https://www.vector.co.jp/soft/winnt/game/se508809.html)is an RPG game created by [Hamusuta (はむすた) ](https://www.vector.co.jp/vpack/browse/person/an051865.html)with [RPGVXAce](https://rpgmakerofficial.com/product/products/rpgvxace/index/). The game is also called as Zakuaku (ざくアク).
 
 <!--
 ### Linuxでのプレイに関して
 -->
 
 ### Playing on Linux
+
+<!--
+[Wine](https://www.winehq.org/)を用いればざくざくアクターズをLinuxでプレイすることはできますが，私自身は一部のBGMを再生させることができず，結局Windows上で動かすことにしました．
+-->
