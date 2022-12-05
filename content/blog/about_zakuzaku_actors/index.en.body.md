@@ -81,3 +81,9 @@ Zakuaku uses [WMA format](https://ja.wikipedia.org/wiki/Windows_Media_Audio) for
 -->
 
 Fortunately, UEC students [can install Windows on a personal PC for free](https://www.cc.uec.ac.jp/ug/ja/license/ms/personal/kivuto/index.html). This is also a way to play the game. In fact, you should have at least one Windows machine becuase you may be forced to use a software which only runs on Windows in a class.
+
+<!--
+**Wineを利用したことによるトラブルや不具合に関してゲームの製作者に問い合わせないでください．Wineの使用は開発側の想定環境ではありません．**
+-->
+
+**DO NOT ASK THE GAME CREATERS EVEN IF YOU ENCOUNTERED ANY TROUBLES AND/OR DEFECTS DURING USING WINE. THE USE OF WINE IS NOT EXPECTED.**
