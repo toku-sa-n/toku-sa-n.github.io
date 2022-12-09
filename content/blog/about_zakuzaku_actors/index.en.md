@@ -61,7 +61,7 @@ This article includes spoilers that are revealed after playing Zakuzaku Actors 1
 [ざくざくアクターズ](https://www.vector.co.jp/soft/winnt/game/se508809.html)は，[はむすた](https://www.vector.co.jp/vpack/browse/person/an051865.html)氏によって[RPGVXAce](https://rpgmakerofficial.com/product/products/rpgvxace/index/)で制作されたRPGゲームです．縮めてざくアクとも呼ばれています．
 -->
 
-[Zakuzaku Actors (ざくざくアクターズ, Zakuzaku Akuta&#772;zu) ](https://www.vector.co.jp/soft/winnt/game/se508809.html)is an RPG game created by [Hamusuta (はむすた)](https://www.vector.co.jp/vpack/browse/person/an051865.html) with [RPGVXAce](https://rpgmakerofficial.com/product/products/rpgvxace/index/). The game is also called as Zakuaku (ざくアク).
+[Zakuzaku Actors (ざくざくアクターズ, Zakuzaku Akuta&#772;zu) ](https://www.vector.co.jp/soft/winnt/game/se508809.html)is an RPG game created by [Hamusuta (はむすた)](https://www.vector.co.jp/vpack/browse/person/an051865.html) with [RPGVXAce](https://rpgmakerofficial.com/product/products/rpgvxace/index/). The game is also called as Zakuaku (ざくアク - **Zaku**zaku **Aku**ta&#772;zu).
 
 <!--
 作者ブログによれば，2012年6月19日にバージョン0.71aが公開されました．これがこのゲームの初めての公開となります．その後更新を続け，メインストーリーが完結したあともコンテンツの追加が続き，この記事の執筆当時最新版であるバージョン1.82が2022年10月24日に公開されました．なお，作者ブログにはゲームのネタバレに相当するコンテンツを含まれているため，リンクはこの記事の下部にあります．
@@ -74,6 +74,24 @@ According to the creater's blog, version 0.71a is released on June 19th, 2012. I
 -->
 
 Hamusuta, the creater of the game, also creates an RPG game called [Random Dungeon (らんだむダンジョン, Randamu Danjon)](https://www.vector.co.jp/soft/winnt/game/se482804.html) previously, and writes a novel called [To us in the upside-down world (逆さま世界の私達へ, Sakasama sekai no watashi tachi e)](https://www.pixiv.net/novel/series/1449123).
+
+<!--
+### 前作「らんだむダンジョン」に関して
+-->
+
+### About the previous work "Random Dungeon"
+
+<!--
+前述の通り，ざくアクの製作者であるはむすた氏は，過去にらんだむダンジョン（通称らんダン）というゲームを製作しています．こちらもかなりの大作です．
+-->
+
+As I said above, Hamusuta, the creator of Zakuzaku Actors had created a game called "Random Dungeon" (a.k.a. Randan - **Ran**damu **Dan**jon). This is also a masterpiece.
+
+<!--
+ざくアクをプレイするにあたってらんダンを予めプレイする必要はありません．ざくアクにはらんダンのネタがいくつか用いられていますが，らんダンをやっていないからといって，ざくアクのストーリーが全く解らなくなるということはありません．それでももし時間があればらんダンもプレイすることをおすすめします．ざくアクの前にやっても，あとにやっても構いません．らんダン自体面白いですし，ざくアクに含まているネタがわかって結構楽しいです．
+-->
+
+You don't need to play Randan before playing Zakuaku. Although Zakuaku contains a few easter eggs derived from it, playing it is not necessary to understand Zakuaku's story. Still, I recommend to play Randan if you have time; you can play it either before or after playing Zakuaku. It's just fun to play it, and also interesting because you can find tips related to Randan in Zakuaku.
 
 <!--
 ### Linuxでのプレイに関して
