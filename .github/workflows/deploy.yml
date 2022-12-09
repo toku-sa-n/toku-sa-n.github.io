@@ -1,6 +1,3 @@
-# TODO: Check the CSS format. `stylelint` is not usable as `postcss-sass` is
-# not maintained anymore.
-# See https://github.com/AleshaOleg/postcss-sass/issues/175.
 name: Deploy
 
 on:
@@ -27,6 +24,30 @@ jobs:
         with:
           name: webpage
           path: public/*
+
+  # There is an action called `reviewdog/action-stylelint`. However, it
+  # requires `package.json` even if a project is not managed by npm.  That is
+  # why I install and run stylelint manually.
+  check_css:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Get the npm cache directory
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+
+      - uses: actions/cache@v3
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-stylelint
+
+      - name: Install stylelint
+        run: npm install stylelint stylelint-config-standard-scss --location=global
+
+      - name: Run stylelint
+        run: stylelint sass/**/*
 
   check_head_and_body_concatenation:
     runs-on: ubuntu-latest
