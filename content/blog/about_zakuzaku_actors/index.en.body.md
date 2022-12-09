@@ -86,7 +86,7 @@ As I said above, Hamusuta, the creator of Zakuzaku Actors had created a game cal
 ざくアクをプレイするにあたってらんダンを予めプレイする必要はありません．ざくアクにはらんダンのネタがいくつか用いられていますが，らんダンをやっていないからといって，ざくアクのストーリーが全く解らなくなるということはありません．それでももし時間があればらんダンもプレイすることをおすすめします．ざくアクの前にやっても，あとにやっても構いません．らんダン自体面白いですし，ざくアクに含まているネタがわかって結構楽しいです．
 -->
 
-You don't need to play Randan before playing Zakuaku. Although Zakuaku contains a few easter eggs derived from it, playing it is not necessary to understand Zakuaku's story. Still, I recommend to play Randan if you have time; you can play it either before or after playing Zakuaku. It's just fun to play it, and also interesting because you can find tips related to Randan in Zakuaku.
+You don't need to play Randan before playing Zakuaku. Although Zakuaku contains a few easter eggs derived from it, playing it is not necessary to understand Zakuaku's story. Still, I recommend to play Randan if you have time; you can play it either before or after playing Zakuaku. It's just fun to play it, and also interesting because you can find tips related to it in Zakuaku.
 
 <!--
 ### Linuxでのプレイに関して
