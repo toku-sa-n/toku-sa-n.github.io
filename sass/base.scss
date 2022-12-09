@@ -11,6 +11,8 @@ body {
 @include media("<desktop") {
     .container {
         display: block;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 }
 
