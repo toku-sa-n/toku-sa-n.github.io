@@ -74,6 +74,18 @@ Hamusuta, the creater of the game, also creates an RPG game called [Random Dunge
 ### Linuxでのプレイに関して
 -->
 
+<!--
+### 前作「らんだむダンジョン」に関して
+-->
+
+### About the previous work "Random Dungeon"
+
+<!--
+前述の通り，ざくアクの製作者であるはむすた氏は，過去にらんだむダンジョン（通称らんダン）というゲームを製作しています．こちらもかなりの大作です．
+-->
+
+As I said above, Hamusuta, the creator of Zakuzaku Actors had created a game called "Random Dungeon" (a.k.a. RanDan - **Ran**damu **Dan**jon). This is also a masterpiece.
+
 ### Playing on Linux
 
 <!--
