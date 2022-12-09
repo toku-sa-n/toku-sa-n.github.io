@@ -1,20 +1,32 @@
 /* Color settings are imported from my .Xresources. */
 
+@import "include-media";
+
 body {
     background: #1d1f21;
     color: #c5c8c6;
     font-family: "Noto Sans CJK JP", "Noto Sans", sans-serif;
 }
 
-.container {
-    display: flex;
-    width: 60rem;
-    margin: auto;
+@include media("<desktop") {
+    .container {
+        display: block;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }
 
-main {
-    width: 40rem;
-    padding-right: 2rem;
+@include media(">=desktop") {
+    .container {
+        display: flex;
+        width: 60rem;
+        margin: auto;
+    }
+
+    main {
+        width: 40rem;
+        padding-right: 2rem;
+    }
 }
 
 a {
