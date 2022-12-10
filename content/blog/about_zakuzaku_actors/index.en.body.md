@@ -71,6 +71,30 @@ According to the creater's blog, version 0.71a is released on June 19th, 2012. I
 Hamusuta, the creater of the game, also creates an RPG game called [Random Dungeon (らんだむダンジョン, Randamu Danjon)](https://www.vector.co.jp/soft/winnt/game/se482804.html) previously, and writes a novel called [To us in the upside-down world (逆さま世界の私達へ, Sakasama sekai no watashi tachi e)](https://www.pixiv.net/novel/series/1449123).
 
 <!--
+### ゲームシステムに関して
+-->
+
+### About the game system
+
+<!--
+ざくアクでは原則8人のパーティーを組みます．戦闘にも8人が関わりますが，そのうち4人が前衛として実際の戦闘を行い，残りの4人は後衛として待機します．ただし，いつでもメンバーを前衛あるいは後衛に移すことが可能です．
+-->
+
+Players form a party of 8 members in general. That 8 members involve battles with enemies, but 4 out of 8 do an actual combat as the advance guard, and the remaining 4 stand by as the rear guard. You can move members from advance to rear anytime, and vise versa.
+
+<!--
+また，ざくアクでは[TP（Tactical Point）](https://tkool.jp/mv/course/03.html)という概念が存在します．これは戦闘中に様々な状況下でたまるものですが，一部の技能はこれを消費します．
+-->
+
+Also, Zakuaku has the concept of [TP (Tactial Point)](https://tkool.jp/mv/course/03.html). The point is increased during a battle for various reasons, and some skills consume it.
+
+<!--
+8人制バトルとTPという概念は単独で見ると地味ですが，この2つが組み合わさるとかなり興味深くなります．例えば蘇生技は概してTPを消費するため，そのような技を持ったキャラクターがTPをためたら後衛に配置し，蘇生するタイミングで前衛に戻すといったことが可能になります．またバフ技を大量に掛けて一撃で突破するという方法も考えられます．
+-->
+
+Both concept of battle with 8 members and TP seem to be kinda boring, but they suddenly become interesting if they are combined. For example, skills to revive characters normally consume TPs. Players can locate characters having such skills in the rear guard after them collecting TPs and in the advance guard to revive characters. Also, it is possible to  buff a character a lot and attack an enemy in a stroke.
+
+<!--
 ### 前作「らんだむダンジョン」に関して
 -->
 
