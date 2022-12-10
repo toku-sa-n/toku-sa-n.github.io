@@ -3,6 +3,12 @@ title = "About Zakuzaku Actors (ざくざくアクターズ) "
 date = 2022-12-13
 +++
 
+### Caution for English speakers
+
+Please note that Zakuzaku Actors is available only in Japanese as of writing this article. You can still play the game with translation tools.
+
+Character names, game titles, and novel titles are translated by me, not by their creators.
+
 <!--
 ### TL;DR
 -->
@@ -43,7 +49,7 @@ I'm [toku\_san](https://keybase.io/toku_san/), a M1 student at UEC.
 この記事にはざくざくアクターズを始めからプレイして15分くらいすればわかるネタバレと，ゲームのストーリーには全く関係のない技術的なネタバレが存在します．でもそんなものはやネタバレではないので気にせず読み続けてください．
 -->
 
-This article includes spoilers that are revealed after playing Zakuzaku Actors 15 minutes, and technical spoilers that are totally not related to the game's story, but continue reading the article anyway as these are no longer spoilers. Also, character names, game titles, and novel titles are translated by me, not by creaters.
+This article includes spoilers that are revealed after playing Zakuzaku Actors 15 minutes, and technical spoilers that are totally not related to the game's story, but continue reading the article anyway as these are no longer spoilers.
 
 <!--
 ### 概要
