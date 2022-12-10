@@ -53,7 +53,7 @@ This article includes spoilers that are revealed after playing Zakuzaku Actors 1
 ![A screenshot of Zakuzaku Actors Ver 1.82 on the first launch](top_screenshot.png)
 
 <!--
-[ざくざくアクターズ](https://www.vector.co.jp/soft/winnt/game/se508809.html)は，[はむすた](https://www.vector.co.jp/vpack/browse/person/an051865.html)氏によって[RPGVXAce](https://rpgmakerofficial.com/product/products/rpgvxace/index/)で制作されたRPGゲームです．縮めてざくアクとも呼ばれています．
+[ざくざくアクターズ](https://www.vector.co.jp/soft/winnt/game/se508809.html)は，[はむすた](https://www.vector.co.jp/vpack/browse/person/an051865.html)氏によって[RPGツクール VX Ace](https://rpgmakerofficial.com/product/products/rpgvxace/index/)で制作されたRPGゲームです．縮めてざくアクとも呼ばれています．
 -->
 
 [Zakuzaku Actors (ざくざくアクターズ, Zakuzaku Akuta&#772;zu) ](https://www.vector.co.jp/soft/winnt/game/se508809.html)is an RPG game created by [Hamusuta (はむすた)](https://www.vector.co.jp/vpack/browse/person/an051865.html) with [RPG Maker VX Ace](https://rpgmakerofficial.com/product/products/rpgvxace/index/). The game is also called as Zakuaku (ざくアク - **Zaku**zaku **Aku**ta&#772;zu).
