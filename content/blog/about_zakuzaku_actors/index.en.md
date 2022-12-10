@@ -115,6 +115,8 @@ The difficult of the game is adjusted well. Quite a few characters appear in the
 ### ストーリーに関して
 -->
 
+### About the story
+
 <!--
 > ……この世界には召喚された物が溢れていた。
 >
@@ -160,8 +162,6 @@ The difficult of the game is adjusted well. Quite a few characters appear in the
 > Those who were not satisfied with the world where they are summoned and ... those who call Hagure (ハグレ) and disrespect them. The unvisible friction between them was unfolding the story but ――. (呼び出された世界に不満を持つ彼らと……。そんな彼らをハグレと読んで軽視するこの世界の人々とで、見えない摩擦が物語を動かそうとしていたが――。)
 >
 > The situation of those who had fled to nameless ruins in this frontier was much different from others. (ここ辺境の、名前もない遺跡に逃げ込んだ彼女達の事情は、他の奴らとはだいぶ違っていた。)
-
-### About the story
 
 <!--
 ### 前作「らんだむダンジョン」に関して
