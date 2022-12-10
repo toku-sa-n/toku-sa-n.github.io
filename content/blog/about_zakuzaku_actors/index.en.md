@@ -7,7 +7,7 @@ date = 2022-12-13
 
 Please note that Zakuzaku Actors is available only in Japanese as of writing this article. You can still play the game with translation tools.
 
-Character names, game titles, and novel titles are translated by me, not by their creators.
+Character names, game titles, novel titles, and quotations are translated by me, not by their creators.
 
 <!--
 ### TL;DR
@@ -116,6 +116,12 @@ The difficult of the game is adjusted well. Quite a few characters appear in the
 -->
 
 ### About the story
+
+<!--
+次に，ゲーム開始直後のナレーションを引用します．
+-->
+
+The following is the quote of the narration immediately after starting the game.
 
 <!--
 > ……この世界には召喚された物が溢れていた。

@@ -107,6 +107,12 @@ The difficult of the game is adjusted well. Quite a few characters appear in the
 ### About the story
 
 <!--
+次に，ゲーム開始直後のナレーションを引用します．
+-->
+
+The following is the quote of the narration immediately after starting the game.
+
+<!--
 > ……この世界には召喚された物が溢れていた。
 >
 > いつ頃からか出来上がった召喚という技術は、様々な世界から技術、人、物を運んできたが、この画期的な技術に少々浮かれすぎた人々は、用もないのに多くの人を呼びすぎた。
