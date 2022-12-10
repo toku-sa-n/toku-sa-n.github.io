@@ -98,7 +98,7 @@ Both concept of battle with 8 members and TP seem to be kinda boring, but they s
 難易度は絶妙です．操作キャラクターはかなりの数が登場しますが，得意不得意はキャラクターによって異なるため，キャラクターを使い分けて攻略することが基本となっています．また敵の性質もやはりそれぞれ異なりますが，ゲーム中に攻略のための誘導が存在するため，かなり親切設計になっています．ただし敵味方の特徴を無視したゴリ押しをしようとすると，レベルがいくら高くても死にます（死にました）．
 -->
 
-The difficult of the game is adjusted well. Quite a few characters appear in the game, but they have different strengths and weaks. Thus, the basic way to proceed the game is to use proper characters. Enemies also have different properties, but it is rather easy to find a way to proceed because cheat tips are hidden in the game. However, enemies will destroy your party if you try to ignore all the properties of characters and enemies and to combat enemies only with high character levels (yes, I tried it and couldn't get it all done.).
+The difficulty of the game is adjusted well. Quite a few characters appear in the game, but they have different strengths and weaks. Thus, the basic way to proceed the game is to use proper characters. Enemies also have different properties, but it is rather easy to find a way to proceed because cheat tips are hidden in the game. However, enemies will destroy your party if you try to ignore all the properties of characters and enemies and to combat enemies only with high character levels (yes, I tried it and couldn't get it all done.).
 
 <!--
 ### ストーリーに関して
