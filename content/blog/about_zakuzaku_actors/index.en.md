@@ -37,7 +37,7 @@ This article is the thirteenth article of [UEC Advent Calendar 2022](https://adv
 現在電通大M1の[toku\_san](https://keybase.io/toku_san/)です．最近学会発表を終えたので，かなり平穏な日々を過ごしています．
 -->
 
-I'm [toku\_san](https://keybase.io/toku_san/), a M1 student at UEC. Recently I have peaceful days because I've finished a presentation at a conference.
+I'm [toku\_san](https://keybase.io/toku_san/), a M1 student at UEC. These days I have peaceful days because I've finished a presentation at a conference.
 
 <!--
 この記事では，私が去年からプレイし始めて，いつの間にかハマってしまったゲーム「ざくざくアクターズ」の紹介をしたいと思います．
@@ -171,7 +171,7 @@ The following is the quote of the narration immediately after starting the game.
 >
 > Those who successfully ran away, those who were not interested in the affair from the start, those who plan another riot... A lot of summonees still remain in this world. (上手く逃げ延びた者、元々暴動騒ぎには興味なかった者。もう一騒ぎ企んでいる者……。まだまだ多数の召喚人が世界には残っている。)
 >
-> Those who were not satisfied with the world where they are summoned and ... those who call them Hagure (ハグレ) and disrespect them. The unvisible friction between them was unfolding a story but ――. (呼び出された世界に不満を持つ彼らと……。そんな彼らをハグレと読んで軽視するこの世界の人々とで、見えない摩擦が物語を動かそうとしていたが――。)
+> Those who were not satisfied with the world where they are summoned and ... those who call them Hagure (ハグレ, the deviated) and disrespect them. The unvisible friction between them was unfolding a story but ――. (呼び出された世界に不満を持つ彼らと……。そんな彼らをハグレと読んで軽視するこの世界の人々とで、見えない摩擦が物語を動かそうとしていたが――。)
 >
 > The situation of those who had fled to nameless ruins in this frontier was much different from others. (ここ辺境の、名前もない遺跡に逃げ込んだ彼女達の事情は、他の奴らとはだいぶ違っていた。)
 
