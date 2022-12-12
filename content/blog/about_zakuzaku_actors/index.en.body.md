@@ -26,7 +26,7 @@ This article is the thirteenth article of [UEC Advent Calendar 2022](https://adv
 現在電通大M1の[toku\_san](https://keybase.io/toku_san/)です．最近学会発表を終えたので，かなり平穏な日々を過ごしています．
 -->
 
-I'm [toku\_san](https://keybase.io/toku_san/), a M1 student at UEC. Recently I have peaceful days because I've finished a presentation at a conference.
+I'm [toku\_san](https://keybase.io/toku_san/), a M1 student at UEC. These days I have peaceful days because I've finished a presentation at a conference.
 
 <!--
 この記事では，私が去年からプレイし始めて，いつの間にかハマってしまったゲーム「ざくざくアクターズ」の紹介をしたいと思います．
