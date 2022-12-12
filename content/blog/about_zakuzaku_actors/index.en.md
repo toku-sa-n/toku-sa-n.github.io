@@ -161,7 +161,7 @@ The following is the quote of the narration immediately after starting the game.
 >
 > They somehow tried to get used to the world, but it was not so easy. Finally, some of the summonees who reached the limit of their patience became mobs and committed violence. (彼らは、なんとか世界に馴染もうとの努力はするものの、そう簡単にはいかず、我慢の限界を超えた一部の召喚人達は、暴徒と化して暴れまわった。)
 >
-> Summoners felt their responsibilities for this and started to quash the mobs, but what is worse, even summonees who were suppressing them began to support the mobs and to rampage. (これに責任を感じた召喚士達は、暴徒の鎮圧に乗り出したが、あろうことか、鎮圧側の召喚人まで暴徒に肩入れして暴れまくり。)
+> The summoners felt their responsibilities for this and started to quash the mobs, but what is worse, even summonees who were suppressing them began to support the mobs and to rampage. (これに責任を感じた召喚士達は、暴徒の鎮圧に乗り出したが、あろうことか、鎮圧側の召喚人まで暴徒に肩入れして暴れまくり。)
 >
 > The scale of the rebellion was continually expanding, and quelling them fatigued many countries and people. (反乱の規模は広がり続け、その鎮圧に、たくさんの国と人々が疲労しまくった。)
 >
