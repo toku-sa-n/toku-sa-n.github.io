@@ -17,16 +17,22 @@
 ### Introduction
 
 <!--
-この記事は[UEC Advent Calendar 2022](https://adventar.org/calendars/7581)の13日目の記事です．
+この記事は[UEC Advent Calendar 2022](https://adventar.org/calendars/7581)の13日目の記事です．昨日はいずりなさんによる，[【Bash】インタラクティブな選択メニューを作ってみた](https://izurina.dev/post/uec-advent2022/)でした．
 -->
 
-This article is the thirteenth article of [UEC Advent Calendar 2022](https://adventar.org/calendars/7581).
+This article is the thirteenth article of [UEC Advent Calendar 2022](https://adventar.org/calendars/7581). The yesterday's article was [【Bash】I've created an interactive selection menu (【Bash】インタラクティブな選択メニューを作ってみた)](https://izurina.dev/post/uec-advent2022/) by Izurina (いずりな).
 
 <!--
-現在電通大M1の[toku\_san](https://keybase.io/toku_san/)です．
+現在電通大M1の[toku\_san](https://keybase.io/toku_san/)です．最近学会発表を終えたので，かなり平穏な日々を過ごしています．
 -->
 
-I'm [toku\_san](https://keybase.io/toku_san/), a M1 student at UEC.
+I'm [toku\_san](https://keybase.io/toku_san/), a M1 student at UEC. Recently I have peaceful days because I've finished a presentation at a conference.
+
+<!--
+この記事では，私が去年からプレイし始めて，いつの間にかハマってしまったゲーム「ざくざくアクターズ」の紹介をしたいと思います．
+-->
+
+I'll introduce my favorite game "Zakuzaku Actors" (ざくざくアクターズ) which I started to play since last year.
 
 <!--
 ### 注意
