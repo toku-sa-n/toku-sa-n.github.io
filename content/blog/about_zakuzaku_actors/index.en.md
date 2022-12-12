@@ -109,7 +109,7 @@ Both concept of battle with 8 members and TP seem to be kinda boring, but they s
 難易度は絶妙です．操作キャラクターはかなりの数が登場しますが，得意不得意はキャラクターによって異なるため，キャラクターを使い分けて攻略することが基本となっています．また敵の性質もやはりそれぞれ異なりますが，ゲーム中に攻略のための誘導が存在するため，かなり親切設計になっています．ただし敵味方の特徴を無視したゴリ押しをしようとすると，レベルがいくら高くても死にます（死にました）．
 -->
 
-The difficult of the game is adjusted well. Quite a few characters appear in the game, but they have different strengths and weaks. Thus, the basic way to proceed the game is to use proper characters. Enemies also have different properties, but it is rather easy to find a way to proceed because cheat tips are hidden in the game. However, enemies will destroy your party if you try to ignore all the properties of characters and enemies and to combat enemies only with high character levels (yes, I tried it and couldn't get it all done.).
+The difficulty of the game is adjusted well. Quite a few characters appear in the game, but they have different strengths and weaks. Thus, the basic way to proceed the game is to use proper characters. Enemies also have different properties, but it is rather easy to find a way to proceed because cheat tips are hidden in the game. However, enemies will destroy your party if you try to ignore all the properties of characters and enemies and to combat enemies only with high character levels (yes, I tried it and couldn't get it all done.).
 
 <!--
 ### ストーリーに関して
@@ -165,7 +165,7 @@ The following is the quote of the narration immediately after starting the game.
 >
 > Those who successfully ran away, those who were not interested in the affair from the start, those who plan another riot... A lot of summonees still remain in this world. (上手く逃げ延びた者、元々暴動騒ぎには興味なかった者。もう一騒ぎ企んでいる者……。まだまだ多数の召喚人が世界には残っている。)
 >
-> Those who were not satisfied with the world where they are summoned and ... those who call Hagure (ハグレ) and disrespect them. The unvisible friction between them was unfolding the story but ――. (呼び出された世界に不満を持つ彼らと……。そんな彼らをハグレと読んで軽視するこの世界の人々とで、見えない摩擦が物語を動かそうとしていたが――。)
+> Those who were not satisfied with the world where they are summoned and ... those who call them Hagure (ハグレ) and disrespect them. The unvisible friction between them was unfolding a story but ――. (呼び出された世界に不満を持つ彼らと……。そんな彼らをハグレと読んで軽視するこの世界の人々とで、見えない摩擦が物語を動かそうとしていたが――。)
 >
 > The situation of those who had fled to nameless ruins in this frontier was much different from others. (ここ辺境の、名前もない遺跡に逃げ込んだ彼女達の事情は、他の奴らとはだいぶ違っていた。)
 
