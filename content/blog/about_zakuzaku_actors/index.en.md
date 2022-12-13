@@ -179,7 +179,7 @@ The following is the quote from the narration immediately after starting the gam
 ……とまあ，ベースとなる設定はかなり重いと思います．ただしストーリーの全てがこれに関係しているわけではなく，実際2割程度かなと思います．その他は登場人物同士のいざこざ（場合によっては死闘）だったり，父親の暴走によって男の娘が殺されそうになったり，女の子同士によるどつき漫才があったり……．
 -->
 
-" Yeah, the base plot is serious, but not the whole story is related to it. I think roughly 20% of it is connected. The other parts consist of quarrels (or mortal combats in some cases) among characters, a situation where an otokonoko is about to be killed by a father by misunderstanding, a comedy with violence by girls... etc.
+... Yeah, the base plot is serious, but not the whole story is related to it. I think roughly 20% of it is connected. The other parts consist of quarrels (or mortal combats in some cases) among characters, a situation where an otokonoko is about to be killed by a father by misunderstanding, a comedy with violence by girls... etc.
 
 <!--
 シリアスな部分はかなり多めですが，そのような展開の中でも時々ネタを突っ込んできたり，雰囲気が柔らかくなるような内容も含まれているので，そこまで辛くありません．絵柄も可愛いですし．
