@@ -12,6 +12,9 @@ runs:
       run: git clone https://github.com/getzola/zola
       shell: bash
 
+    - name: List files
+      run: ls
+
     - uses: actions/cache@v3
       with:
         path: |
