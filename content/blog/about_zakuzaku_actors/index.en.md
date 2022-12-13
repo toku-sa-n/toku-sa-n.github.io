@@ -230,7 +230,7 @@ So, turn on your speaker and play the game. An average person would do so, but I
 ### Appendixes
 
 <!--
-### 付録A：前作「らんだむダンジョン」に関して
+#### 付録A：前作「らんだむダンジョン」に関して
 -->
 
 #### Appendix A: about the previous work "Random Dungeon."
