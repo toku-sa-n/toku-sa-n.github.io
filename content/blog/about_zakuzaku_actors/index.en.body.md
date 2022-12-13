@@ -213,10 +213,16 @@ So, turn on your speaker and play the game. An average person would do so, but I
 [Anyway, the game is fun; you should download and play it.](https://www.vector.co.jp/soft/winnt/game/se508809.html)
 
 <!--
+### 付録
+-->
+
+### Appendixes
+
+<!--
 ### 付録A：前作「らんだむダンジョン」に関して
 -->
 
-### Appendix A: about the previous work "Random Dungeon."
+#### Appendix A: about the previous work "Random Dungeon."
 
 <!--
 前述の通り，ざくアクの製作者であるはむすた氏は，過去にらんだむダンジョン（通称らんダン）というゲームを製作しています．こちらもかなりの大作です．
@@ -231,10 +237,10 @@ As I said above, Hamusuta, the creator of Zakuzaku Actors, had created a game ca
 You can play Randan before playing Zakuaku. Although Zakuaku contains a few easter eggs derived from it, it is not necessary to understand Zakuaku's story. Still, I recommend playing Randan if you have time; you can play it before or after playing Zakuaku. It's just fun to play and enjoyable because you can find tips related to it in Zakuaku.
 
 <!--
-### 付録B：各ウェブサイトへのリンク
+#### 付録B：各ウェブサイトへのリンク
 -->
 
-### Appendix B: Links to websites
+#### Appendix B: Links to websites
 
 <!--
 リンク先はゲームのネタバレが含まている場合があります．　
@@ -258,7 +264,7 @@ The following websites may contain spoilers.
 ### 付録C：Linuxでのプレイに関して
 -->
 
-### Appendix C: Playing on Linux
+#### Appendix C: Playing on Linux
 
 <!--
 [Wine](https://www.winehq.org/)を用いればざくアクをLinuxでプレイすることはできますが，私自身は一部のBGMを再生させることができず，結局Windows上で動かすことにしました．
