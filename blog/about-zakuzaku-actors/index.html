@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+
+    
+<meta property="og:url" content="https:&#x2F;&#x2F;toku-sa-n.github.io&#x2F;blog&#x2F;about-zakuzaku-actors&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ざくざくアクターズに関して">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="備忘録やめた">
+<meta property="og:image" content="https://toku-sa-n.github.io/favicons/android-chrome-512x512.png">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://toku-sa-n.github.io/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://toku-sa-n.github.io/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://toku-sa-n.github.io/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://toku-sa-n.github.io/favicons/site.webmanifest">
+
+    <link rel="stylesheet" href="https://toku-sa-n.github.io/base.css">
+
+    <title>備忘録やめた</title>
+  </head>
+
+  <body>
+    <h1><a href="https://toku-sa-n.github.io">備忘録やめた</a></h1>
+
+    <div class="container">
+      <main>
+        
+<h2>ざくざくアクターズに関して</h2>
+
+<p><strong>2022-12-13</strong></p>
+
+<h3 id="tl-dr">TL;DR</h3>
+<p><a href="https://www.vector.co.jp/soft/dl/winnt/game/se508809.html">Vectorのダウンロードページ</a>からダウンロードしてプレイしましょう．</p>
+<h3 id="hazimeni">はじめに</h3>
+<p>この記事は<a href="https://adventar.org/calendars/7581">UEC Advent Calendar 2022</a>の13日目の記事です．昨日はいずりなさんによる，<a href="https://izurina.dev/post/uec-advent2022/">【Bash】インタラクティブな選択メニューを作ってみた</a>でした．</p>
+<p>現在電通大M1の<a href="https://keybase.io/toku_san/">toku_san</a>です．最近学会発表を終えたので，かなり平穏な日々を過ごしています．</p>
+<p>この記事では，私が去年からプレイし始めて，いつの間にかハマってしまったゲーム「ざくざくアクターズ」の紹介をしたいと思います．</p>
+<h3 id="zhu-yi">注意</h3>
+<p>この記事にはざくざくアクターズを始めからプレイして5分くらいすればわかるネタバレと，ゲームのストーリーには全く関係のない技術的なネタバレが存在します．でもそんなものはやネタバレではないので気にせず読み続けてください．</p>
+<h3 id="gemunogai-yao">ゲームの概要</h3>
+<p><img src="https://toku-sa-n.github.io/blog/about-zakuzaku-actors/top_screenshot.png" alt="ざくざくアクターズVer1.82を初回起動した直後のスクリーンショット" /></p>
+<p><a href="https://www.vector.co.jp/soft/winnt/game/se508809.html">ざくざくアクターズ</a>は，<a href="https://www.vector.co.jp/vpack/browse/person/an051865.html">はむすた</a>氏によって<a href="https://rpgmakerofficial.com/product/products/rpgvxace/index/">RPGツクール VX Ace</a>で制作されたRPG形式のフリーゲームです．縮めてざくアクとも呼ばれています．</p>
+<p>作者ブログによれば，2012年6月19日にバージョン0.71aが公開されました．これがこのゲームの初めての公開となります．その後更新を続け，メインストーリーが完結したあともコンテンツの追加が続き，この記事の執筆当時最新版であるバージョン1.82が2022年10月24日に公開されました．なお，作者ブログにはゲームのネタバレに相当するコンテンツを含まれているため，リンクはこの記事の下部にあります．</p>
+<p>製作者のはむすた氏はざくアクの他に，<a href="https://www.vector.co.jp/soft/winnt/game/se482804.html">らんだむダンジョン</a>というRPGゲームを過去に製作しているほか，<a href="https://www.pixiv.net/novel/series/1449123">逆さま世界の私達へ</a>という小説も執筆しています．</p>
+<h3 id="gemusisutemuniguan-site">ゲームシステムに関して</h3>
+<p>ざくアクでは原則8人のパーティーを組みます．戦闘にも8人が関わりますが，そのうち4人が前衛として実際の戦闘を行い，残りの4人は後衛として待機します．ただし，いつでもメンバーを前衛あるいは後衛に移すことが可能です．</p>
+<p>また，ざくアクでは<a href="https://tkool.jp/mv/course/03.html">TP（Tactical Point）</a>という概念が存在します．これは戦闘中に様々な状況下でたまるものですが，一部の技能はこれを消費します．</p>
+<p>8人制バトルとTPという概念は単独で見ると地味ですが，この2つが組み合わさるとかなり興味深くなります．例えば蘇生技は概してTPを消費するため，そのような技を持ったキャラクターがTPをためたら後衛に配置し，蘇生するタイミングで前衛に戻すといったことが可能になります．またバフ技を大量に掛けて一撃で突破するという方法も考えられます．</p>
+<p>難易度は絶妙です．操作キャラクターはかなりの数が登場しますが，得意不得意はキャラクターによって異なるため，キャラクターを使い分けて攻略することが基本となっています．また敵の性質もやはりそれぞれ異なりますが，ゲーム中に攻略のための誘導が存在するため，かなり親切設計になっています．ただし敵味方の特徴を無視したゴリ押しをしようとすると，レベルがいくら高くても死にます（死にました）．</p>
+<h3 id="sutoriniguan-site">ストーリーに関して</h3>
+<p>次に，ゲーム開始直後のナレーションを引用します．</p>
+<blockquote>
+<p>……この世界には召喚された物が溢れていた。</p>
+<p>いつ頃からか出来上がった召喚という技術は、様々な世界から技術、人、物を運んできたが、この画期的な技術に少々浮かれすぎた人々は、用もないのに多くの人を呼びすぎた。</p>
+<p>結果として、仕事もなく、やることもなく。余ってしまった召喚された側――召喚人達が溢れてしまう。</p>
+<p>彼らは、なんとか世界に馴染もうとの努力はするものの、そう簡単にはいかず、我慢の限界を超えた一部の召喚人達は、暴徒と化して暴れまわった。</p>
+<p>これに責任を感じた召喚士達は、暴徒の鎮圧に乗り出したが、あろうことか、鎮圧側の召喚人まで暴徒に肩入れして暴れまくり。</p>
+<p>反乱の規模は広がり続け、その鎮圧に、たくさんの国と人々が疲労しまくった。</p>
+<p>当然、召喚士達の面目は丸つぶれで、これ以降、召喚には大幅な制限がかけられることになったのである。</p>
+<p>……この世界側からみると、一先ず落ち着いたような事件なのだけど、召喚された者にとっては、全くそうではなかった。</p>
+<p>上手く逃げ延びた者、元々暴動騒ぎには興味なかった者。もう一騒ぎ企んでいる者……。まだまだ多数の召喚人が世界には残っている。</p>
+<p>呼び出された世界に不満を持つ彼らと……。そんな彼らをハグレと読んで軽視するこの世界の人々とで、見えない摩擦が物語を動かそうとしていたが――。</p>
+<p>ここ辺境の、名前もない遺跡に逃げ込んだ彼女達の事情は、他の奴らとはだいぶ違っていた。</p>
+</blockquote>
+<p>……とまあ，ベースとなる設定はかなり重いと思います．ただしストーリーの全てがこれに関係しているわけではなく，実際2割程度かなと思います．その他は登場人物同士のいざこざ（場合によっては死闘）だったり，父親の暴走によって男の娘が殺されそうになったり，女の子同士によるどつき漫才があったり……．</p>
+<p>シリアスな部分はかなり多めですが，そのような展開の中でも時々ネタを突っ込んできたり，雰囲気が柔らかくなるような内容も含まれているので，そこまで辛くありません．絵柄も可愛いですし．</p>
+<p>ちなみにこの導入において述べられている「彼女達」は上記のスクリーンショットにある二人の少女たちのことです．青い服の子がデーリッチ，そして緑の服の子がローズマリーです．プレイヤーはデーリッチを操作することになります．</p>
+<h3 id="bgmniguan-site">BGMに関して</h3>
+<p>このゲームでは特に中盤以降，mozell氏によって作曲されたBGMがいくつか使用されています．また一部のBGMはこのゲームのための書き下ろしです．このBGMですが，それ自体の質が高いのも然ることながら，このBGMはゲームとの非常に親和性が高く，プレイしていてなんか色んな感情が出てきます．</p>
+<p>ですからぜひともBGMを鳴らしてプレイしてください．普通そうするでしょうが，僕はBGMを鳴らせなかったのでだいぶ後悔しています．</p>
+<h3 id="zong-gua">総括</h3>
+<p><a href="https://www.vector.co.jp/soft/winnt/game/se508809.html">とにかく面白いので一度ダウンロードしてプレイしてみてください．</a></p>
+<h3 id="fu-lu">付録</h3>
+<h4 id="fu-lu-a-qian-zuo-randamudanziyon-niguan-site">付録A：前作「らんだむダンジョン」に関して</h4>
+<p>前述の通り，ざくアクの製作者であるはむすた氏は，過去にらんだむダンジョン（通称らんダン）というゲームを製作しています．こちらもかなりの大作です．</p>
+<p>ざくアクをプレイするにあたってらんダンを予めプレイする必要はありません．ざくアクにはらんダンのネタがいくつか用いられていますが，らんダンをやっていないからといって，ざくアクのストーリーが全く解らなくなるということはありません．それでももし時間があればらんダンもプレイすることをおすすめします．ざくアクの前にやっても，あとにやっても構いません．らんダン自体面白いですし，ざくアクに含まているネタがわかって結構楽しいです．</p>
+<h4 id="fu-lu-b-ge-uebusaitohenorinku">付録B：各ウェブサイトへのリンク</h4>
+<p>リンク先はゲームのネタバレが含まている場合があります．　</p>
+<ul>
+<li><a href="http://blog.livedoor.jp/hamusuta_rpg/">はむすたブログ</a></li>
+<li><a href="https://twitter.com/hamusuta_zakuak">はむすた氏のTwitterアカウント</a></li>
+<li><a href="https://mozeen.com/">もぜ園</a></li>
+<li><a href="https://twitter.com/mozeen_mozell">mozell氏のTwitterアカウント</a></li>
+</ul>
+<h4 id="fu-lu-c-linuxdenopureiniguan-site">付録C：Linuxでのプレイに関して</h4>
+<p><a href="https://www.winehq.org/">Wine</a>を用いればざくアクをLinuxでプレイすることはできますが，私自身は一部のBGMを再生させることができず，結局Windows上で動かすことにしました．</p>
+<p>ざくアクには<a href="https://ja.wikipedia.org/wiki/Windows_Media_Audio">WMA形式</a>の音源が用いられていますが，この形式で保存されているBGMを鳴らすことができませんでした．Wineでは2022年2月11日に公開された<a href="https://www.winehq.org/announce/7.2">バージョン7.2</a>でWMAデコーダの開発が開始されたばかりなため，あくまで推測ですが，まだWMAを直接鳴らすことが出来ないのかなと考えています．従って素直にWindows上でプレイするほうが得策だと思います．</p>
+<p>幸いにして，電通大の学生は<a href="https://www.cc.uec.ac.jp/ug/ja/license/ms/personal/kivuto/index.html">無料で個人PCにWindowsをインストールすることができます</a>．これを利用するのも一つの手です．実際これ以外にも，例えば授業中にWindowsでしか動かないソフトウェアの利用を強いられることがありますし，Windowsマシンは一台あったほうが良いです．</p>
+<p><strong>Wineを利用したことによるトラブルや不具合に関してゲームの製作者に問い合わせないでください．Wineの使用は開発側の想定環境ではありません．</strong></p>
+
+
+
+      </main>
+
+      <nav>
+        
+
+<h2>言語一覧</h2>
+<ul>
+    
+    <li><a href="https:&#x2F;&#x2F;toku-sa-n.github.io&#x2F;en&#x2F;blog&#x2F;about-zakuzaku-actors&#x2F;">English</a></li>
+    
+    <li><a href="https:&#x2F;&#x2F;toku-sa-n.github.io&#x2F;blog&#x2F;about-zakuzaku-actors&#x2F;">日本語</a></li>
+    
+</ul>
+
+<p><a href="https://toku-sa-n.github.io/blog/">記事一覧へ戻る</a></p>
+
+
+      </nav>
+    </div>
+  </body>
+
+</html>
