@@ -41,16 +41,16 @@ I'll introduce my favorite game "Zakuzaku Actors" (ざくざくアクターズ) 
 ### Caution
 
 <!--
-この記事にはざくざくアクターズを始めからプレイして15分くらいすればわかるネタバレと，ゲームのストーリーには全く関係のない技術的なネタバレが存在します．でもそんなものはやネタバレではないので気にせず読み続けてください．
+この記事にはざくざくアクターズを始めからプレイして5分くらいすればわかるネタバレと，ゲームのストーリーには全く関係のない技術的なネタバレが存在します．でもそんなものはやネタバレではないので気にせず読み続けてください．
 -->
 
-This article includes spoilers that are revealed after playing Zakuzaku Actors 15 minutes, and technical spoilers that are totally not related to the game's story, but continue reading the article anyway as these are no longer spoilers.
+This article includes spoilers that are revealed after playing Zakuzaku Actors 5 minutes, and technical spoilers that are totally not related to the game's story, but continue reading the article anyway as these are no longer spoilers.
 
 <!--
-### 概要
+### ゲームの概要
 -->
 
-### Overview
+### Overview of the game
 
 <!--
 ![ざくざくアクターズVer1.82を初回起動した直後のスクリーンショット](top_screenshot.png)
@@ -59,10 +59,10 @@ This article includes spoilers that are revealed after playing Zakuzaku Actors 1
 ![A screenshot of Zakuzaku Actors Ver 1.82 on the first launch](top_screenshot.png)
 
 <!--
-[ざくざくアクターズ](https://www.vector.co.jp/soft/winnt/game/se508809.html)は，[はむすた](https://www.vector.co.jp/vpack/browse/person/an051865.html)氏によって[RPGツクール VX Ace](https://rpgmakerofficial.com/product/products/rpgvxace/index/)で制作されたRPGゲームです．縮めてざくアクとも呼ばれています．
+[ざくざくアクターズ](https://www.vector.co.jp/soft/winnt/game/se508809.html)は，[はむすた](https://www.vector.co.jp/vpack/browse/person/an051865.html)氏によって[RPGツクール VX Ace](https://rpgmakerofficial.com/product/products/rpgvxace/index/)で制作されたRPG形式のフリーゲームです．縮めてざくアクとも呼ばれています．
 -->
 
-[Zakuzaku Actors (ざくざくアクターズ, Zakuzaku Akuta&#772;zu) ](https://www.vector.co.jp/soft/winnt/game/se508809.html)is an RPG game created by [Hamusuta (はむすた)](https://www.vector.co.jp/vpack/browse/person/an051865.html) with [RPG Maker VX Ace](https://rpgmakerofficial.com/product/products/rpgvxace/index/). The game is also called as Zakuaku (ざくアク - **Zaku**zaku **Aku**ta&#772;zu).
+[Zakuzaku Actors (ざくざくアクターズ, Zakuzaku Akuta&#772;zu) ](https://www.vector.co.jp/soft/winnt/game/se508809.html)is an RPG-style freeware game created by [Hamusuta (はむすた)](https://www.vector.co.jp/vpack/browse/person/an051865.html) with [RPG Maker VX Ace](https://rpgmakerofficial.com/product/products/rpgvxace/index/). The game is also called as Zakuaku (ざくアク - **Zaku**zaku **Aku**ta&#772;zu).
 
 <!--
 作者ブログによれば，2012年6月19日にバージョン0.71aが公開されました．これがこのゲームの初めての公開となります．その後更新を続け，メインストーリーが完結したあともコンテンツの追加が続き，この記事の執筆当時最新版であるバージョン1.82が2022年10月24日に公開されました．なお，作者ブログにはゲームのネタバレに相当するコンテンツを含まれているため，リンクはこの記事の下部にあります．
@@ -165,10 +165,58 @@ The following is the quote of the narration immediately after starting the game.
 > The situation of those who had fled to nameless ruins in this frontier was much different from others. (ここ辺境の、名前もない遺跡に逃げ込んだ彼女達の事情は、他の奴らとはだいぶ違っていた。)
 
 <!--
-### 前作「らんだむダンジョン」に関して
+……とまあ，ベースとなる設定はかなり重いと思います．ただしストーリーの全てがこれに関係しているわけではなく，実際2割程度かなと思います．その他は登場人物同士のいざこざ（場合によっては死闘）だったり，父親の暴走によって男の娘が殺されそうになったり，女の子同士によるどつき漫才があったり……．
 -->
 
-### About the previous work "Random Dungeon"
+... Yeah, I think the base plot is kinda serious, but not the whole story is related to it. I think roughly 20% of it is related. The other parts are quarrels (or mortal combats in some cases) among characters, a situation where an otokonoko is about to be killed by a father by misunderstanding, a comedy with violance by girls...
+
+<!--
+シリアスな部分はかなり多めですが，そのような展開の中でも時々ネタを突っ込んできたり，雰囲気が柔らかくなるような内容も含まれているので，そこまで辛くありません．絵柄も可愛いですし．
+-->
+
+The game has quite a few serious parts, but it's not so bitter; often characters say jokes and many parts ease such atmosphere. Also, pictures are cute.
+
+<!--
+ちなみにこの導入において述べられている「彼女達」は上記のスクリーンショットにある二人の少女たちのことです．青い服の子がデーリッチ，そして緑の服の子がローズマリーです．プレイヤーはデーリッチを操作することになります．
+-->
+
+By the way, "girls" in the narration are those in the screenshot above. A girl wearing in blue is Derich (デーリッチ, De&#772;ricchi), and the one in green is Rosemary (ローズマリー, Ro&#772;zumari&#772;). Players move and control Derich.
+
+<!--
+### BGMに関して
+-->
+
+### About BGMs
+
+<!--
+このゲームでは特に中盤以降，mozell氏によって作曲されたBGMがいくつか使用されています．また一部のBGMはこのゲームのための書き下ろしです．このBGMですが，それ自体の質が高いのも然ることながら，このBGMはゲームとの非常に親和性が高く，プレイしていてなんか色んな感情が出てきます．
+-->
+
+A few BGMs in this game are written by mozell, especially from the middle of the story. Also, some of them are newly written for this game. These BGMs are not only high quality. They also matches the game very well and fulfilled me with various kinds of emotions.
+
+<!--
+ですからぜひともBGMを鳴らしてプレイしてください．普通そうするでしょうが，僕はBGMを鳴らせなかったのでだいぶ後悔しています．
+-->
+
+So, turn on your speaker and play the game. A normal person would do so, but I'm regretting because I couldn't do it.
+
+<!--
+### 総括
+-->
+
+### Conclusion
+
+<!--
+[とにかく面白いので一度ダウンロードしてプレイしてみてください．](https://www.vector.co.jp/soft/winnt/game/se508809.html)
+-->
+
+[Anyway the game is so fun and you should download and play it.](https://www.vector.co.jp/soft/winnt/game/se508809.html)
+
+<!--
+### 付録A：前作「らんだむダンジョン」に関して
+-->
+
+### Appendix A: about the previous work "Random Dungeon"
 
 <!--
 前述の通り，ざくアクの製作者であるはむすた氏は，過去にらんだむダンジョン（通称らんダン）というゲームを製作しています．こちらもかなりの大作です．
@@ -183,10 +231,34 @@ As I said above, Hamusuta, the creator of Zakuzaku Actors had created a game cal
 You don't need to play Randan before playing Zakuaku. Although Zakuaku contains a few easter eggs derived from it, playing it is not necessary to understand Zakuaku's story. Still, I recommend to play Randan if you have time; you can play it either before or after playing Zakuaku. It's just fun to play it, and also interesting because you can find tips related to it in Zakuaku.
 
 <!--
-### Linuxでのプレイに関して
+### 付録B：各ウェブサイトへのリンク
 -->
 
-### Playing on Linux
+### Appendix B: Links to websites
+
+<!--
+リンク先はゲームのネタバレが含まている場合があります．　
+-->
+
+The following websites may contain spoilers.
+
+<!--
+- [はむすたブログ](http://blog.livedoor.jp/hamusuta_rpg/)
+- [はむすた氏のTwitterアカウント](https://twitter.com/hamusuta_zakuak)
+- [もぜ園](https://mozeen.com/)
+- [mozell氏のTwitterアカウント](https://twitter.com/mozeen_mozell)
+-->
+
+- [Hamusuta Blog (はむすたブログ)](http://blog.livedoor.jp/hamusuta_rpg/)
+- [Hamusuta's Twitter account](https://twitter.com/hamusuta_zakuak)
+- [Mozeen (もぜ園)](https://mozeen.com/)
+- [mozell's Twitter account](https://twitter.com/mozeen_mozell)
+
+<!--
+### 付録C：Linuxでのプレイに関して
+-->
+
+### Appendix C: Playing on Linux
 
 <!--
 [Wine](https://www.winehq.org/)を用いればざくアクをLinuxでプレイすることはできますが，私自身は一部のBGMを再生させることができず，結局Windows上で動かすことにしました．
