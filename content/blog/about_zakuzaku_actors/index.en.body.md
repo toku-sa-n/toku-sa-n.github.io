@@ -261,7 +261,7 @@ The following websites may contain spoilers.
 - [mozell's Twitter account](https://twitter.com/mozeen_mozell)
 
 <!--
-### 付録C：Linuxでのプレイに関して
+#### 付録C：Linuxでのプレイに関して
 -->
 
 #### Appendix C: Playing on Linux
