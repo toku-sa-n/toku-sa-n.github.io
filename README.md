@@ -1,6 +1,6 @@
 # `toku-sa-n.github.io`
 
-## Licneses
+## Licenses
 
 This project uses
 [include-media](https://github.com/eduardoboucas/include-media), and its
