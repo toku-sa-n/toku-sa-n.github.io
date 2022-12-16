@@ -17,7 +17,7 @@ runs:
         path: |
           ~/.cargo/bin
           ~/.cargo/registry/index/
-          ~/.cargo/regisry/cache
+          ~/.cargo/registry/cache/
           ~/.cargo/git/db
           zola/target/
         key: zola-${{ hashFiles('zola/Cargo.lock') }}-${{ github.sha }}
