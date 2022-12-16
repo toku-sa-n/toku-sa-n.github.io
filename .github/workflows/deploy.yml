@@ -16,8 +16,23 @@ jobs:
 
       - uses: ./.github/workflows/install_zola
 
+      - name: Get the npm cache directory
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+
+      - uses: actions/cache@v3
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-stylelint
+
+      - name: Install Autoprefixer
+        run: npm install postcss postcss-cli autoprefixer
+
       - name: Build the webpage
         run: zola build
+
+      - name: Run Autoprefixer
+        run: npx postcss public/*.css --use autoprefixer --replace
 
       - name: Upload as an artifact
         uses: actions/upload-artifact@v3
