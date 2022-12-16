@@ -12,10 +12,6 @@ runs:
       run: git clone https://github.com/getzola/zola
       shell: bash
 
-    - name: List files
-      run: ls
-      shell: bash
-
     - uses: actions/cache@v3
       with:
         path: |
@@ -24,7 +20,7 @@ runs:
           ~/.cargo/regisry/cache
           ~/.cargo/git/db
           zola/target/
-        key: ${{ runner.os }}-zola-${{ hashFiles('zola/Cargo.lock') }}
+        key: ${{ runner.os }}-zola-${{ hashFiles('zola/Cargo.lock') }}-${{ github.sha }}
 
     - name: Build a Zola executable
       run: cargo install --path . --features indexing-ja --force
