@@ -16,8 +16,23 @@ jobs:
 
       - uses: ./.github/workflows/install_zola
 
+      - name: Get the npm cache directory
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+
+      - uses: actions/cache@v3
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-stylelint
+
+      - name: Install Autoprefixer
+        run: npm install postcss postcss-cli autoprefixer
+
       - name: Build the webpage
         run: zola build
+
+      - name: Run Autoprefixer
+        run: npx postcss public/*.css --use autoprefixer --replace
 
       - name: Upload as an artifact
         uses: actions/upload-artifact@v3
@@ -25,8 +40,9 @@ jobs:
           name: webpage
           path: public/*
 
-  # There is an action called `reviewdog/action-stylelint`. However, it requires `package.json` even if a project is not managed by npm.
-  # That is why I install and run stylelint manually.
+  # There is an action called `reviewdog/action-stylelint`. However, it
+  # requires `package.json` even if a project is not managed by npm.  That is
+  # why I install and run stylelint manually.
   check_css:
     runs-on: ubuntu-latest
 
@@ -43,7 +59,7 @@ jobs:
           key: ${{ runner.os }}-stylelint
 
       - name: Install stylelint
-        run: npm install stylelint postcss-sass --location=global
+        run: npm install stylelint stylelint-config-standard-scss --location=global
 
       - name: Run stylelint
         run: stylelint sass/**/*

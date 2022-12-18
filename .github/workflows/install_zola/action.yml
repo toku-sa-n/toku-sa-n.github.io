@@ -17,10 +17,11 @@ runs:
         path: |
           ~/.cargo/bin
           ~/.cargo/registry/index/
-          ~/.cargo/regisry/cache
+          ~/.cargo/registry/cache/
           ~/.cargo/git/db
           zola/target/
-        key: ${{ runner.os }}-zola-${{ hashFiles('zola/Cargo.lock') }}
+        key: zola-${{ hashFiles('zola/Cargo.lock') }}-${{ github.sha }}
+        restore-keys: zola-${{ hashFiles('zola/Cargo.lock') }}
 
     - name: Build a Zola executable
       run: cargo install --path . --features indexing-ja --force
