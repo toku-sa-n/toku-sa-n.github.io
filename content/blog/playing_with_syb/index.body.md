@@ -1,0 +1,1 @@
+/home/hiroki/git_repository/toku-sa-n.github.io/content/blog/playing_with_syb/tests/playing-with-syb/src/Lib.lhs
