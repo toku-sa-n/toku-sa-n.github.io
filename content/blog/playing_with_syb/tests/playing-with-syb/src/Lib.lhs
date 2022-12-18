@@ -18,6 +18,10 @@
 
 [Haskell Wiki](https://wiki.haskell.org/Research_papers/Generics)にいくつか論文が紹介されていますが，特に[Scrap Your Boilerplate: A Practical Design Pattern for Generic Programming](https://www.microsoft.com/en-us/research/wp-content/uploads/2003/01/hmap.pdf)は読みやすいのでおすすめです．
 
+### 使用例
+
+#### 特定の型の値だけを抽出する
+
 例えば以下のような，様々な世界に住む住民の情報を一つのデータ構造に含めたとします．
 
 ```haskell
