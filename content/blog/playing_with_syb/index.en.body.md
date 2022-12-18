@@ -275,7 +275,7 @@ worlds =
                       , members =
                             [ Member
                                   { memberName = "Derich"
-                                  , anotherName = "Queen of Hagure Queendom"
+                                  , anotherName = "The queen of Hagure Queendom"
                                   , age = Nothing
                                   , favoriteMoss = Nothing
                                   }
@@ -290,4 +290,115 @@ worlds =
                 ]
           }
     ]
+```
+
+
+<!--
+`World`に含まれている`Member`を全て抽出する関数を単純に書くと，以下の`membersFromWorld`関数のようになります．
+-->
+
+Simply writing a function that extracts all `Member`s in a `World` would look like the following `membersFromWorld` function.
+
+<!--
+```haskell
+membersFromWorld :: World -> [Member]
+membersFromWorld = concatMap members . groups
+
+allMembersInWorld :: [Member]
+allMembersInWorld =
+    [ Member
+          { memberName = "ロミアス"
+          , anotherName = "異形の森の使者"
+          , age = Just 24
+          , favoriteMoss = Nothing
+          }
+    , Member
+          { memberName = "ラーネイレ"
+          , anotherName = "風を聴く者"
+          , age = Just 22
+          , favoriteMoss = Nothing
+          }
+    , Member
+          { memberName = "ウェゼル"
+          , anotherName = "ザナンの白き鷹"
+          , age = Just 31
+          , favoriteMoss = Nothing
+          }
+    , Member
+          { memberName = "ロイター"
+          , anotherName = "ザナンの紅の英雄"
+          , age = Just 32
+          , favoriteMoss = Nothing
+          }
+    , Member
+          { memberName = "デーリッチ"
+          , anotherName = "ハグレ王国国王"
+          , age = Nothing
+          , favoriteMoss = Nothing
+          }
+    , Member
+          { memberName = "ローズマリー"
+          , anotherName = "ビッグモス"
+          , age = Nothing
+          , favoriteMoss = Just "モスアルカディア"
+          }
+    ]
+
+testMembersFromWorld :: Spec
+testMembersFromWorld =
+    describe "membersFromWorld" $
+    it "returns all `Member`s in a `World`" $
+    concatMap membersFromWorld worlds `shouldBe` allMembersInWorld
+```
+-->
+
+```haskell
+membersFromWorld :: World -> [Member]
+membersFromWorld = concatMap members . groups
+
+allMembersInWorld :: [Member]
+allMembersInWorld =
+    [ Member
+          { memberName = "Romias"
+          , anotherName = "The messenger for Vindale"
+          , age = Just 24
+          , favoriteMoss = Nothing
+          }
+    , Member
+          { memberName = "Larnneire"
+          , anotherName = "The listener of the wind"
+          , age = Just 22
+          , favoriteMoss = Nothing
+          }
+    , Member
+          { memberName = "Vessel"
+          , anotherName = "The crimson of Zanan"
+          , age = Just 31
+          , favoriteMoss = Nothing
+          }
+    , Member
+          { memberName = "Loyter"
+          , anotherName = "The crimson of Zanan"
+          , age = Just 32
+          , favoriteMoss = Nothing
+          }
+    , Member
+          { memberName = "Derich"
+          , anotherName = "The queend of Hagure Queendom"
+          , age = Nothing
+          , favoriteMoss = Nothing
+          }
+    , Member
+          { memberName = "Rosemary"
+          , anotherName = "Big moss"
+          , age = Nothing
+          , favoriteMoss = Just "Mossalcadia"
+          }
+    ]
+
+testMembersFromWorld :: Spec
+testMembersFromWorld =
+    describe "membersFromWorld" $
+    it "returns all `Member`s in a `World`" $
+    concatMap membersFromWorld worlds `shouldBe` allMembersInWorld
 ```
