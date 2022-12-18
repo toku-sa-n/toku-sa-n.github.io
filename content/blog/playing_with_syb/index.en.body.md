@@ -53,3 +53,241 @@ This article briefly introduces [syb](https://hackage.haskell.org/package/syb-0.
 -->
 
 [Haskell Wiki](https://wiki.haskell.org/Research_papers/Generics) lists papers related to syb. I recommend to read [Scrap Your Boilerplate: A Practical Design Pattern for Generic Programming](https://www.microsoft.com/en-us/research/wp-content/uploads/2003/01/hmap.pdf) because it is easy to read.
+
+<!--
+### 使用例
+-->
+
+### Usage
+
+<!--
+#### 特定の型の値だけを抽出する
+-->
+
+#### Extract only values of a specific type
+
+<!--
+例えば以下のような，様々な世界に住む住民の情報を一つのデータ構造に含めたとします．
+-->
+
+Suppose you included information of residents living in various worlds in a data structure.
+
+<!--
+```haskell
+{-# LANGUAGE DeriveDataTypeable #-}
+
+module Lib
+    ( testMembersFromWorld
+    , testMembersFromWorldWithListify
+    , testListMossalcadiaMania
+    , testSummonAllGroupsInKumamotoCastle
+    ) where
+
+import           Data.Data             (Data)
+import           Data.Generics.Aliases (mkT)
+import           Data.Generics.Schemes (everywhere, listify)
+import           Data.List             (nub)
+import           Test.Hspec            (Spec, describe, it, shouldBe)
+
+data World =
+    World
+        { worldName :: String
+        , groups    :: [Group]
+        }
+    deriving (Data, Eq)
+
+data Group =
+    Group
+        { groupName :: String
+        , place     :: String
+        , members   :: [Member]
+        }
+    deriving (Data, Eq)
+
+data Member =
+    Member
+        { memberName   :: String
+        , anotherName  :: String
+        , age          :: Maybe Int
+        , favoriteMoss :: Maybe String
+        }
+    deriving (Data, Eq, Show)
+
+worlds :: [World]
+worlds =
+    [ World
+          { worldName = "イルヴァ"
+          , groups =
+                [ Group
+                      { groupName = "エレア"
+                      , place = "ノースティリス"
+                      , members =
+                            [ Member
+                                  { memberName = "ロミアス"
+                                  , anotherName = "異形の森の使者"
+                                  , age = Just 24
+                                  , favoriteMoss = Nothing
+                                  }
+                            , Member
+                                  { memberName = "ラーネイレ"
+                                  , anotherName = "風を聴く者"
+                                  , age = Just 22
+                                  , favoriteMoss = Nothing
+                                  }
+                            ]
+                      }
+                , Group
+                      { groupName = "ヴェルニースの人達"
+                      , place = "ヴェルニース"
+                      , members =
+                            [ Member
+                                  { memberName = "ウェゼル"
+                                  , anotherName = "ザナンの白き鷹"
+                                  , age = Just 31
+                                  , favoriteMoss = Nothing
+                                  }
+                            , Member
+                                  { memberName = "ロイター"
+                                  , anotherName = "ザナンの紅の英雄"
+                                  , age = Just 32
+                                  , favoriteMoss = Nothing
+                                  }
+                            ]
+                      }
+                ]
+          }
+    , World
+          { worldName = "ざくざくアクターズの世界"
+          , groups =
+                [ Group
+                      { groupName = "ハグレ王国"
+                      , place = "ハグレ王国"
+                      , members =
+                            [ Member
+                                  { memberName = "デーリッチ"
+                                  , anotherName = "ハグレ王国国王"
+                                  , age = Nothing
+                                  , favoriteMoss = Nothing
+                                  }
+                            , Member
+                                  { memberName = "ローズマリー"
+                                  , anotherName = "ビッグモス"
+                                  , age = Nothing
+                                  , favoriteMoss = Just "モスアルカディア"
+                                  }
+                            ]
+                      }
+                ]
+          }
+    ]
+```
+-->
+
+```haskell
+{-# LANGUAGE DeriveDataTypeable #-}
+
+module Lib
+    ( testMembersFromWorld
+    , testMembersFromWorldWithListify
+    , testListMossalcadiaMania
+    , testSummonAllGroupsInKumamotoCastle
+    ) where
+
+import           Data.Data             (Data)
+import           Data.Generics.Aliases (mkT)
+import           Data.Generics.Schemes (everywhere, listify)
+import           Data.List             (nub)
+import           Test.Hspec            (Spec, describe, it, shouldBe)
+
+data World =
+    World
+        { worldName :: String
+        , groups    :: [Group]
+        }
+    deriving (Data, Eq)
+
+data Group =
+    Group
+        { groupName :: String
+        , place     :: String
+        , members   :: [Member]
+        }
+    deriving (Data, Eq)
+
+data Member =
+    Member
+        { memberName   :: String
+        , anotherName  :: String
+        , age          :: Maybe Int
+        , favoriteMoss :: Maybe String
+        }
+    deriving (Data, Eq, Show)
+
+worlds :: [World]
+worlds =
+    [ World
+          { worldName = "Ilva"
+          , groups =
+                [ Group
+                      { groupName = "Elea"
+                      , place = "North Tyris"
+                      , members =
+                            [ Member
+                                  { memberName = "Romias"
+                                  , anotherName = "The messenger for Vindale"
+                                  , age = Just 24
+                                  , favoriteMoss = Nothing
+                                  }
+                            , Member
+                                  { memberName = "Larnneire"
+                                  , anotherName = "The listener of the wind"
+                                  , age = Just 22
+                                  , favoriteMoss = Nothing
+                                  }
+                            ]
+                      }
+                , Group
+                      { groupName = "People in Vernis"
+                      , place = "Vernis"
+                      , members =
+                            [ Member
+                                  { memberName = "Vessel"
+                                  , anotherName = "The white hawk"
+                                  , age = Just 31
+                                  , favoriteMoss = Nothing
+                                  }
+                            , Member
+                                  { memberName = "Loyter"
+                                  , anotherName = "The crimson of Zanan"
+                                  , age = Just 32
+                                  , favoriteMoss = Nothing
+                                  }
+                            ]
+                      }
+                ]
+          }
+    , World
+          { worldName = "The world of Zakuzaku Actors"
+          , groups =
+                [ Group
+                      { groupName = "Hagure Queendom"
+                      , place = "Hagure Queendom"
+                      , members =
+                            [ Member
+                                  { memberName = "Derich"
+                                  , anotherName = "Queen of Hagure Queendom"
+                                  , age = Nothing
+                                  , favoriteMoss = Nothing
+                                  }
+                            , Member
+                                  { memberName = "Rosemary"
+                                  , anotherName = "Big moss"
+                                  , age = Nothing
+                                  , favoriteMoss = Just "Mossalcadia"
+                                  }
+                            ]
+                      }
+                ]
+          }
+    ]
+```
