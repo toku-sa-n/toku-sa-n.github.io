@@ -130,7 +130,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: |
-            ${{ steps.haskell_setop.outputs.stack-root }}
+            ${{ steps.haskell_setup.outputs.stack-root }}
           key: test-script-${{ github.sha }}
           restore-keys: test-script
 

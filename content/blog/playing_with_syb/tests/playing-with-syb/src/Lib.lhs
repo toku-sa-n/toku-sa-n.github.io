@@ -31,10 +31,13 @@ module Lib
     ( testMembersFromWorld
     , testMembersFromWorldWithListify
     , testListMossalcadiaMania
+    , testSummonAllGroupsInKumamotoCastle
     ) where
 
 import           Data.Data             (Data)
-import           Data.Generics.Schemes (listify)
+import           Data.Generics.Aliases (mkT)
+import           Data.Generics.Schemes (everywhere, listify)
+import           Data.List             (nub)
 import           Test.Hspec            (Spec, describe, it, shouldBe)
 
 data World =
@@ -227,4 +230,28 @@ testListMossalcadiaMania =
               , favoriteMoss = Just "モスアルカディア"
               }
         ]
+```
+
+#### 特定の型の値を変更する
+
+妙な話ですが，例えば全ての集団が突然熊本城に召喚されたとしましょう．やはりこれも小規模のデータ構造ならいくつの関数を定義すればどうにかなります．しかし大規模なものになると手に負えません．
+
+このような場合，`syb`で定義されている`everywhere`を使うと楽に書けます．
+
+```haskell
+summonAllGroupsInKumamotoCastle :: World -> World
+summonAllGroupsInKumamotoCastle = everywhere (mkT f)
+  where
+    f :: Group -> Group
+    f x = x {place = "熊本城"}
+
+testSummonAllGroupsInKumamotoCastle :: Spec
+testSummonAllGroupsInKumamotoCastle =
+    describe "summonAllGroupsInKumamotoCastle" $
+    it "sets \"熊本城\" to the `place`s of all `Group`s in a `World`" $
+    nub (fmap place $ listify f $ fmap summonAllGroupsInKumamotoCastle worlds) `shouldBe`
+    ["熊本城"]
+  where
+    f :: Group -> Bool
+    f = const True
 ```
