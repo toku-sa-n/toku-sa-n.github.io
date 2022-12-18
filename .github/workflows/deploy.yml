@@ -122,6 +122,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: haskell/actions/setup@v1
+        id: haskell_setup
+        with:
+          enable-stack: true
+
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ${{ steps.haskell_setop.outputs.stack-root }}
+          key: test-script-${{ github.sha }}
+          restore-keys: test-script
+
       - name: Install Zsh
         run: sudo apt install zsh
 
