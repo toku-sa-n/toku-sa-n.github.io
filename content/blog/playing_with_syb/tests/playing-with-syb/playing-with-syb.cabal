@@ -29,6 +29,7 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -pgmL markdown-unlit
   build-depends:
       base >=4.7 && <5
+    , hspec
     , syb
   default-language: Haskell2010
 
@@ -42,6 +43,7 @@ test-suite playing-with-syb-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -pgmL markdown-unlit -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , hspec
     , playing-with-syb
     , syb
   default-language: Haskell2010
