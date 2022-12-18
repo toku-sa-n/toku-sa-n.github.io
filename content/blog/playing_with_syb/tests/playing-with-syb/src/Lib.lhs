@@ -30,6 +30,7 @@
 module Lib
     ( testMembersFromWorld
     , testMembersFromWorldWithListify
+    , testListMossalcadiaMania
     ) where
 
 import           Data.Data             (Data)
@@ -63,39 +64,39 @@ data Member =
 worlds :: [World]
 worlds =
     [ World
-          { worldName = "Ilva"
+          { worldName = "イルヴァ"
           , groups =
                 [ Group
-                      { groupName = "Elea"
-                      , place = "North Tyris"
+                      { groupName = "エレア"
+                      , place = "ノースティリス"
                       , members =
                             [ Member
-                                  { memberName = "Romias"
-                                  , anotherName = "The messenger from Vindale"
+                                  { memberName = "ロミアス"
+                                  , anotherName = "異形の森の使者"
                                   , age = Just 24
                                   , favoriteMoss = Nothing
                                   }
                             , Member
-                                  { memberName = "Larnneire"
-                                  , anotherName = "The listener of the wind"
+                                  { memberName = "ラーネイレ"
+                                  , anotherName = "風を聴く者"
                                   , age = Just 22
                                   , favoriteMoss = Nothing
                                   }
                             ]
                       }
                 , Group
-                      { groupName = "People in Vernis"
-                      , place = "Vernis"
+                      { groupName = "ヴェルニースの人達"
+                      , place = "ヴェルニース"
                       , members =
                             [ Member
-                                  { memberName = "Vessel"
-                                  , anotherName = "The white hawk"
+                                  { memberName = "ウェゼル"
+                                  , anotherName = "ザナンの白き鷹"
                                   , age = Just 31
                                   , favoriteMoss = Nothing
                                   }
                             , Member
-                                  { memberName = "Loyter"
-                                  , anotherName = "The crimson of Zanan"
+                                  { memberName = "ロイター"
+                                  , anotherName = "ザナンの紅の英雄"
                                   , age = Just 32
                                   , favoriteMoss = Nothing
                                   }
@@ -104,23 +105,23 @@ worlds =
                 ]
           }
     , World
-          { worldName = "The world of Zakuzaku Actors"
+          { worldName = "ざくざくアクターズの世界"
           , groups =
                 [ Group
-                      { groupName = "Hagure Queendom"
-                      , place = "Hagure Queendom"
+                      { groupName = "ハグレ王国"
+                      , place = "ハグレ王国"
                       , members =
                             [ Member
-                                  { memberName = "Derich"
-                                  , anotherName = "The queen of Hagure Queendom"
+                                  { memberName = "デーリッチ"
+                                  , anotherName = "ハグレ王国国王"
                                   , age = Nothing
                                   , favoriteMoss = Nothing
                                   }
                             , Member
-                                  { memberName = "Rosemary"
-                                  , anotherName = "Big moss"
+                                  { memberName = "ローズマリー"
+                                  , anotherName = "ビッグモス"
                                   , age = Nothing
-                                  , favoriteMoss = Just "Mossarcadia"
+                                  , favoriteMoss = Just "モスアルカディア"
                                   }
                             ]
                       }
@@ -138,40 +139,40 @@ membersFromWorld = concatMap members . groups
 allMembersInWorld :: [Member]
 allMembersInWorld =
     [ Member
-          { memberName = "Romias"
-          , anotherName = "The messenger from Vindale"
+          { memberName = "ロミアス"
+          , anotherName = "異形の森の使者"
           , age = Just 24
           , favoriteMoss = Nothing
           }
     , Member
-          { memberName = "Larnneire"
-          , anotherName = "The listener of the wind"
+          { memberName = "ラーネイレ"
+          , anotherName = "風を聴く者"
           , age = Just 22
           , favoriteMoss = Nothing
           }
     , Member
-          { memberName = "Vessel"
-          , anotherName = "The white hawk"
+          { memberName = "ウェゼル"
+          , anotherName = "ザナンの白き鷹"
           , age = Just 31
           , favoriteMoss = Nothing
           }
     , Member
-          { memberName = "Loyter"
-          , anotherName = "The crimson of Zanan"
+          { memberName = "ロイター"
+          , anotherName = "ザナンの紅の英雄"
           , age = Just 32
           , favoriteMoss = Nothing
           }
     , Member
-          { memberName = "Derich"
-          , anotherName = "The queen of Hagure Queendom"
+          { memberName = "デーリッチ"
+          , anotherName = "ハグレ王国国王"
           , age = Nothing
           , favoriteMoss = Nothing
           }
     , Member
-          { memberName = "Rosemary"
-          , anotherName = "Big moss"
+          { memberName = "ローズマリー"
+          , anotherName = "ビッグモス"
           , age = Nothing
-          , favoriteMoss = Just "Mossarcadia"
+          , favoriteMoss = Just "モスアルカディア"
           }
     ]
 
@@ -199,4 +200,31 @@ testMembersFromWorldWithListify =
     it "has the same functionality with `testMembersFromWorld`" $
     concatMap membersFromWorldWithListify worlds `shouldBe`
     concatMap membersFromWorld worlds
+```
+
+`listify`関数のシグネチャは`Typeable r => (r -> Bool) -> GenericQ [r]`となっています．引数で型`r`の値に対し，抽出する条件を指定します．`const True`で常に`True`を返すことで，型`r`の値を常に抽出するするようにします．なお，`GenericQ`は`forall a. Data a => a -> r`のエイリアスです．
+
+ですから，例えばモスアルカディアが好きな人物だけを抽出することも可能です．
+
+```haskell
+listMossalcadiaMania :: World -> [Member]
+listMossalcadiaMania = listify f
+  where
+    f :: Member -> Bool
+    f = (== Just "モスアルカディア") . favoriteMoss
+
+testListMossalcadiaMania :: Spec
+testListMossalcadiaMania =
+    describe "listMossalcadiaMania" $
+    it "lists all `Member`s who love Mossalcadia" $
+    concatMap listMossalcadiaMania worlds `shouldBe` expected
+  where
+    expected =
+        [ Member
+              { memberName = "ローズマリー"
+              , anotherName = "ビッグモス"
+              , age = Nothing
+              , favoriteMoss = Just "モスアルカディア"
+              }
+        ]
 ```

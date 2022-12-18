@@ -6,3 +6,4 @@ main =
   hspec $ do
     testMembersFromWorld
     testMembersFromWorldWithListify
+    testListMossalcadiaMania
