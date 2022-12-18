@@ -205,9 +205,11 @@ testMembersFromWorldWithListify =
     concatMap membersFromWorld worlds
 ```
 
-`listify`関数のシグネチャは`Typeable r => (r -> Bool) -> GenericQ [r]`となっています．引数で型`r`の値に対し，抽出する条件を指定します．`const True`で常に`True`を返すことで，型`r`の値を常に抽出するするようにします．なお，`GenericQ`は`forall a. Data a => a -> r`のエイリアスです．
+`listify`関数のシグネチャは`Typeable r => (r -> Bool) -> GenericQ [r]`となっています．引数で型`r`の値に対し，抽出する条件を指定します．`const True`で常に`True`を返すことで，型`r`の値を常に抽出するするようにします．なお，`GenericQ`は`forall a. Data a => a -> r`のエイリアスです．また，[ドキュメントに記載されている](https://hackage.haskell.org/package/base-4.16.3.0/docs/Data-Typeable.html)ように，GHC7.10以降，全ての型は自動で`Typeable`をderiveしているため，型変数などを用いていなければ基本的に`listify`を任意の型に対して使用することができると考えて大丈夫です．以下に引用します．
 
-ですから，例えばモスアルカディアが好きな人物だけを抽出することも可能です．
+> Since GHC 7.10, all types automatically have Typeable instances derived. This is in contrast to previous releases where Typeable had to be explicitly derived using the DeriveDataTypeable language extension.
+
+引数で抽出する条件を指定するため，例えばモスアルカディアが好きな人物だけを抽出することも可能です．
 
 ```haskell
 listMossalcadiaMania :: World -> [Member]
@@ -255,3 +257,5 @@ testSummonAllGroupsInKumamotoCastle =
     f :: Group -> Bool
     f = const True
 ```
+
+ここで，`mkT`という関数を使用しています．

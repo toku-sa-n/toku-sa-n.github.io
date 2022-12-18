@@ -7,3 +7,4 @@ main =
     testMembersFromWorld
     testMembersFromWorldWithListify
     testListMossalcadiaMania
+    testSummonAllGroupsInKumamotoCastle
