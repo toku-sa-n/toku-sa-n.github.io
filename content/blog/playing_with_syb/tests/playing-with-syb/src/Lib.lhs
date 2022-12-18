@@ -133,7 +133,7 @@ worlds =
     ]
 ```
 
-`World`に含まれている`Member`を全て抽出する関数を単純に書くと以下のようになります．
+`World`に含まれている`Member`を全て抽出する関数を単純に書くと以下の`membersFromWorld`関数のようになります．
 
 ```haskell
 membersFromWorld :: World -> [Member]
