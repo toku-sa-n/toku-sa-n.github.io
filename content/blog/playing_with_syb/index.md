@@ -256,8 +256,8 @@ testSummonAllGroupsInKumamotoCastle :: Spec
 testSummonAllGroupsInKumamotoCastle =
     describe "summonAllGroupsInKumamotoCastle" $
     it "sets \"熊本城\" to the `place`s of all `Group`s in a `World`" $
-    nub (fmap place $ listify f $ fmap summonAllGroupsInKumamotoCastle worlds)
-    `shouldBe` ["熊本城"]
+    nub (fmap place $ listify f $ fmap summonAllGroupsInKumamotoCastle worlds) `shouldBe`
+    ["熊本城"]
   where
     f :: Group -> Bool
     f = const True
