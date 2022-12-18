@@ -15,3 +15,23 @@ This is the 20th article of [Haskell Advent Calendar 2022](https://qiita.com/adv
 -->
 
 This article briefly introduces [syb](https://hackage.haskell.org/package/syb-0.7.2.2) which is one of Haskell libraries, and an example where I used it in a project.
+
+<!--
+### バージョン情報
+-->
+
+### Versions
+
+<!--
+| 名前                        | バージョン                    |
+|-----------------------------|-------------------------------|
+| Stack                       | 2.9.1                         |
+| Stack resolver              | LTS 20.4                      |
+| GHCやライブラリのバージョン | LTSで指定されているものを使用 |
+-->
+
+| Name                          | Version               |
+|-------------------------------|-----------------------|
+| Stack                         | 2.9.1                 |
+| Stack resolver                | LTS 20.4              |
+| Versions of GHC and libraries | Ones specified by LTS |
