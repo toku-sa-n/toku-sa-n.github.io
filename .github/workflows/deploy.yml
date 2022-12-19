@@ -134,6 +134,9 @@ jobs:
           key: test-script-${{ github.sha }}
           restore-keys: test-script
 
+      - name: Install `markdown-unlit`
+        run: cabal install -z -j -O2 markdown-unlit
+
       - name: Install Zsh
         run: sudo apt install zsh
 
