@@ -574,3 +574,43 @@ testSummonAllGroupsInKumamotoCastle =
 -->
 
 The signature of `everywhere` is `(forall a. Data a => a -> a) -> forall a. Data a => a -> a`. For `listify` we can just pass a function that receives a value of some type and returns a `Bool` value as the signature of its parameter is `Typeable r => (r -> Bool)`. However, `everywhere` requires us to define a function that receives a value of any type implementing `Data` and returns a value of the same type, which seems to make it impossible to operate on values of a specific type.
+
+<!--
+ここで利用するものが[`mkT`](https://hackage.haskell.org/package/syb-0.7.2.2/docs/Data-Generics-Aliases.html#v:mkT)です．`mkT`のシグネチャは`(Typeable a, Typeable b) => (b -> b) -> a -> a`ですが，この関数は，`b`型の値を受け取り，同じ型の値を返す関数を受け取り，それを`Typeable`な任意の型`a`の値を受け取り，同じ型の値を返す関数に拡張します．この際，受け取った値の型が実際には`b`である場合，受け取った関数を適用し，そうでなければ単純に受け取った値を返すようになります．以下に実行例を示します．
+-->
+
+This is where we use [`mkT`](https://hackage.haskell.org/package/syb-0.7.2.2/docs/Data-Generics-Aliases.html#v:mkT). Its signature is `(Typeable a, Typeable b) => (b -> b) -> a -> a`. It receives a function that takes a value of type `b` and returns a value of the same type, and extends it to a function that takes a value of any types implementing `Typeable` and returns a value of the same type. Here, it applies the passed function is the actual type of the given value is `b`, and returns the value as-is otherwise. The following code is an example.
+
+<!--
+```haskell
+appendWorld :: String -> String
+appendWorld = (++ " World")
+
+appendWorldForData :: Data a => a -> a
+appendWorldForData = mkT appendWorld
+
+testAppendWorldForData :: Spec
+testAppendWorldForData =
+    describe "appendWorldForData" $ do
+        it "受け取った値の型が`String`なら，\" World\"を付加する" $
+            appendWorldForData "Hello" `shouldBe` "Hello World"
+        it "受け取った値の型が`String`ではないなら，受け取った値をそのまま返す" $
+            appendWorldForData (3 :: Int) `shouldBe` 3
+```
+-->
+
+```haskell
+appendWorld :: String -> String
+appendWorld = (++ " World")
+
+appendWorldForData :: Data a => a -> a
+appendWorldForData = mkT appendWorld
+
+testAppendWorldForData :: Spec
+testAppendWorldForData =
+    describe "appendWorldForData" $ do
+        it "appends \"World\" if the type of the given value is `String`" $
+            appendWorldForData "Hello" `shouldBe` "Hello World"
+        it "returns the given value as-is if its type is not `String`" $
+            appendWorldForData (3 :: Int) `shouldBe` 3
+```
