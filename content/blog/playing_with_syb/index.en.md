@@ -517,3 +517,59 @@ testListMossalcadiaMania =
               }
         ]
 ```
+
+<!--
+#### 特定の型の値を変更する
+-->
+
+#### Modify values of a specific type
+
+<!--
+妙な話ですが，例えば全ての集団が突然熊本城に召喚されたとしましょう．`Group`の`place`を全て熊本城に変更しなければなりません．やはりこれも小規模のデータ構造ならいくつの関数を定義すればどうにかなります．しかし大規模なものになると手に負えません．
+-->
+
+Strangely enough, but suppose all groups are suddenly summoned at Kumamoto Castle. We need to change the `place` all `Group`s to Kumamoto Castle. Again, we can achieve this by definiting a few functions for a small data structure, but it's too much work for a large one.
+
+<!--
+このような場合，`syb`で定義されている`everywhere`を使うと楽に書けます．
+-->
+
+For this case, we can write it up easily with [`everywhere`](https://hackage.haskell.org/package/syb-0.7.2.2/docs/Data-Generics-Schemes.html#v:everywhere) defined in `syb`.
+
+<!--
+```haskell
+summonAllGroupsInKumamotoCastle :: World -> World
+summonAllGroupsInKumamotoCastle = everywhere (mkT f)
+  where
+    f :: Group -> Group
+    f x = x {place = "熊本城"}
+
+testSummonAllGroupsInKumamotoCastle :: Spec
+testSummonAllGroupsInKumamotoCastle =
+    describe "summonAllGroupsInKumamotoCastle" $
+    it "sets \"熊本城\" to the `place`s of all `Group`s in a `World`" $
+    nub (fmap place $ listify f $ fmap summonAllGroupsInKumamotoCastle worlds) `shouldBe`
+    ["熊本城"]
+  where
+    f :: Group -> Bool
+    f = const True
+```
+-->
+
+```haskell
+summonAllGroupsInKumamotoCastle :: World -> World
+summonAllGroupsInKumamotoCastle = everywhere (mkT f)
+  where
+    f :: Group -> Group
+    f x = x {place = "Kumamoto Castle"}
+
+testSummonAllGroupsInKumamotoCastle :: Spec
+testSummonAllGroupsInKumamotoCastle =
+    describe "summonAllGroupsInKumamotoCastle" $
+    it "sets \"Kumamoto Castle\" to the `place`s of all `Group`s in a `World`" $
+    nub (fmap place $ listify f $ fmap summonAllGroupsInKumamotoCastle worlds) `shouldBe`
+    ["Kumamoto Castle"]
+  where
+    f :: Group -> Bool
+    f = const True
+```

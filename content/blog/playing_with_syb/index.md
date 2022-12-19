@@ -241,9 +241,9 @@ testListMossalcadiaMania =
 
 #### 特定の型の値を変更する
 
-妙な話ですが，例えば全ての集団が突然熊本城に召喚されたとしましょう．やはりこれも小規模のデータ構造ならいくつの関数を定義すればどうにかなります．しかし大規模なものになると手に負えません．
+妙な話ですが，例えば全ての集団が突然熊本城に召喚されたとしましょう．`Group`の`place`を全て熊本城に変更しなければなりません．やはりこれも小規模のデータ構造ならいくつの関数を定義すればどうにかなります．しかし大規模なものになると手に負えません．
 
-このような場合，`syb`で定義されている`everywhere`を使うと楽に書けます．
+このような場合，`syb`で定義されている[`everywhere`](https://hackage.haskell.org/package/syb-0.7.2.2/docs/Data-Generics-Schemes.html#v:everywhere)を使うと楽に書けます．
 
 ```haskell
 summonAllGroupsInKumamotoCastle :: World -> World
