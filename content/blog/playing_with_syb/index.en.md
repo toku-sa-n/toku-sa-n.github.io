@@ -407,3 +407,113 @@ testMembersFromWorld =
     it "returns all `Member`s in a `World`" $
     concatMap membersFromWorld worlds `shouldBe` allMembersInWorld
 ```
+
+<!--
+今回の場合，`World`の構造があまり複雑ではないため，いくつかの関数を用いて簡単に抽出することが出来ました．しかし，例えば`Maybe`が使われていたり，構造がもっと大きく複雑だったり，型引数が使用されていたりすると，今回のようにセレクタ関数を組み合わせて抽出する方法は難しくなります．
+-->
+
+For this case, we could extract them easily by using a few functions because the structure of `World` was not so complex. However, it is difficult to do it with selector functions if, e.g., a data structure contains `Maybe`s, it has much bigger and more complex structure, or it has type variables.
+
+<!--
+そのような場合，sybの[`listify`](https://hackage.haskell.org/package/syb-0.7.2.2/docs/Data-Generics-Schemes.html#v:listify)関数を用いるとすんなり書けます．
+-->
+
+In such cases, we can write the function easily with the [`listify`](https://hackage.haskell.org/package/syb-0.7.2.2/docs/Data-Generics-Schemes.html#v:listify) function provided by syb.
+
+<!--
+```haskell
+membersFromWorldWithListify :: World -> [Member]
+membersFromWorldWithListify = listify onlyMember
+  where
+    onlyMember :: Member -> Bool
+    onlyMember = const True
+
+testMembersFromWorldWithListify :: Spec
+testMembersFromWorldWithListify =
+    describe "membersFromWorldWithListify" $
+    it "has the same functionality with `testMembersFromWorld`" $
+    concatMap membersFromWorldWithListify worlds `shouldBe`
+    concatMap membersFromWorld worlds
+```
+-->
+
+```haskell
+membersFromWorldWithListify :: World -> [Member]
+membersFromWorldWithListify = listify onlyMember
+  where
+    onlyMember :: Member -> Bool
+    onlyMember = const True
+
+testMembersFromWorldWithListify :: Spec
+testMembersFromWorldWithListify =
+    describe "membersFromWorldWithListify" $
+    it "has the same functionality with `testMembersFromWorld`" $
+    concatMap membersFromWorldWithListify worlds `shouldBe`
+    concatMap membersFromWorld worlds
+```
+
+<!--
+`listify`関数のシグネチャは`Typeable r => (r -> Bool) -> GenericQ [r]`となっています．引数で型`r`の値に対し，抽出する条件を指定します．`const True`で常に`True`を返すことで，型`r`の値を常に抽出するするようにします．なお，`GenericQ`は`forall a. Data a => a -> r`のエイリアスです．また，[ドキュメントに記載されている](https://hackage.haskell.org/package/base-4.16.3.0/docs/Data-Typeable.html)ように，GHC7.10以降，全ての型は自動で`Typeable`をderiveしているため，型変数などを用いていなければ基本的に`listify`を任意の型に対して使用することができると考えて大丈夫です．以下に引用します．
+-->
+
+The signature of the `listify` function is `Typeable r => (r -> Bool) -> GenericQ [r]`. We specify the condition to extract values of type `r`, and passing `const True` which always returns `True` makes the function extract all values of the type. Note that `GenericQ` is an alias of `forall a. Data a => a -> r` and [as written in the document](https://hackage.haskell.org/package/base-4.16.3.0/docs/Data-Typeable.html), all types automatically derive `Typeable` since GHC 7.10, you can assume that you can use `listify` for any values of any types unless the type do not use any type variables. I'll quote the document as follows.
+
+<!--
+> Since GHC 7.10, all types automatically have Typeable instances derived. This is in contrast to previous releases where Typeable had to be explicitly derived using the DeriveDataTypeable language extension.
+-->
+
+> Since GHC 7.10, all types automatically have Typeable instances derived. This is in contrast to previous releases where Typeable had to be explicitly derived using the DeriveDataTypeable language extension.
+
+<!--
+引数で抽出する条件を指定するため，例えばモスアルカディアが好きな人物だけを抽出することも可能です．
+-->
+
+Since we specify the extraction condition by an argument, also we can extract characters who like Mossalcadia for example.
+
+<!--
+```haskell
+listMossalcadiaMania :: World -> [Member]
+listMossalcadiaMania = listify f
+  where
+    f :: Member -> Bool
+    f = (== Just "モスアルカディア") . favoriteMoss
+
+testListMossalcadiaMania :: Spec
+testListMossalcadiaMania =
+    describe "listMossalcadiaMania" $
+    it "lists all `Member`s who love Mossalcadia" $
+    concatMap listMossalcadiaMania worlds `shouldBe` expected
+  where
+    expected =
+        [ Member
+              { memberName = "ローズマリー"
+              , anotherName = "ビッグモス"
+              , age = Nothing
+              , favoriteMoss = Just "モスアルカディア"
+              }
+        ]
+```
+-->
+
+```haskell
+listMossalcadiaMania :: World -> [Member]
+listMossalcadiaMania = listify f
+  where
+    f :: Member -> Bool
+    f = (== Just "Mossalcadia") . favoriteMoss
+
+testListMossalcadiaMania :: Spec
+testListMossalcadiaMania =
+    describe "listMossalcadiaMania" $
+    it "lists all `Member`s who love Mossalcadia" $
+    concatMap listMossalcadiaMania worlds `shouldBe` expected
+  where
+    expected =
+        [ Member
+              { memberName = "Rosemary"
+              , anotherName = "Big moss"
+              , age = Nothing
+              , favoriteMoss = Just "Mossalcadia"
+              }
+        ]
+```
