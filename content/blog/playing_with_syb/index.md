@@ -23,17 +23,16 @@ date = 2022-12-20
 
 [Haskell Wiki](https://wiki.haskell.org/Research_papers/Generics)にいくつか論文が紹介されていますが，特に[Scrap Your Boilerplate: A Practical Design Pattern for Generic Programming](https://www.microsoft.com/en-us/research/wp-content/uploads/2003/01/hmap.pdf)は読みやすいのでおすすめです．
 
-### 使用例
+### コード例
 
-#### 特定の型の値だけを抽出する
-
-例えば以下のような，様々な世界に住む住民の情報を一つのデータ構造に含めたとします．
+以下の説明では，次のような，様々な世界に住む住民や集団の情報を一つのデータ構造に含めたものを用います．
 
 ```haskell
-{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveDataTypeable, RankNTypes, RecordWildCards #-}
 
 module Lib
-    ( testMembersFromWorld
+    ( gfoldMember
+    , testMembersFromWorld
     , testMembersFromWorldWithListify
     , testListMossalcadiaMania
     , testSummonAllGroupsInKumamotoCastle
@@ -139,6 +138,37 @@ worlds =
     ]
 ```
 
+### 下準備：`Data`型クラスの実装
+
+`syb`を利用するためには，型が`Data`型クラスを実装している必要があります．`Data`型クラスの詳細についてはドキュメントを確認してください．
+
+何はともあれまずは実装方法ですが，GHCの拡張機能である`DeriveDataTypeable`を有効にして，`deriving (Data)`で完了です．もちろん手動で定義することも可能ですが，deriveしたほうが楽です．
+
+以下の説明は，型に対し`Data`型クラスが適切に実装されていることを前提としています．
+
+さて，この`Data`型クラスですが，一番重要なメソッドが[`gfoldl`](https://hackage.haskell.org/package/base-4.16.3.0/docs/Data-Data.html#t:Data)です．`Member`型では`deriving (Data)`を用いていますが，おおよそ以下のような実装が生成されます（実際の名前は`gfoldl`ですが，ここでは`gfoldMember`としています）．
+
+```haskell
+gfoldlMember ::
+       (forall d b. Data d =>
+                        c (d -> b) -> d -> c b)
+    -> (forall g. g -> c g)
+    -> Member
+    -> c Member
+gfoldlMember k z Member {..} =
+    z Member `k` memberName `k` anotherName `k` age `k` favoriteMoss
+```
+
+つまり，`Member`の各フィールドの値を畳み込むことが出来ます．
+
+`syb`で定義されている各関数は直接`gfoldl`関数を用いているのではなく，この関数を用いている`Data`型クラスの他のメソッドを使用しています．
+
+### 使用例
+
+#### 特定の型の値だけを抽出する
+
+例えば以下のような，様々な世界に住む住民の情報を一つのデータ構造に含めたとします．
+
 `World`に含まれている`Member`を全て抽出する関数を単純に書くと，以下の`membersFromWorld`関数のようになります．
 
 ```haskell
@@ -211,7 +241,11 @@ testMembersFromWorldWithListify =
     concatMap membersFromWorld worlds
 ```
 
-`listify`関数のシグネチャは`Typeable r => (r -> Bool) -> GenericQ [r]`となっています．引数で型`r`の値に対し，抽出する条件を指定します．`const True`で常に`True`を返すことで，型`r`の値を常に抽出するするようにします．なお，`GenericQ`は`forall a. Data a => a -> r`のエイリアスです．また，[ドキュメントに記載されている](https://hackage.haskell.org/package/base-4.16.3.0/docs/Data-Typeable.html)ように，GHC7.10以降，全ての型は自動で`Typeable`をderiveしているため，型変数などを用いていなければ基本的に`listify`を任意の型に対して使用することができると考えて大丈夫です．以下に引用します．
+`listify`関数は，抽出する値の条件を指定する関数を受け取り，「`Data`を実装する任意の型の値を受け取り，その値の構成要素のうち，条件を満たす値をリストとして返す」関数を返します．
+
+`listify`関数のシグネチャは`Typeable r => (r -> Bool) -> GenericQ [r]`となっています．この`r`が，最終的なリストの要素の型となります．すなわちこの関数が返す関数は，受け取った値に含まれている型`r`の値に対し，それが条件を満たすかどうかを確認しています．上記の場合，`const True`で常に`True`を返すことで，型`r`の値を常に抽出するするようにします．
+
+なお，`GenericQ`は`forall a. Data a => a -> r`のエイリアスです．また，[ドキュメントに記載されている](https://hackage.haskell.org/package/base-4.16.3.0/docs/Data-Typeable.html)ように，GHC7.10以降，全ての型は自動で`Typeable`をderiveしているため，型変数などを用いていなければ基本的に`listify`を任意の型に対して使用することができると考えて大丈夫です．以下に引用します．
 
 > Since GHC 7.10, all types automatically have Typeable instances derived. This is in contrast to previous releases where Typeable had to be explicitly derived using the DeriveDataTypeable language extension.
 
@@ -283,3 +317,5 @@ testAppendWorldForData =
         it "受け取った値の型が`String`ではないなら，受け取った値をそのまま返す" $
             appendWorldForData (3 :: Int) `shouldBe` 3
 ```
+
+上記の熊本城の例では，関数`f :: Group -> Group`に`mkT`を適用したものを`everywhere`で使用しています．もし
