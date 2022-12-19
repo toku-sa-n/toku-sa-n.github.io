@@ -573,3 +573,9 @@ testSummonAllGroupsInKumamotoCastle =
     f :: Group -> Bool
     f = const True
 ```
+
+<!--
+`everywhere`のシグネチャは`(forall a. Data a => a -> a) -> forall a. Data a => a -> a`となっています．`listify`の場合，引数の型は`Typeable r => (r -> Bool)`でしたので，単純に`Member -> Bool`などと，適当な型の値を受け取って`Bool`値を返す関数を渡せばよいのですが，`everywhere`は`Data`を実装する任意の型を受け取って，同じ型の値を返す関数を定義しなければならず，ある特定の型の値に対する操作を行うのは不可能のように見えます．
+-->
+
+The signature of `everywhere` is `(forall a. Data a => a -> a) -> forall a. Data a => a -> a`. For `listify` we can just pass a function that receives a value of some type and returns a `Bool` value as the signature of its parameter is `Typeable r => (r -> Bool)`. However, `everywhere` requires us to define a function that receives a value of any type implementing `Data` and returns a value of the same type, which seems to make it impossible to operate on values of a specific type.
