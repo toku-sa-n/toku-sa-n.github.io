@@ -37,6 +37,7 @@ module Lib
     , testMembersFromWorldWithListify
     , testListMossalcadiaMania
     , testSummonAllGroupsInKumamotoCastle
+    , testAppendWorldForData
     ) where
 
 import           Data.Data             (Data)
@@ -264,3 +265,21 @@ testSummonAllGroupsInKumamotoCastle =
 ```
 
 `everywhere`のシグネチャは`(forall a. Data a => a -> a) -> forall a. Data a => a -> a`となっています．`listify`の場合，引数の型は`Typeable r => (r -> Bool)`でしたので，単純に`Member -> Bool`などと，適当な型の値を受け取って`Bool`値を返す関数を渡せばよいのですが，`everywhere`は`Data`を実装する任意の型を受け取って，同じ型の値を返す関数を定義しなければならず，ある特定の型の値に対する操作を行うのは不可能のように見えます．
+
+ここで利用するものが[`mkT`](https://hackage.haskell.org/package/syb-0.7.2.2/docs/Data-Generics-Aliases.html#v:mkT)です．`mkT`のシグネチャは`(Typeable a, Typeable b) => (b -> b) -> a -> a`ですが，この関数は，`b`型の値を受け取り，同じ型の値を返す関数を受け取り，それを`Typeable`な任意の型`a`の値を受け取り，同じ型の値を返す関数に拡張します．この際，受け取った値の型が実際には`b`である場合，受け取った関数を適用し，そうでなければ単純に受け取った値を返すようになります．以下に実行例を示します．
+
+```haskell
+appendWorld :: String -> String
+appendWorld = (++ " World")
+
+appendWorldForData :: Data a => a -> a
+appendWorldForData = mkT appendWorld
+
+testAppendWorldForData :: Spec
+testAppendWorldForData =
+    describe "appendWorldForData" $ do
+        it "受け取った値の型が`String`なら，\" World\"を付加する" $
+            appendWorldForData "Hello" `shouldBe` "Hello World"
+        it "受け取った値の型が`String`ではないなら，受け取った値をそのまま返す" $
+            appendWorldForData (3 :: Int) `shouldBe` 3
+```

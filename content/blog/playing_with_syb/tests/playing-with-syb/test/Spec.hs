@@ -8,3 +8,4 @@ main =
     testMembersFromWorldWithListify
     testListMossalcadiaMania
     testSummonAllGroupsInKumamotoCastle
+    testAppendWorldForData
