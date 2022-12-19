@@ -134,6 +134,9 @@ jobs:
           key: test-script-${{ github.sha }}
           restore-keys: test-script
 
+      - name: Update the Cabal index
+        run: cabal update
+
       - name: Install `markdown-unlit`
         run: cabal install -z -j -O2 markdown-unlit
 
