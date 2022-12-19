@@ -187,7 +187,8 @@ worlds =
 {-# LANGUAGE DeriveDataTypeable #-}
 
 module Lib
-    ( testMembersFromWorld
+    ( gfoldlMember
+    , testMembersFromWorld
     , testMembersFromWorldWithListify
     , testListMossalcadiaMania
     , testSummonAllGroupsInKumamotoCastle
