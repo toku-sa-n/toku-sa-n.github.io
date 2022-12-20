@@ -9,3 +9,4 @@ main =
     testListMossalcadiaMania
     testSummonAllGroupsInKumamotoCastle
     testAppendWorldForData
+    testAllNothing

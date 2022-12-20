@@ -28,15 +28,22 @@ date = 2022-12-20
 以下の説明では，次のような，様々な世界に住む住民や集団の情報を一つのデータ構造に含めたものを用います．
 
 ```haskell
-{-# LANGUAGE DeriveDataTypeable, RankNTypes, RecordWildCards #-}
+{-# LANGUAGE DeriveDataTypeable  #-}
+{-# LANGUAGE PatternSynonyms     #-}
+{-# LANGUAGE RankNTypes          #-}
+{-# LANGUAGE RecordWildCards     #-}
+{-# LANGUAGE ScopedTypeVariables #-}
+{-# LANGUAGE TypeApplications    #-}
+{-# LANGUAGE TypeFamilies        #-}
 
 module Lib
-    ( gfoldMember
+    ( gfoldlMember
     , testMembersFromWorld
     , testMembersFromWorldWithListify
     , testListMossalcadiaMania
     , testSummonAllGroupsInKumamotoCastle
     , testAppendWorldForData
+    , testAllNothing
     ) where
 
 import           Data.Data             (Data)
@@ -44,6 +51,8 @@ import           Data.Generics.Aliases (mkT)
 import           Data.Generics.Schemes (everywhere, listify)
 import           Data.List             (nub)
 import           Test.Hspec            (Spec, describe, it, shouldBe)
+import           Type.Reflection       (eqTypeRep, pattern App, typeRep,
+                                        (:~~:) (HRefl))
 
 data World =
     World
@@ -146,23 +155,6 @@ worlds =
 
 以下の説明は，型に対し`Data`型クラスが適切に実装されていることを前提としています．
 
-さて，この`Data`型クラスですが，一番重要なメソッドが[`gfoldl`](https://hackage.haskell.org/package/base-4.16.3.0/docs/Data-Data.html#t:Data)です．`Member`型では`deriving (Data)`を用いていますが，おおよそ以下のような実装が生成されます（実際の名前は`gfoldl`ですが，ここでは`gfoldMember`としています）．
-
-```haskell
-gfoldlMember ::
-       (forall d b. Data d =>
-                        c (d -> b) -> d -> c b)
-    -> (forall g. g -> c g)
-    -> Member
-    -> c Member
-gfoldlMember k z Member {..} =
-    z Member `k` memberName `k` anotherName `k` age `k` favoriteMoss
-```
-
-つまり，`Member`の各フィールドの値を畳み込むことが出来ます．
-
-`syb`で定義されている各関数は直接`gfoldl`関数を用いているのではなく，この関数を用いている`Data`型クラスの他のメソッドを使用しています．
-
 ### 使用例
 
 #### 特定の型の値だけを抽出する
@@ -241,7 +233,7 @@ testMembersFromWorldWithListify =
     concatMap membersFromWorld worlds
 ```
 
-`listify`関数は，抽出する値の条件を指定する関数を受け取り，「`Data`を実装する任意の型の値を受け取り，その値の構成要素のうち，条件を満たす値をリストとして返す」関数を返します．
+`listify`関数は，抽出する値の条件を指定する関数を受け取り，「`Data`を実装する任意の型の値を受け取り，その値に含まれている値のうち，条件を満たす値をリストとして返す」関数を返します．
 
 `listify`関数のシグネチャは`Typeable r => (r -> Bool) -> GenericQ [r]`となっています．この`r`が，最終的なリストの要素の型となります．すなわちこの関数が返す関数は，受け取った値に含まれている型`r`の値に対し，それが条件を満たすかどうかを確認しています．上記の場合，`const True`で常に`True`を返すことで，型`r`の値を常に抽出するするようにします．
 
@@ -276,7 +268,7 @@ testListMossalcadiaMania =
 
 #### 特定の型の値を変更する
 
-妙な話ですが，例えば全ての集団が突然熊本城に召喚されたとしましょう．`Group`の`place`を全て熊本城に変更しなければなりません．やはりこれも小規模のデータ構造ならいくつの関数を定義すればどうにかなります．しかし大規模なものになると手に負えません．
+妙な話ですが，例えば全ての集団が突然熊本城に召喚されたとしましょう．`Group`の`place`を全て"熊本城"に変更しなければなりません．やはりこれも小規模のデータ構造ならいくつの関数を定義すればどうにかなります．しかし大規模なものになると手に負えません．
 
 このような場合，`syb`で定義されている[`everywhere`](https://hackage.haskell.org/package/syb-0.7.2.2/docs/Data-Generics-Schemes.html#v:everywhere)を使うと楽に書けます．
 
@@ -298,6 +290,8 @@ testSummonAllGroupsInKumamotoCastle =
     f = const True
 ```
 
+`everywhere`は値を変更するための関数を受け取り，「`Data`を実装している任意の値を受け取り，それに含まれている全ての値に対して，先に受け取った関数を適用する」関数を返します．`fmap`のようなものです．
+
 `everywhere`のシグネチャは`(forall a. Data a => a -> a) -> forall a. Data a => a -> a`となっています．`listify`の場合，引数の型は`Typeable r => (r -> Bool)`でしたので，単純に`Member -> Bool`などと，適当な型の値を受け取って`Bool`値を返す関数を渡せばよいのですが，`everywhere`は`Data`を実装する任意の型を受け取って，同じ型の値を返す関数を定義しなければならず，ある特定の型の値に対する操作を行うのは不可能のように見えます．
 
 ここで利用するものが[`mkT`](https://hackage.haskell.org/package/syb-0.7.2.2/docs/Data-Generics-Aliases.html#v:mkT)です．`mkT`のシグネチャは`(Typeable a, Typeable b) => (b -> b) -> a -> a`ですが，この関数は，`b`型の値を受け取り，同じ型の値を返す関数を受け取り，それを`Typeable`な任意の型`a`の値を受け取り，同じ型の値を返す関数に拡張します．この際，受け取った値の型が実際には`b`である場合，受け取った関数を適用し，そうでなければ単純に受け取った値を返すようになります．以下に実行例を示します．
@@ -318,4 +312,116 @@ testAppendWorldForData =
             appendWorldForData (3 :: Int) `shouldBe` 3
 ```
 
-上記の熊本城の例では，関数`f :: Group -> Group`に`mkT`を適用したものを`everywhere`で使用しています．もし
+上記の熊本城の例では，関数`f :: Group -> Group`に`mkT`を適用したものを`everywhere`で使用しています．したがって，もし受け取った値の中に`Group`型の値が含まれているのならば，それの`place`を"熊本城"に変更します．別の型の値に対しては何も変更を加えません．
+
+#### 複雑な型に対応する
+
+どういう理由かは知りませんが，突然全ての`Maybe a`を`Nothing`にしないといけなくなったとしましょう．単純に`mkT`に`f :: Data a => Maybe a -> Maybe a`という型の関数を渡すと失敗します．
+
+```haskell
+-- 以下のような関数は定義できない．
+-- allNothing :: World -> World
+-- allNothing = everywhere (mkT f)
+--   where
+--     f :: Data a => Maybe a -> Maybe a
+--     f = const Nothing
+```
+
+正直なところ，私はこのエラーに対する正しい説明をすることが出来ません．ただし打開策は存在します．[`Type.Reflection`](https://hackage.haskell.org/package/base-4.16.3.0/docs/Type-Reflection.html#t:Typeable)モジュールを利用します．以下のように書くと目的を達成できます．なお，このコードの実行には`TypeApplications`，`ScopedTypeVariables`，`RankNTypes`を有効にする必要があります．
+
+```haskell
+allNothing :: Data a => a -> a
+allNothing = everywhere f
+  where
+    f :: forall a. Data a => a -> a
+    f x
+        | App g _ <- typeRep @a
+        , Just HRefl <- eqTypeRep g (typeRep @Maybe) = Nothing
+        | otherwise = x
+
+testAllNothing :: Spec
+testAllNothing =
+    describe "allNothing" $
+    it "すべての`Maybe a`を`Nothing`にする" $
+    allNothing allMembersInWorld `shouldBe` expected
+  where
+    expected =
+        [ Member
+              { memberName = "ロミアス"
+              , anotherName = "異形の森の使者"
+              , age = Nothing
+              , favoriteMoss = Nothing
+              }
+        , Member
+              { memberName = "ラーネイレ"
+              , anotherName = "風を聴く者"
+              , age = Nothing
+              , favoriteMoss = Nothing
+              }
+        , Member
+              { memberName = "ウェゼル"
+              , anotherName = "ザナンの白き鷹"
+              , age = Nothing
+              , favoriteMoss = Nothing
+              }
+        , Member
+              { memberName = "ロイター"
+              , anotherName = "ザナンの紅の英雄"
+              , age = Nothing
+              , favoriteMoss = Nothing
+              }
+        , Member
+              { memberName = "デーリッチ"
+              , anotherName = "ハグレ王国国王"
+              , age = Nothing
+              , favoriteMoss = Nothing
+              }
+        , Member
+              { memberName = "ローズマリー"
+              , anotherName = "ビッグモス"
+              , age = Nothing
+              , favoriteMoss = Nothing
+              }
+        ]
+```
+
+`typeRep`を使用することで，型の構成を知ることができます．また，`eqTypeRep`は2つの型が等しいかどうかを確かめます．これが`Just HRefl`を返す場合，その2つの型は等しいとされます．
+
+これらを用いることで，`everywhere`を使用する際に型変数を含む型に対しても操作を行うことができます．
+
+### 実際のプロジェクトでの使用経験
+
+現在私が行っている[HIndent](https://hackage.haskell.org/package/hindent)の[改修](https://github.com/mihaimaruseac/hindent/pull/593)において，ASTに対する前処理で`syb`の各関数を使用しました．
+
+HIndentはHaskellのソースコードフォーマッタの一つです．現在の実装では，Haskellのソースコードをパースするために[haskell-src-exts](https://hackage.haskell.org/package/haskell-src-exts)を用いています．しかしながら，このライブラリは長らくメンテナンスされておらず，最近のGHCで導入された拡張機能などに対応することができません．したがってそのような拡張機能を利用しているコードをうまく整形できない問題がありました．
+
+そこで，GHCのAPIを複数のGHCのバージョンで利用できるようにした[ghc-lib-parser](https://hackage.haskell.org/package/ghc-lib-parser)を利用するように，現在ソースコードを改修しています．
+
+[`ghc-lib-parser`を用いてHaskellのソースコードをパースする](https://hackage.haskell.org/package/ghc-lib-parser-9.2.5.20221107/docs/GHC-Parser.html)と，[`HsModule`](https://hackage.haskell.org/package/ghc-lib-parser-9.2.5.20221107/docs/GHC-Hs.html#t:HsModule)という型の値を得ることができます．これはHaskellのソースコードのASTであり，これをもとにHIndentはコードの整形を行います．ただし，単純に生成されたASTを用いるとコメントの扱いが難しかったり，他にも整形において不便な事柄が存在します．そのため，適切なノードにコメントのノードを再配置するなど，ASTに対する前処理を行う必要があります．
+
+`HsModule`は`Data`を実装しているため，`syb`の各関数を用いることができます．コメントノードの再配置の際は，まず[`listify`でコメントノードを回収](https://github.com/toku-sa-n/hindent/blob/afd30663dea44c1dd60d62f27cbe968d90544833/src/HIndent/ModulePreprocessing.hs#L42)します．このとき，コードの終端を表すために存在するEOFコメントノードは省いています．その後，コメントを適切に再配置しています．このとき`syb`の関数を使用していますが，同時に`State`モナドも利用しているため，`everywhere`ではなく[`everywhereM`関数](https://hackage.haskell.org/package/syb-0.7.2.2/docs/Data-Generics-Schemes.html#v:everywhereM)を使用しています（[コード例](https://github.com/toku-sa-n/hindent/blob/afd30663dea44c1dd60d62f27cbe968d90544833/src/HIndent/ModulePreprocessing/CommentRelocation.hs#L119-L128)）．
+
+### 最後に
+
+この記事では`syb`に関して簡単に説明しました．実際のところ，`Data`が実装されていて`Functor`が実装されていないという場合はあまりないと思います．だいたい`fmap`で事足ります．それでももしそのような状況に遭遇したら，`syb`のことを思い出してあげてください．
+
+### 付録：なぜこのようなことが可能なのか
+
+`syb`を初めて利用したときに，なぜ`listify`や`everywhere`などが実装可能なのか非常に気になりました．
+
+その秘密は`Data`型クラスにあります．特に一番重要なメソッドが[`gfoldl`](https://hackage.haskell.org/package/base-4.16.3.0/docs/Data-Data.html#t:Data)です．`Member`型では`deriving (Data)`を用いていますが，おおよそ以下のような実装が生成されます（実際の名前は`gfoldl`ですが，ここでは`gfoldMember`としています）．
+
+```haskell
+gfoldlMember ::
+       (forall d b. Data d =>
+                        c (d -> b) -> d -> c b)
+    -> (forall g. g -> c g)
+    -> Member
+    -> c Member
+gfoldlMember k z Member {..} =
+    z Member `k` memberName `k` anotherName `k` age `k` favoriteMoss
+```
+
+つまり，`Member`の各フィールドの値を畳み込むことが出来ます．
+
+`syb`で定義されている各関数は直接`gfoldl`関数を用いているのではなく，この関数を用いている`Data`型クラスの他のメソッドを使用しています．
