@@ -26,7 +26,7 @@
 {-# LANGUAGE DeriveDataTypeable, RankNTypes, RecordWildCards #-}
 
 module Lib
-    ( gfoldMember
+    ( gfoldlMember
     , testMembersFromWorld
     , testMembersFromWorldWithListify
     , testListMossalcadiaMania
@@ -236,7 +236,7 @@ testMembersFromWorldWithListify =
     concatMap membersFromWorld worlds
 ```
 
-`listify`関数は，抽出する値の条件を指定する関数を受け取り，「`Data`を実装する任意の型の値を受け取り，その値の構成要素のうち，条件を満たす値をリストとして返す」関数を返します．
+`listify`関数は，抽出する値の条件を指定する関数を受け取り，「`Data`を実装する任意の型の値を受け取り，その値に含まれている値のうち，条件を満たす値をリストとして返す」関数を返します．
 
 `listify`関数のシグネチャは`Typeable r => (r -> Bool) -> GenericQ [r]`となっています．この`r`が，最終的なリストの要素の型となります．すなわちこの関数が返す関数は，受け取った値に含まれている型`r`の値に対し，それが条件を満たすかどうかを確認しています．上記の場合，`const True`で常に`True`を返すことで，型`r`の値を常に抽出するするようにします．
 
@@ -271,7 +271,7 @@ testListMossalcadiaMania =
 
 #### 特定の型の値を変更する
 
-妙な話ですが，例えば全ての集団が突然熊本城に召喚されたとしましょう．`Group`の`place`を全て熊本城に変更しなければなりません．やはりこれも小規模のデータ構造ならいくつの関数を定義すればどうにかなります．しかし大規模なものになると手に負えません．
+妙な話ですが，例えば全ての集団が突然熊本城に召喚されたとしましょう．`Group`の`place`を全て"熊本城"に変更しなければなりません．やはりこれも小規模のデータ構造ならいくつの関数を定義すればどうにかなります．しかし大規模なものになると手に負えません．
 
 このような場合，`syb`で定義されている[`everywhere`](https://hackage.haskell.org/package/syb-0.7.2.2/docs/Data-Generics-Schemes.html#v:everywhere)を使うと楽に書けます．
 
@@ -293,6 +293,8 @@ testSummonAllGroupsInKumamotoCastle =
     f = const True
 ```
 
+`everywhere`は値を変更するための関数を受け取り，「`Data`を実装している任意の値を受け取り，それに含まれている全ての値に対して，先に受け取った関数を適用する」関数を返します．`fmap`のようなものです．
+
 `everywhere`のシグネチャは`(forall a. Data a => a -> a) -> forall a. Data a => a -> a`となっています．`listify`の場合，引数の型は`Typeable r => (r -> Bool)`でしたので，単純に`Member -> Bool`などと，適当な型の値を受け取って`Bool`値を返す関数を渡せばよいのですが，`everywhere`は`Data`を実装する任意の型を受け取って，同じ型の値を返す関数を定義しなければならず，ある特定の型の値に対する操作を行うのは不可能のように見えます．
 
 ここで利用するものが[`mkT`](https://hackage.haskell.org/package/syb-0.7.2.2/docs/Data-Generics-Aliases.html#v:mkT)です．`mkT`のシグネチャは`(Typeable a, Typeable b) => (b -> b) -> a -> a`ですが，この関数は，`b`型の値を受け取り，同じ型の値を返す関数を受け取り，それを`Typeable`な任意の型`a`の値を受け取り，同じ型の値を返す関数に拡張します．この際，受け取った値の型が実際には`b`である場合，受け取った関数を適用し，そうでなければ単純に受け取った値を返すようになります．以下に実行例を示します．
@@ -313,4 +315,18 @@ testAppendWorldForData =
             appendWorldForData (3 :: Int) `shouldBe` 3
 ```
 
-上記の熊本城の例では，関数`f :: Group -> Group`に`mkT`を適用したものを`everywhere`で使用しています．もし
+上記の熊本城の例では，関数`f :: Group -> Group`に`mkT`を適用したものを`everywhere`で使用しています．したがって，もし受け取った値の中に`Group`型の値が含まれているのならば，それの`place`を"熊本城"に変更します．別の型の値に対しては何も変更を加えません．
+
+#### 複雑な型に対応する
+
+どういう理由かは知りませんが，突然全ての`Maybe a`を`Nothing`にしないといけなくなったとしましょう．単純に`mkT`に`f :: Data a => Maybe a -> Maybe a`という型の関数を渡すと失敗します．
+
+```haskell
+-- 以下のような関数は定義できない．
+-- foo :: Data a => a -> a
+-- foo = everywhere (mkT f)
+--     where f :: Data a => Maybe a -> Maybe a
+--           f = id
+```
+
+正直なところ，私はこのエラーに対する正しい説明をすることが出来ません．ただし打開策は存在します．
