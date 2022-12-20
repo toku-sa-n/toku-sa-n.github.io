@@ -140,6 +140,9 @@ jobs:
       - name: Install `markdown-unlit`
         run: cabal install -z -j -O2 markdown-unlit
 
+      - name: Update the PATH environment variable
+        run: echo "$HOME/.cabal/bin" >> $GITHUB_PATH
+
       - name: Install Zsh
         run: sudo apt install zsh
 
