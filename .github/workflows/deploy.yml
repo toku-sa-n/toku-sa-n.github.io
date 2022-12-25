@@ -140,7 +140,7 @@ jobs:
            , run_test_scripts
            ]
 
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'schedule'
 
     steps:
       - uses: actions/checkout@v2
