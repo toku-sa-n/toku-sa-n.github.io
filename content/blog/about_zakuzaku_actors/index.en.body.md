@@ -17,10 +17,10 @@
 ### Introduction
 
 <!--
-この記事は[UEC Advent Calendar 2022](https://adventar.org/calendars/7581)の13日目の記事です．昨日はいずりなさんによる，[【Bash】インタラクティブな選択メニューを作ってみた](https://izurina.dev/post/uec-advent2022/)でした．
+この記事は[UEC Advent Calendar 2022](https://adventar.org/calendars/7581)の13日目の記事です．昨日はいずりなさんによる，[【Bash】インタラクティブな選択メニューを作ってみた](https://izurina.dev/p/uec-advent2022/)でした．
 -->
 
-This is the thirteenth article of [UEC Advent Calendar 2022](https://adventar.org/calendars/7581). Yesterday's theme was [【Bash】I've created an interactive selection menu (【Bash】インタラクティブな選択メニューを作ってみた)](https://izurina.dev/post/uec-advent2022/) by Izurina (いずりな).
+This is the thirteenth article of [UEC Advent Calendar 2022](https://adventar.org/calendars/7581). Yesterday's theme was [【Bash】I've created an interactive selection menu (【Bash】インタラクティブな選択メニューを作ってみた)](https://izurina.dev/p/uec-advent2022/) by Izurina (いずりな).
 
 <!--
 現在電通大M1の[toku\_san](https://keybase.io/toku_san/)です．最近学会発表を終えたので，かなり平穏な日々を過ごしています．
