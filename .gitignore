@@ -1,0 +1,7 @@
+public/
+*.out
+.zola-cache/
+.DS_Store
+.preview/
+.worktrees/
+.venv/

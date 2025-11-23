@@ -1,0 +1,9 @@
+{
+    "extends": "stylelint-config-standard-scss",
+    "plugins": [
+        "@stylistic/stylelint-plugin"
+    ],
+    "rules": {
+        "@stylistic/indentation": 4
+    }
+}

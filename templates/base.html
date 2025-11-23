@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block ogp %}
+    {% endblock %}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path="favicons/apple-touch-icon.png") }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path="favicons/favicon-32x32.png") }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ get_url(path="favicons/favicon-16x16.png") }}">
+    <link rel="manifest" href="{{ get_url(path="favicons/site.webmanifest") }}">
+
+    <link rel="stylesheet" href="{{ get_url(path="base.css") }}">
+
+    <title>{{ config.title }}</title>
+  </head>
+
+  <body>
+    <h1><a href="{{ get_url(path="/") }}">{{ config.title }}</a></h1>
+
+    <div class="container">
+      <main>
+        {% block content %}
+        {% endblock %}
+      </main>
+
+      <nav>
+        {% block sidemenu %}
+        {% endblock %}
+      </nav>
+    </div>
+  </body>
+
+</html>

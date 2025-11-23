@@ -1,0 +1,29 @@
+name: Install Zola
+description: 'Install Zola from the source code'
+
+runs:
+  using: "composite"
+
+  steps:
+    # We build a Zola executable from the source code for these reasons:
+    # - The Zola executable built by `cargo install zola` is too old. See https://github.com/getzola/zola/issues/1919.
+    # - Zola executables released in https://github.com/getzola/zola/releases do not support Japaneses.
+    - name: Fetch the Zola source code
+      run: git clone https://github.com/getzola/zola
+      shell: bash
+
+    - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+      with:
+        path: |
+          ~/.cargo/bin
+          ~/.cargo/registry/index/
+          ~/.cargo/registry/cache/
+          ~/.cargo/git/db
+          zola/target/
+        key: zola-${{ hashFiles('zola/Cargo.lock') }}-${{ github.sha }}
+        restore-keys: zola-${{ hashFiles('zola/Cargo.lock') }}
+
+    - name: Build a Zola executable
+      run: cargo install --path . --features indexing-ja --force
+      shell: bash
+      working-directory: zola

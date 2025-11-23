@@ -1,0 +1,11 @@
+base_url = "https://toku-sa-n.github.io/"
+default_language = "ja"
+compile_sass = true
+build_search_index = false
+ignored_content = ["*.header.md", "*.body.md"]
+
+title = "備忘録やめた"
+description = "toku-sa-nによる個人ブログ"
+
+[markdown]
+highlight_code = true

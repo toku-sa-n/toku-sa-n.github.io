@@ -1,0 +1,147 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+
+      - uses: ./.github/workflows/install_zola
+
+      - name: Get the npm cache directory
+        id: npm-cache-dir
+        run: echo "dir=$(npm config get cache)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-stylelint
+
+      - name: Install Autoprefixer
+        run: npm install postcss postcss-cli autoprefixer
+
+      - name: Build the webpage
+        run: zola build
+
+      - name: Run Autoprefixer
+        run: npx postcss public/*.css --use autoprefixer --replace
+
+      - name: Upload as an artifact
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: webpage
+          path: public/*
+
+  # There is an action called `reviewdog/action-stylelint`. However, it
+  # requires `package.json` even if a project is not managed by npm.  That is
+  # why I install and run stylelint manually.
+  check_css:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+
+      - name: Get the npm cache directory
+        id: npm-cache-dir
+        run: echo "dir=$(npm config get cache)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-stylelint
+
+      - name: Install stylelint (local)
+        run: npm install --no-save stylelint stylelint-config-standard-scss @stylistic/stylelint-plugin
+
+      - name: Run stylelint
+        run: npx stylelint sass/**/*
+
+  check_head_and_body_concatenation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+
+      - name: Check if a concatenated file is up-to-date.
+        run: scripts/check_concatenated_file_is_up_to_date.py
+
+  check_python_file_format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+
+      - uses: psf/black@05f0a8ce1f71fbb36e1e032d3b518c7b945089a2 # 25.11.0
+
+  check_zola:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+
+      - uses: ./.github/workflows/install_zola
+
+      - name: Check source files
+        run: zola check
+
+  run_test_scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+
+      - name: Install Zsh
+        run: sudo apt install zsh
+
+      - name: Run test scripts
+        run: scripts/run_test_scripts.sh
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    needs: [ build
+           , check_css
+           , check_head_and_body_concatenation
+           , check_python_file_format
+           , check_zola
+           , run_test_scripts
+           ]
+
+    if: github.ref == 'refs/heads/main' && github.event_name != 'schedule'
+
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+
+      - name: Set the committer information
+        run: |
+          git config --global user.name 'Hiroki Tokunaga'
+          git config --global user.email 'toku-sa-n@users.noreply.github.com'
+
+      - name: Checkout to the `gh-pages` branch
+        run: |
+          git pull
+          git checkout gh-pages
+
+      - name: Clean up the directory
+        run: rm -rf *
+
+      - name: Download the artifact
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: webpage
+
+      - name: Commit
+        run: |
+          git add .
+          git diff-index --quiet HEAD || git commit -m 'Deploy the website'
+
+      - name: Push
+        run: git push
