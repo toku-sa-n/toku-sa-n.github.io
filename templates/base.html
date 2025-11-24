@@ -1,12 +1,5 @@
 <!DOCTYPE html>
-{% if page is defined %}
-  {% set page_lang = page.lang | default(value=config.default_language) %}
-{% elif section is defined %}
-  {% set page_lang = section.lang | default(value=config.default_language) %}
-{% else %}
-  {% set page_lang = config.default_language %}
-{% endif %}
-<html lang="{{ page_lang }}">
+<html lang="{{ lang }}">
 
   <head>
     <meta charset="utf-8">
