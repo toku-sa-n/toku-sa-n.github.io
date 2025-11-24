@@ -1,14 +1,5 @@
 {% extends "base.html" %}
 
-{% block ogp %}
-<meta property="og:url" content="{{ current_url }}">
-<meta property="og:type" content="article">
-<meta property="og:title" content="{{ page.title }}">
-<meta property="og:description" content="{{ page.description }}">
-<meta property="og:site_name" content="{{ config.title }}">
-<meta property="og:image" content="{{ get_url(path="favicons/android-chrome-512x512.png") }}">
-{% endblock %}
-
 {% block content %}
 <h2>{{ page.title }}</h2>
 
