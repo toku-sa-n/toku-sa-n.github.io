@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 
+{% block ogp %}
+<meta property="og:url" content="{{ current_url }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ section.title }}">
+<meta property="og:description" content="{{ section.description }}">
+<meta property="og:site_name" content="{{ config.title }}">
+<meta property="og:image" content="{{ get_url(path="static/favicons/android-chrome-512x512.png") }}">
+{% endblock %}
+
 {% block content %}
 
 <p><a href="{{ get_url(path="@/blog/_index.md") }}">ブログ記事一覧</a></p>

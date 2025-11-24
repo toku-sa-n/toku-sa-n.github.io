@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {# ===== Meta basics ===== #}
     {% if page is defined %}
       {% set meta_title = page.title ~ " | " ~ config.title %}
       {% set meta_description = page.description
@@ -13,7 +12,6 @@
         | striptags
         | trim %}
       {% set canonical_url = page.permalink %}
-      {% set og_type = "article" %}
     {% elif section is defined %}
       {% set meta_title = section.title ~ " | " ~ config.title %}
       {% set meta_description = section.description
@@ -21,33 +19,18 @@
         | striptags
         | trim %}
       {% set canonical_url = section.permalink %}
-      {% set og_type = "website" %}
     {% else %}
       {% set meta_title = config.title %}
       {% set meta_description = config.description | striptags | trim %}
       {% set canonical_url = config.base_url %}
-      {% set og_type = "website" %}
     {% endif %}
 
     <title>{{ meta_title }}</title>
     <meta name="description" content="{{ meta_description }}">
     <link rel="canonical" href="{{ canonical_url }}">
 
-    {# ===== OGP / Twitter ===== #}
-    {% set default_og_image = get_url(path="favicons/android-chrome-512x512.png") %}
-    <meta property="og:url" content="{{ canonical_url }}">
-    <meta property="og:type" content="{{ og_type }}">
-    <meta property="og:title" content="{{ meta_title }}">
-    <meta property="og:description" content="{{ meta_description }}">
-    <meta property="og:site_name" content="{{ config.title }}">
-    <meta property="og:image" content="{{ default_og_image }}">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ meta_title }}">
-    <meta name="twitter:description" content="{{ meta_description }}">
-    <meta name="twitter:image" content="{{ default_og_image }}">
-
-    {% block ogp %}{% endblock %}
+    {% block ogp %}
+    {% endblock %}
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path="favicons/apple-touch-icon.png") }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path="favicons/favicon-32x32.png") }}">
