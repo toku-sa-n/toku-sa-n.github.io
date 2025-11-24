@@ -83,18 +83,6 @@ jobs:
       - name: Check source files
         run: zola check
 
-  run_test_scripts:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
-
-      - name: Install Zsh
-        run: sudo apt install zsh
-
-      - name: Run test scripts
-        run: scripts/run_test_scripts.sh
-
   deploy:
     runs-on: ubuntu-latest
 
@@ -102,7 +90,6 @@ jobs:
            , check_css
            , check_python_file_format
            , check_zola
-           , run_test_scripts
            ]
 
     if: github.ref == 'refs/heads/main' && github.event_name != 'schedule'

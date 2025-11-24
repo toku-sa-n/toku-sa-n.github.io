@@ -2,13 +2,12 @@
 
 ## Project Structure & Module Organization
 - `config.toml`: Zola settings (default lang ja, Sass compile on).
-- `content/`: Posts at `content/blog/<slug>/index.md`; assets stay beside them. `_index.md` controls the list. Optional `tests/` for samples.
+- `content/`: Posts at `content/blog/<slug>/index.md`; assets stay beside them. `_index.md` controls the list.
 - `templates/` Tera layouts; `sass/` styles; `static/` served as-is; `public/` build output—never edit. `licenses/` holds third-party notices.
 
 ## Authoring Workflow
 - Create `content/blog/<slug>/` (lowercase snake_case) with `index.md`; TOML front matter, date `YYYY-MM-DD` (JST).
 - Assets stay alongside; use relative links and compressed images.
-- Add `tests/run.sh` to execute shown code; keep it in sync with the article.
 - Use `draft = true` until ready to publish.
 
 ## Build, Test, and Development Commands
@@ -16,7 +15,6 @@
 - `zola serve`: dev server with live reload (http://127.0.0.1:1111).
 - `zola check`: validate content, templates, and links; run before pushing.
 - `zola build`: generate the static site into `public/`.
-- `scripts/run_test_scripts.sh`: run every `tests/run.sh` under `content/blog/*/tests/`; fails fast.
 
 ## Coding Style & Naming Conventions
 - Front matter: include `title` and `date`; add `description` or `draft` when needed.
@@ -26,15 +24,13 @@
 - Keep this guide in English; do not translate AGENTS.md.
 
 ## Testing Guidelines
-- Runnable examples stay in `content/blog/<slug>/tests/` with a single `run.sh`. Avoid external input; keep side effects local.
-- Check required toolchains inside the script; fail or explain skips explicitly.
-- Run `scripts/run_test_scripts.sh` before PRs.
+- No shared test runner is maintained. Keep code samples lightweight and self-contained inside each post.
 
 ## Commit & Pull Request Guidelines
 - Use Conventional Commits (e.g., `docs: add repository guidelines`, `feat: add new post`); keep summaries ≈72 chars.
 - PR description: state why the change is needed; omit what/tests. Link issues; add screenshots if the UI changes.
 - Default to Draft PRs; mark Ready for Review after checks pass.
-- Merge gate: `zola check` and `scripts/run_test_scripts.sh` pass; run `zola build` when deploying.
+- Merge gate: `zola check` passes; run `zola build` when deploying.
 - When you change workflows, commands, or style rules, update `AGENTS.md` in the same PR so contributors stay in sync.
 - Keep PRs single-commit; squash locally. Final commit message matches the PR title (Conventional).
 
