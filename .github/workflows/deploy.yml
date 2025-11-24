@@ -64,15 +64,6 @@ jobs:
       - name: Run stylelint
         run: npx stylelint sass/**/*
 
-  check_head_and_body_concatenation:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
-
-      - name: Check if a concatenated file is up-to-date.
-        run: scripts/check_concatenated_file_is_up_to_date.py
-
   check_python_file_format:
     runs-on: ubuntu-latest
 
@@ -109,7 +100,6 @@ jobs:
 
     needs: [ build
            , check_css
-           , check_head_and_body_concatenation
            , check_python_file_format
            , check_zola
            , run_test_scripts
