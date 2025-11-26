@@ -2,15 +2,70 @@
 
 @import "include-media";
 
+:root {
+    --bg: #f6f7fb;
+    --text: #16181d;
+    --muted: #4b5563;
+    --accent: #e07a5f;
+    --border: #e1e5ec;
+    --code-bg: #f1f5f9;
+    --card: #fff;
+    --shadow: 0 8px 24px rgb(0 0 0 / 6%);
+}
+
+[data-theme="dark"] {
+    --bg: #1d1f21;
+    --text: #e5e7eb;
+    --muted: #a1a7b3;
+    --accent: #de935f;
+    --border: #2d2f35;
+    --code-bg: #2a2d31;
+    --card: #1f2124;
+    --shadow: 0 10px 28px rgb(0 0 0 / 35%);
+}
+
 html {
     font-size: 100%;
 }
 
 body {
-    background: #1d1f21;
-    color: #c5c8c6;
+    background: var(--bg);
+    color: var(--text);
     font-family: "Noto Sans CJK JP", "Noto Sans", sans-serif;
     text-size-adjust: 100%;
+    margin: 0;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 60rem;
+    margin: 0 auto 1.5rem;
+    padding: 1.25rem 1rem 0.5rem;
+}
+
+.theme-toggle {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 30px rgb(0 0 0 / 12%);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+    }
 }
 
 @include media("<desktop") {
@@ -63,7 +118,7 @@ h6 {
 }
 
 a {
-    color: #de935f;
+    color: var(--accent);
     text-decoration: none;
 
     &:hover {
@@ -80,6 +135,13 @@ p {
 }
 
 pre {
-    overflow: scroll;
-    padding: 0.5rem;
+    overflow: auto;
+    padding: 0.75rem 1rem;
+    background: var(--code-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+}
+
+code, pre {
+    font-family: "Fira Code", SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
 }
