@@ -9,7 +9,6 @@
     root.setAttribute('data-theme', theme);
     localStorage.setItem(storageKey, theme);
     toggle.setAttribute('aria-pressed', theme === 'dark');
-    toggle.textContent = theme === 'dark' ? '🌙' : '☀';
   };
 
   const current = root.getAttribute('data-theme') || 'dark';

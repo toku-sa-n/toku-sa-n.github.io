@@ -7,6 +7,8 @@
     --text: #16181d;
     --muted: #4b5563;
     --accent: #e07a5f;
+    --sun: #d97706; // darker amber for contrast on light bg
+    --moon: #4338ca; // deep indigo for contrast
     --border: #e1e5ec;
     --code-bg: #f1f5f9;
     --card: #fff;
@@ -52,20 +54,96 @@ body {
     background: var(--card);
     color: var(--text);
     border-radius: 999px;
-    padding: 0.35rem 0.75rem;
+    padding: 0.4rem 0.9rem;
     cursor: pointer;
     box-shadow: var(--shadow);
     transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-
-    &:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 12px 30px rgb(0 0 0 / 12%);
-    }
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.6rem;
+    height: 2.6rem;
 
     &:focus-visible {
         outline: 2px solid var(--accent);
         outline-offset: 3px;
     }
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    transform: translateY(1px);
+    box-shadow: 0 12px 30px rgb(0 0 0 / 12%);
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    transform: translateY(1px);
+    box-shadow: 0 12px 30px rgb(0 0 0 / 12%);
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+}
+
+.theme-toggle__icon {
+    font-size: 1.25rem;
+    line-height: 1;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -14px);
+    transition: transform 0.22s ease, opacity 0.22s ease, color 0.22s ease;
+    opacity: 0;
+}
+
+.theme-toggle__icon svg {
+    width: 1.35rem;
+    height: 1.35rem;
+    display: block;
+    fill: currentColor;
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 18%));
+}
+
+[data-theme="dark"] .theme-toggle__icon--moon {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+[data-theme="dark"] .theme-toggle__icon--sun {
+    transform: translate(-50%, -18px);
+    opacity: 0;
+}
+
+[data-theme="light"] .theme-toggle__icon--sun {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+[data-theme="light"] .theme-toggle__icon--moon {
+    transform: translate(-50%, -18px);
+    opacity: 0;
+}
+
+[data-theme="dark"] .theme-toggle:hover .theme-toggle__icon--moon {
+    transform: translate(-50%, 16px);
+    opacity: 0;
+}
+
+[data-theme="dark"] .theme-toggle:hover .theme-toggle__icon--sun {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+[data-theme="light"] .theme-toggle:hover .theme-toggle__icon--sun {
+    transform: translate(-50%, 16px);
+    opacity: 0;
+}
+
+[data-theme="light"] .theme-toggle:hover .theme-toggle__icon--moon {
+    transform: translate(-50%, 0);
+    opacity: 1;
 }
 
 @include media("<desktop") {
@@ -144,4 +222,8 @@ pre {
 
 code, pre {
     font-family: "Fira Code", SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+}
+[data-theme="light"] .theme-toggle__icon--sun,
+[data-theme="dark"] .theme-toggle__icon--moon {
+    text-shadow: 0 1px 2px rgb(0 0 0 / 18%);
 }
