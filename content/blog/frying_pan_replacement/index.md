@@ -19,7 +19,7 @@ date = 2025-12-06
 - 候補メモ：宮崎製作所 ジオ ソテーパン25cm（GEO-25ST、容量約2.5L）https://amzn.asia/d/b11sIeW は少し容量不足。
 - 候補メモ：フィスラー カターニャ フライパン24cm（081-353-24-100、容量約2.2L）https://amzn.asia/d/j3Jiqi6 も容量足りず。
 - 候補メモ：フィスラー オリジナル プロフィ コレクション フライパン28cm（084-378-28-100、容量約3.4Lと見積もり）https://amzn.asia/d/c8lXawW は若干少なめだが許容範囲。
-- 候補メモ：クーベルフライパン 27cm 深型（容量約4.0L）https://ku-bell.com/products/stainless27deep ちょい少ないけど許容。
+- 候補メモ：クーベルフライパン 27cm 深型（容量約4.0L）https://ku-bell.com/products/stainless27deep 容量は十分クリア。
 
 調べメモ：  
 - remyのコラム「プロから学ぼう！フライパンの種類と選び方」（https://remy.jp/column/fryingpan）で、耐久性がある素材は鉄とステンレス。ただし鉄は錆びやすく手入れが大変だから、手間を減らしたい自分はステンレスを第一候補にする。  
