@@ -26,3 +26,5 @@ date = 2025-12-06
 - noteの記事（https://note.com/mihoharaya/n/ncfd0eed51e36）でも、長持ちさせたいなら鉄・ステンレスが有力って話がまとまってた。追加の裏付けとしてキープ。
 - 和平フレイズのコラム（https://www.wahei.co.jp/reading/trivia/25857.html）に鉄フライパンの手入れ手順が詳しく載ってる。油をそれなりに使うので、オイルポットが必要そうだし、やっぱり手間が増えるのがネック。
 - ステンレスメーカー一覧まとめ（https://ku-bell.com/blogs/blog/stainless-steel-frying-pan-for-life?srsltid=AfmBOoqeNC-3LVpiZQARIe1iDAvb_WyK_PiRxwJjbBoBRYOWcfWiuHBv）も参考にキープ。
+- クーベルFAQ（https://ku-bell.com/pages/faq）：実店舗販売なしで現物を手に取れない。  
+- クーベル30日返品保証（https://ku-bell.com/pages/30daysreturn）：理由不要で30日以内返品OK。
