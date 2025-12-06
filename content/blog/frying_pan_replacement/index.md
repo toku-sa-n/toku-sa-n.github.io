@@ -24,3 +24,4 @@ date = 2025-12-06
 - remyのコラム「プロから学ぼう！フライパンの種類と選び方」（https://remy.jp/column/fryingpan）で、耐久性がある素材は鉄とステンレス。ただし鉄は錆びやすく手入れが大変だから、手間を減らしたい自分はステンレスを第一候補にする。  
 - noteの記事（https://note.com/mihoharaya/n/ncfd0eed51e36）でも、長持ちさせたいなら鉄・ステンレスが有力って話がまとまってた。追加の裏付けとしてキープ。
 - 和平フレイズのコラム（https://www.wahei.co.jp/reading/trivia/25857.html）に鉄フライパンの手入れ手順が詳しく載ってる。油をそれなりに使うので、オイルポットが必要そうだし、やっぱり手間が増えるのがネック。
+- ステンレスメーカー一覧まとめ（https://ku-bell.com/blogs/blog/stainless-steel-frying-pan-for-life?srsltid=AfmBOoqeNC-3LVpiZQARIe1iDAvb_WyK_PiRxwJjbBoBRYOWcfWiuHBv）も参考にキープ。
