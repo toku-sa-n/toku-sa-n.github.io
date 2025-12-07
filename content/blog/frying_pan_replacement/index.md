@@ -25,6 +25,7 @@ date = 2025-12-06
 - 候補メモ：フィスラー オリジナル プロフィ コレクション フライパン28cm（084-378-28-100、容量約3.4Lと見積もり）https://amzn.asia/d/c8lXawW は若干少なめだが許容範囲。
 - 候補メモ：クーベルフライパン 27cm 深型（容量約4.0L）https://ku-bell.com/products/stainless27deep 容量は十分クリア。
 - 候補メモ：クーベル ソテーパン27cm（底面24cm、高さ6cm）https://ku-bell.com/products/stainlesssaute27?srsltid=AfmBOoqF3P8KAi-rzXtfaXfE6OrLF81w7OYBtULmHyzlZSAEA5gkM7i9 容量は非掲載だけどかなり入りそう。
+  - ジオ ソテーパン25cm公式ページ（https://miyazaki-ss.co.jp/product/geoproduct-sautepan/）を見ると公称容量は多くて2.5Lで、やっぱり小さい。
 
 調べメモ：  
 - remyのコラム「プロから学ぼう！フライパンの種類と選び方」（https://remy.jp/column/fryingpan）で、耐久性がある素材は鉄とステンレス。ただし鉄は錆びやすく手入れが大変だから、手間を減らしたい自分はステンレスを第一候補にする。  
