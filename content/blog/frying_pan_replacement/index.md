@@ -28,6 +28,8 @@ date = 2025-12-06
 - 候補メモ：フィスラー オリジナル プロフィ コレクション フライパン28cm（084-378-28-100、容量約3.4Lと見積もり）https://amzn.asia/d/c8lXawW は若干少なめだが許容範囲。
 - 候補メモ：クーベルフライパン 27cm 深型（容量約4.0L）https://ku-bell.com/products/stainless27deep 容量は十分クリア。
 - 候補メモ：クーベル ソテーパン27cm（底面24cm、高さ6cm）https://ku-bell.com/products/stainlesssaute27?srsltid=AfmBOoqF3P8KAi-rzXtfaXfE6OrLF81w7OYBtULmHyzlZSAEA5gkM7i9 容量は非掲載だけどかなり入りそう。
+  - 底面広いけど高さ6cmしかないなら、やっぱ深底モデルの方が使いやすそうかも。
+- 候補メモ：ビタクラフト 両手鍋タイプ（https://www.vitacraft.co.jp/shop/products/detail.php?product_id=1335）容量4.0Lと明記されてて安心だけど両手鍋なので振れない。今はIHだから問題ないけど、将来ガスコンロを使うかもしれないこと考えると迷う。
   - ジオ・プロダクト ソテーパン25cm公式ページ（https://miyazaki-ss.co.jp/product/geoproduct-sautepan/）を見ると公称容量は多くて2.5Lで、やっぱり小さい。
 
 調べメモ：  
