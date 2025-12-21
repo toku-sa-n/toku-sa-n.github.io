@@ -114,7 +114,7 @@ https://visalamcookware.com/ultimate-guide-to-stainless-steel-cookware-thickness
 | [クーベル 27cm 深型](https://ku-bell.com/products/stainless27deep) | 27cm | - | - | 4.0L | 約1.0kg | 容量十分 |
 | [クーベル ソテーパン27cm](https://ku-bell.com/products/stainlesssaute27?srsltid=AfmBOoqF3P8KAi-rzXtfaXfE6OrLF81w7OYBtULmHyzlZSAEA5gkM7i9) | 27cm | 24cm | 6cm | 非掲載 | 約1.23kg | 底広いけど浅め |
 | [ビタクラフト 両手鍋タイプ](https://www.vitacraft.co.jp/shop/products/detail.php?product_id=1335) | - | - | - | 4.0L | 約1.8kg | 7層・無水OK/振れない |
-| [ビタクラフト Sシリーズ フライパン27cm](https://www.vitacraft.co.jp/shop/products/detail.php?product_id=1337) | 27cm | - | - | 3.15L(自計) | 未掲載 | 容量やや不足 |
+| [ビタクラフト Sシリーズ フライパン27cm](https://www.vitacraft.co.jp/shop/products/detail.php?product_id=1337) | 27cm | - | - | 3.15L(自分で計算してみた) | 未掲載 | 容量やや不足 |
 
 調べメモ：  
 - noteの記事（https://note.com/mihoharaya/n/ncfd0eed51e36）でも、長持ちさせたいなら鉄・ステンレスが有力って話がまとまってた。追加の裏付けとしてキープ。
