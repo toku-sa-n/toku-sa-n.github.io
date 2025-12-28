@@ -61,31 +61,15 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 
 総じて、IHヒーターはかなり制約があるものの、それで使えなくてもラジエントヒーターなら使える場合が多いため、ここにおいてあまり心配する必要はなさそう。
 
-……と思ったが、ラジエントヒーターがだいぶ酷評されている[^induction_vs_radiant_cooktops][^radiant_or_induction_cook_top_what_are_your][^induction_or_radiant_electric_range_for_cast_iron]
+……と思ったが、一般にラジエントヒーターがだいぶ酷評されている[^induction_vs_radiant_cooktops][^radiant_or_induction_cook_top_what_are_your][^induction_or_radiant_electric_range_for_cast_iron]
 
 炒めものと汁物を同時に作る時くらいしかラジエントヒーターを使ったことがないので詳しいことは分からないが、ラジエントヒーターがIHやガス火よりも、温度切り替えをしてもなかなか実際に温度が変化しないのは把握している。それから、今まで使用していたフライパンもアルミニウム合金であり厳密にはコンロが求める要件に合致していないものの[^L38377]、フライパン自身はIH対応としており[^L38377]、今まで普通に使えたため、IH対応を謳っているものを購入し、IHヒーターでうまく調理できなかったらラジエントヒーターに移る、という感じても良いかもしれない。
 
 ### そもそも何を買うの
 
-ソテーパンというものもあるらしいが、違いがわからない。https://www.reddit.com/r/Cooking/comments/11yl1y9/cooking_in_a_saute_pan_vs_frying_pan_any_reasons/やhttps://www.reddit.com/r/Cooking/comments/jj1xn1/saute_pan_vs_frying_pan_skillet_all_clad/?chainedPosts=t3_11yl1y9を読んだが、自分の用途ならばどっちでも良い気がする。
+そもそもフライパンのような形状は種類によって名称があり、ソテーパン[^understanding-stovetop-cookware]や炒め鍋[^frying-pan-vs-wok]などとも呼ばれる。フライパンに限らずこれらも考慮に入れる。
 
-https://forums.egullet.org/topic/25717-understanding-stovetop-cookware/にいろいろある。フライパン、という括りで探すのではなく、コンロ上で使うもの、を探すべきかもしれない。それからこのページ曰く
-
-> The French verb “sauter” means “to jump” -- so foods that are “sauté” are “jumped around in the pan.”
-
-とのこと。
-
-両手鍋という選択肢もあるっぽい。ただしフライパンなどと異なり振れない。けれども今はIHを使っているので振らないし、将来ガスになっても振る予感がしない。けれども重い。
-
-### フライパンの選択基準
-
-以下の基準を満たす
-
-[remyのウェブサイト](https://remy.jp/column/fryingpan)に載っている選択基準を参考にした。
-
-https://forums.egullet.org/topic/25717-understanding-stovetop-cookware/
-
-#### 用途
+### 用途
 
 以下のようなものを作りたい。
 
@@ -100,15 +84,9 @@ https://forums.egullet.org/topic/25717-understanding-stovetop-cookware/
 - 揚げ物
 - 煮物
 
-#### IH対応け
+### フライパンの選択基準
 
-今IHなので。
-
-使っているIH：CS-H2201B
-
-底の直径12-27cmでないとダメ。
-
-https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/MA_IB/zt790z634h01f.pdf
+いくつかのウェブサイト[^understanding-stovetop-cookware][^remy]をもとに基準を立てた。
 
 #### サイズ
 
@@ -116,40 +94,20 @@ https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/MA_
 
 #### 素材
 
-以下の理由でステンレスを選択した。
+以下の理由でステンレス + アルミかステンレス + 銅を選択した。
 
 - コーティング系のフライパンは今回のように剥がれてしまい、寿命も長くない[^kyocera-frying-pan-lifetime]。
-
-ステンレスの寿命は10年くらい
-https://hands.net/hintmagazine/kitchen/2402-frying-pan.html?srsltid=AfmBOopK7QSwQdLzlNJ1i8XnoTNlwNPdnaPa8RHIjgurOUAxJ8uBfIaT
-https://www.yamada-denkiweb.com/media/36907/
-https://ku-bell.com/blogs/blog/stainless-pan-demerit?srsltid=AfmBOoqALTbhYHA6tryWnuGRdfBvXSF9Qqx66bEVLwRtoTbUfS2n47C4
-https://iron-pro.jp/pan-lifespan1/
-
-とは思ったが、数十年という記述もある。
-https://www.bonappetit.com/story/best-stainless-steel-pan-skillet?srsltid=AfmBOopMBrYOKZUjei9kQwu_AxP4YVXDQMyJ05g8nFGaqmtB2PvK_JvL&utm_source=chatgpt.com
-
-具体的な根拠はともに見当たらないが、少なくとも加工よりは保ちそう。
-
-https://note.com/mihoharaya/n/ncfd0eed51e36にもそう書かれてる。
-
+- 鉄の場合は水に浸したままにできない[^can-you-use-soap-on-cast-iron-pans]。洗うのが面倒な時にとりあえず水に浸しておく、というのが出来ないのは辛い。
+- ステンレスの寿命はページによって10年[^how-long-do-stainless-steel-pans-last]から数十年[^how-long-do-stainless-steel-pots-last]とされており、長い。
 - 今使っている一人用鍋がステンレスであり、扱いに慣れている。
-- アルミなどの他の素材もあるらしいが、Redditを見てみると鉄かステンレスがよくおすすめされているので、ステンレスにする。
-
-https://kyocera-kitchen.com/blogs/feature/frying-pan_material?srsltid=AfmBOoqddgQlSkNhTJHYjVSvAm0GvdnTdzOax941U3fDaVfAm8IqjSgD
-https://www.reddit.com/r/cookware/comments/1b9i13a/just_how_bad_are_scratches_like_this_in_nonstick/
-https://www.reddit.com/r/Cooking/comments/17gehay/time_for_some_new_frying_pans_which_materials_to/
-
-- 鉄のフライパンはシーズニングが面倒そう
-https://iron-pro.jp/seasoning/
 
 #### 底面
+
+上述の通り、IHヒーターを使うならば底の直径は12cmから27cmでなければならない。
 
 https://www.furaipan.com/kaigi/14/0701.shtml
 
 底面が広いと餃子やハンバーグを一度にたくさん置けるが、今はそんなに作らないし、広くなくてもよいかも。
-
-12-27cmでないといけない。
 
 #### 深さ
 
@@ -180,5 +138,11 @@ https://visalamcookware.com/ultimate-guide-to-stainless-steel-cookware-thickness
 [^induction_vs_radiant_cooktops]: https://www.reddit.com/r/Cooking/comments/1cfukgs/induction_vs_radiant_cooktops/
 [^radiant_or_induction_cook_top_what_are_your]: https://www.reddit.com/r/Cooking/comments/iupi7q/radiant_or_induction_cook_top_what_are_your/
 [^induction_or_radiant_electric_range_for_cast_iron]: https://www.reddit.com/r/Cooking/comments/1b3decm/induction_or_radiant_electric_range_for_cast_iron/
-[^tfal-when-to-buy-new-one]: https://www.t-fal.co.jp/pots-pans/discovery-feature-stackable-how-to-use/#anchor04
+[^understanding-stovetop-cookware]: https://forums.egullet.org/topic/25717-understanding-stovetop-cookware/
+[^frying-pan-vs-wok]: https://www.furaipan.com/kaigi/14/0701.shtml
+[^remy]: https://remy.jp/column/fryingpan
 [^kyocera-frying-pan-lifetime]: https://kyocera-kitchen.com/blogs/feature/frying-pan-lifespan?srsltid=AfmBOoo__VXoy7laMwplBqVMB08H92LAD06UFv0cawhF2M4x3JeCq-gP
+[^iron-pro-seasoning]: https://iron-pro.jp/seasoning/
+[^can-you-use-soap-on-cast-iron-pans]: https://www.realsimple.com/can-you-use-soap-on-cast-iron-pans-11842550
+[^how-long-do-stainless-steel-pans-last]: https://chopchopusa.com/blogs/news/how-long-do-stainless-steel-pans-last
+[^how-long-do-stainless-steel-pots-last]: https://www.bobsredmill.com/articles/how-long-do-stainless-steel-pots-last
