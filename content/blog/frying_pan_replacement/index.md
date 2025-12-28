@@ -92,6 +92,8 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 
 今のフライパンと同じかもっと大きいもの。作り置きをするため、大量に料理できるものがよい。
 
+ただし、大きいフライパンで少量の料理をすると、料理が乗っていない場所が空焚きになってしまうのは注意すべきらしい[^mihoharaya-big-not-small]。
+
 #### 素材
 
 以下の理由でステンレス + アルミかステンレス + 銅を選択した。
@@ -100,6 +102,7 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 - 鉄の場合は水に浸したままにできない[^can-you-use-soap-on-cast-iron-pans]。洗うのが面倒な時にとりあえず水に浸しておく、というのが出来ないのは辛い。
 - ステンレスの寿命はページによって10年[^how-long-do-stainless-steel-pans-last]から数十年[^how-long-do-stainless-steel-pots-last]とされており、長い。
 - 今使っている一人用鍋がステンレスであり、扱いに慣れている。
+- ステンレス単体だと熱する時間が掛かり、銅やアルミが貼り付いていることが推奨されている[^understanding-stovetop-cookware][^heritage-steel]。
 
 #### 底面
 
@@ -115,9 +118,9 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 
 #### 厚み
 
-厚みはかなり重視されているっぽい。
+厚い方が良いとされている[^understanding-stovetop-cookware][^heritage-steel][^mihoharaya-diff-iron-stainless]。
 
-素材の熱電性が低いと、薄い材料の場合は表面の熱さに差ができてしまう。
+素材の熱電性が低いと、薄い材料の場合は表面の熱さにムラができてしまう[^understanding-stovetop-cookware][^heritage-steel]。
 
 https://note.com/mihoharaya/n/ncfd0eed51e36
 https://www.reddit.com/r/cookware/comments/1fc5jdx/what_is_the_best_thickness_for_stainless_steel/
@@ -126,8 +129,6 @@ https://visalamcookware.com/ultimate-guide-to-stainless-steel-cookware-thickness
 
 調べメモ：  
 - noteの記事（https://note.com/mihoharaya/n/ncfd0eed51e36）でも、長持ちさせたいなら鉄・ステンレスが有力って話がまとまってた。追加の裏付けとしてキープ。
-- 和平フレイズのコラム（https://www.wahei.co.jp/reading/trivia/25857.html）に鉄フライパンの手入れ手順が詳しく載ってる。油をそれなりに使うので、オイルポットが必要そうだし、やっぱり手間が増えるのがネック。
-- ステンレスメーカー一覧まとめ（https://ku-bell.com/blogs/blog/stainless-steel-frying-pan-for-life?srsltid=AfmBOoqeNC-3LVpiZQARIe1iDAvb_WyK_PiRxwJjbBoBRYOWcfWiuHBv）も参考にキープ。
 - https://www.reddit.com/r/Cooking/comments/13vnoqs/is_stainless_steel_the_only_nonbullshit_pan/：同じような考えの人
 - https://www.reddit.com/r/Cooking/comments/16ntqsp/if_you_could_only_pick_one_would_you_pick_cast/：ステンレスと鉄、どっちを選ぶ？的なやつ
 
@@ -145,3 +146,6 @@ https://visalamcookware.com/ultimate-guide-to-stainless-steel-cookware-thickness
 [^how-long-do-stainless-steel-pans-last]: https://chopchopusa.com/blogs/news/how-long-do-stainless-steel-pans-last
 [^how-long-do-stainless-steel-pots-last]: https://www.bobsredmill.com/articles/how-long-do-stainless-steel-pots-last
 [^furaipan-0701]: https://www.furaipan.com/kaigi/14/0701.shtml
+[^heritage-steel]: https://www.heritagesteel.us/blogs/cookware-knowledge/the-5-rules-of-good-cookware?srsltid=AfmBOorFKDyUDiUF81nJ8nx_F-kHmSO4_5LpR4YP4_t2O6pxJc1Jd8NA
+[^mihoharaya-diff-iron-stainless]: https://note.com/mihoharaya/n/ncfd0eed51e36
+[^mihoharaya-big-not-small]: https://note.com/mihoharaya/n/n38da14b0baa0
