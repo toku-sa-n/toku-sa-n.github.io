@@ -105,13 +105,11 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 
 上述の通り、IHヒーターを使うならば底の直径は12cmから27cmでなければならない。
 
-https://www.furaipan.com/kaigi/14/0701.shtml
-
-底面が広いと餃子やハンバーグを一度にたくさん置けるが、今はそんなに作らないし、広くなくてもよいかも。
+底面が広いと餃子やハンバーグを一度にたくさん置けるが、[^furaipan-0701]今はそんなに作らないし、広くなくてもよいかも。
 
 #### 深さ
 
-深さがあると炒めものなどがこぼれにくい。それから丸みがあると、具材が動くので炒めやすい。ちなみに深さがあるのは炒め鍋とか中華鍋、北京鍋って呼ばれるらしい。
+深さがあると炒めものなどがこぼれにく、また丸みがあると、具材が動くので炒めやすい[^furaipan-0701]。ちなみに深さがあるのは炒め鍋とか中華鍋、北京鍋って呼ばれるらしい[^furaipan-0701]。
 
 炒めものはよく作るので、深さは優先度を上げる。
 
@@ -146,3 +144,4 @@ https://visalamcookware.com/ultimate-guide-to-stainless-steel-cookware-thickness
 [^can-you-use-soap-on-cast-iron-pans]: https://www.realsimple.com/can-you-use-soap-on-cast-iron-pans-11842550
 [^how-long-do-stainless-steel-pans-last]: https://chopchopusa.com/blogs/news/how-long-do-stainless-steel-pans-last
 [^how-long-do-stainless-steel-pots-last]: https://www.bobsredmill.com/articles/how-long-do-stainless-steel-pots-last
+[^furaipan-0701]: https://www.furaipan.com/kaigi/14/0701.shtml
