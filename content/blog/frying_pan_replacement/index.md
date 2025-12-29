@@ -126,11 +126,6 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 
 ひとまず2.5mm以上を基準とする。
 
-調べメモ：  
-- noteの記事（https://note.com/mihoharaya/n/ncfd0eed51e36）でも、長持ちさせたいなら鉄・ステンレスが有力って話がまとまってた。追加の裏付けとしてキープ。
-- https://www.reddit.com/r/Cooking/comments/13vnoqs/is_stainless_steel_the_only_nonbullshit_pan/：同じような考えの人
-- https://www.reddit.com/r/Cooking/comments/16ntqsp/if_you_could_only_pick_one_would_you_pick_cast/：ステンレスと鉄、どっちを選ぶ？的なやつ
-
 [^L38377]: https://www.t-fal.co.jp/pots-pans/stackable/products/ingenio-ih-rouge-unlimited-2100119749/
 [^CS-H2201B]: https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/MA_IB/zt790z634h01f.pdf
 [^induction_vs_radiant_cooktops]: https://www.reddit.com/r/Cooking/comments/1cfukgs/induction_vs_radiant_cooktops/
