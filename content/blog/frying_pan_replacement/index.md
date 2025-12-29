@@ -88,9 +88,9 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 
 いくつかのウェブサイト[^understanding-stovetop-cookware][^remy]をもとに基準を立てた。
 
-#### サイズ
+#### 容量
 
-今のフライパンと同じかもっと大きいもの。作り置きをするため、大量に料理できるものがよい。
+今のフライパンと同じかもっとたくさん入るもの。作り置きをするため、大量に料理できるものがよい。
 
 ただし、大きいフライパンで少量の料理をすると、料理が乗っていない場所が空焚きになってしまうのは注意すべきらしい[^mihoharaya-big-not-small]。
 
@@ -118,14 +118,13 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 
 #### 厚み
 
-厚い方が良いとされている[^understanding-stovetop-cookware][^heritage-steel][^mihoharaya-diff-iron-stainless]。
+厚い方が良いとされている[^understanding-stovetop-cookware][^heritage-steel][^mihoharaya-diff-iron-stainless][^mihoharaya-how-to-select-pan]。
 
 素材の熱電性が低いと、薄い材料の場合は表面の熱さにムラができてしまう[^understanding-stovetop-cookware][^heritage-steel]。
 
-https://note.com/mihoharaya/n/ncfd0eed51e36
-https://www.reddit.com/r/cookware/comments/1fc5jdx/what_is_the_best_thickness_for_stainless_steel/
-https://www.reddit.com/r/cookware/comments/1eu8nhk/different_stainless_steel_pan_thicknesses/
-https://visalamcookware.com/ultimate-guide-to-stainless-steel-cookware-thickness-and-buying-tips/
+厚さの基準は様々。2.5mm以上を求めるRedditのコメント[^reddit-2.5mm]や推奨する記事[^ultimate-guide-to-stainless-steel-cookware-thickness-and-buying-tips]もあれば、4mmくらいが良いとする記事[^bodenstaerke]もある。また、3層や5層になっているものは薄くても熱をよく分配するという指摘もある[^bodenstaerke]。
+
+ひとまず2.5mm以上を基準とする。
 
 調べメモ：  
 - noteの記事（https://note.com/mihoharaya/n/ncfd0eed51e36）でも、長持ちさせたいなら鉄・ステンレスが有力って話がまとまってた。追加の裏付けとしてキープ。
@@ -149,3 +148,7 @@ https://visalamcookware.com/ultimate-guide-to-stainless-steel-cookware-thickness
 [^heritage-steel]: https://www.heritagesteel.us/blogs/cookware-knowledge/the-5-rules-of-good-cookware?srsltid=AfmBOorFKDyUDiUF81nJ8nx_F-kHmSO4_5LpR4YP4_t2O6pxJc1Jd8NA
 [^mihoharaya-diff-iron-stainless]: https://note.com/mihoharaya/n/ncfd0eed51e36
 [^mihoharaya-big-not-small]: https://note.com/mihoharaya/n/n38da14b0baa0
+[^mihoharaya-how-to-select-pan]: https://note.com/mihoharaya/n/n1155ba3c0511
+[^reddit-2.5mm]: https://www.reddit.com/r/cookware/comments/1fc5jdx/comment/lm67y3m/
+[^ultimate-guide-to-stainless-steel-cookware-thickness-and-buying-tips]: https://visalamcookware.com/ultimate-guide-to-stainless-steel-cookware-thickness-and-buying-tips/
+[^bodenstaerke]: https://www.pfannenprofis.com/en-cz/pages/bodenstaerke
