@@ -126,8 +126,14 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 
 ひとまず2.5mm以上を基準とする。
 
+#### 重さ
+
+重いほうが厚みも出て良いとされている[^mihoharaya-diff-iron-stainless][^mihoharaya-how-to-select-pan]が、新宿の伊勢丹[^shinjuku-isetan]でフィスラーのオリジナルプロフィの28cmフライパン（約1.8kg）[^original-profi-frying-pan]を持ってみて重いと感じたので、片手パンは重くても2kg未満でないと厳しいと感じた。
+
+ただ、そこで勧められた同じオリジナルプロフィの28cmサーブパンは、同じく約1.8kgだが[^original-profi-serving-pan]、両手で持てるためあまり負担にはならなかった。
+
 [^L38377]: https://www.t-fal.co.jp/pots-pans/stackable/products/ingenio-ih-rouge-unlimited-2100119749/
-[^CS-H2201B]: https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/MA_IB/zt790z634h01f.pdf
+[^CS_H2201B]: https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/MA_IB/zt790z634h01f.pdf
 [^induction_vs_radiant_cooktops]: https://www.reddit.com/r/Cooking/comments/1cfukgs/induction_vs_radiant_cooktops/
 [^radiant_or_induction_cook_top_what_are_your]: https://www.reddit.com/r/Cooking/comments/iupi7q/radiant_or_induction_cook_top_what_are_your/
 [^induction_or_radiant_electric_range_for_cast_iron]: https://www.reddit.com/r/Cooking/comments/1b3decm/induction_or_radiant_electric_range_for_cast_iron/
@@ -147,3 +153,6 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 [^reddit-2.5mm]: https://www.reddit.com/r/cookware/comments/1fc5jdx/comment/lm67y3m/
 [^ultimate-guide-to-stainless-steel-cookware-thickness-and-buying-tips]: https://visalamcookware.com/ultimate-guide-to-stainless-steel-cookware-thickness-and-buying-tips/
 [^bodenstaerke]: https://www.pfannenprofis.com/en-cz/pages/bodenstaerke
+[^shinjuku-isetan]: https://www.mistore.jp/store/shinjuku.html
+[^original-profi-frying-pan]: https://global.fissler.com/en/products/opc2-pan?variant=56735218565469
+[^original-profi-serving-pan]: https://global.fissler.com/en/products/original-profi-collection-servierpfanne?_pos=1&_psq=serv&_ss=e&_v=1.0&variant=56806348063069
