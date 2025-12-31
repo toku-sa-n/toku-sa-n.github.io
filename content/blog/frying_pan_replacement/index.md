@@ -132,6 +132,12 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 
 ただ、そこで勧められた同じオリジナルプロフィの28cmサーブパンは、同じく約1.8kgだが[^original-profi-serving-pan]、両手で持てるためあまり負担にはならなかった。
 
+#### 底だけ厚い（Disk bottomed）か、全面多層か
+
+Disk bottomedだとかなり温まりにくい[^is_a_fullyclad_pan_better_than_disk_bottomed_in]。また、ソースを作る以外にあまり変わらないという意見もある[^is_a_fullyclad_pan_better_than_disk_bottomed_in]。
+
+Disk bottomedのほうがもっと均等に温まり、焦げにくいという意見もある[^disc_bottom_vs_clad_saucepan_for_moderate_home_use]。全面多層の方がエネルギーを消費せず材料を温められたり、簡単に掃除できたりする、という意見もある[^disc_bottom_vs_clad_saucepan_for_moderate_home_use]。Disc bottomの方が変形させやすい、という意見もある[^disc_bottom_vs_clad_saucepan_for_moderate_home_use]。
+
 [^L38377]: https://www.t-fal.co.jp/pots-pans/stackable/products/ingenio-ih-rouge-unlimited-2100119749/
 [^CS_H2201B]: https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/MA_IB/zt790z634h01f.pdf
 [^induction_vs_radiant_cooktops]: https://www.reddit.com/r/Cooking/comments/1cfukgs/induction_vs_radiant_cooktops/
@@ -156,3 +162,6 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 [^shinjuku-isetan]: https://www.mistore.jp/store/shinjuku.html
 [^original-profi-frying-pan]: https://global.fissler.com/en/products/opc2-pan?variant=56735218565469
 [^original-profi-serving-pan]: https://global.fissler.com/en/products/original-profi-collection-servierpfanne?_pos=1&_psq=serv&_ss=e&_v=1.0&variant=56806348063069
+[^is_a_fullyclad_pan_better_than_disk_bottomed_in]: https://www.reddit.com/r/Cooking/comments/5f2pxl/is_a_fullyclad_pan_better_than_disk_bottomed_in/
+[^disc_bottom_vs_clad_saucepan_for_moderate_home_use]: https://www.reddit.com/r/cookware/comments/1dyktsl/disc_bottom_vs_clad_saucepan_for_moderate_home_use/
+[^disc_bottom_vs_fullyclad_cookware_how_much_does]: https://www.reddit.com/r/cookware/comments/11prssc/disc_bottom_vs_fullyclad_cookware_how_much_does/
