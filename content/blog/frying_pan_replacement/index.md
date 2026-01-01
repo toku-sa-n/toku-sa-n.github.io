@@ -128,15 +128,17 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 
 #### 重さ
 
-重いほうが厚みも出て良いとされている[^mihoharaya-diff-iron-stainless][^mihoharaya-how-to-select-pan]が、新宿の伊勢丹[^shinjuku-isetan]でフィスラーのオリジナルプロフィの28cmフライパン（約1.8kg）[^original-profi-frying-pan]を持ってみて重いと感じたので、片手パンは重くても2kg未満でないと厳しいと感じた。
+重いほうが厚みも出て良いとされている[^mihoharaya-diff-iron-stainless][^mihoharaya-how-to-select-pan]が、新宿の伊勢丹[^shinjuku-isetan]でフィスラーのオリジナルプロフィの28cmフライパン（約1.8kg）[^original-profi-frying-pan]を持ってみて重いと感じたので、片手パンは重くても2kg未満、理想はもっと軽いものという結論に至った。
 
-ただ、そこで勧められた同じオリジナルプロフィの28cmサーブパンは、同じく約1.8kgだが[^original-profi-serving-pan]、両手で持てるためあまり負担にはならなかった。
+ただ、そこで勧められた同じオリジナルプロフィの28cmサーブパンは、同じく約1.8kgだが[^original-profi-serving-pan]、両手で持てるためあまり負担にはならなかった。両手ハンドルだったら2kg近くでも問題なさそう。
 
 #### 底だけ厚い（Disk bottomed）か、全面多層か
 
 Disk bottomedだとかなり温まりにくい[^is_a_fullyclad_pan_better_than_disk_bottomed_in]。また、ソースを作る以外にあまり変わらないという意見もある[^is_a_fullyclad_pan_better_than_disk_bottomed_in]。
 
 Disk bottomedのほうがもっと均等に温まり、焦げにくいという意見もある[^disc_bottom_vs_clad_saucepan_for_moderate_home_use]。全面多層の方がエネルギーを消費せず材料を温められたり、簡単に掃除できたりする、という意見もある[^disc_bottom_vs_clad_saucepan_for_moderate_home_use]。Disc bottomの方が変形させやすい、という意見もある[^disc_bottom_vs_clad_saucepan_for_moderate_home_use]。
+
+全面多層は鍋料理ならば、液体が入っているため十分に側面が温まらないのであまり利点がない、という意見もある[^disc_bottom_vs_fullyclad_cookware_how_much_does]。フライパンのように側面が曲面ならば全面多層、側面が直角ならDisk bottomedという意見もある[^disc_bottom_vs_fullyclad_cookware_how_much_does]。また上記の意見と矛盾するが、Disc bottomedの方が変形に強い、という意見もある[^disc_bottom_vs_fullyclad_cookware_how_much_does]。
 
 [^L38377]: https://www.t-fal.co.jp/pots-pans/stackable/products/ingenio-ih-rouge-unlimited-2100119749/
 [^CS_H2201B]: https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/MA_IB/zt790z634h01f.pdf
