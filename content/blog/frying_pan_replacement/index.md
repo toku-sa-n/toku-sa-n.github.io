@@ -11,7 +11,7 @@ date = 2025-12-06
 - 材料がこびり付く
 - 茶色い痕がある
 
-焦げ付きが原因かと思ったものの取り除くことができず、コーティング剥がれと考え、新しい調理器具を買うことにした。
+焦げ付きが原因かと思ったものの取り除けず、コーティング剥がれと判断し、新しい調理器具を買うことにした。
 
 ### 状況
 
@@ -31,11 +31,11 @@ date = 2025-12-06
 
 #### コンロ
 
-CS-H2201Bを使用している。IHヒーターとラジエントヒーターがあり、それぞれで使用できる器具が異なる。条件は以下の通り[^CS-H2201B]。
+CS-H2201Bを使用している。IHヒーターとラジエントヒーターがあり、それぞれ使用できる器具が異なる。条件は以下の通り[^CS-H2201B]。
 
 ##### IHヒーターで使える器具
 
-以下の材質のもの。
+材質は以下。
 
 - 鉄
 - 鉄鋳物
@@ -139,6 +139,10 @@ Disk bottomedだとかなり温まりにくい[^is_a_fullyclad_pan_better_than_d
 Disk bottomedのほうがもっと均等に温まり、焦げにくいという意見もある[^disc_bottom_vs_clad_saucepan_for_moderate_home_use]。全面多層の方がエネルギーを消費せず材料を温められたり、簡単に掃除できたりする、という意見もある[^disc_bottom_vs_clad_saucepan_for_moderate_home_use]。Disc bottomの方が変形させやすい、という意見もある[^disc_bottom_vs_clad_saucepan_for_moderate_home_use]。
 
 全面多層は鍋料理ならば、液体が入っているため十分に側面が温まらないのであまり利点がない、という意見もある[^disc_bottom_vs_fullyclad_cookware_how_much_does]。フライパンのように側面が曲面ならば全面多層、側面が直角ならDisk bottomedという意見もある[^disc_bottom_vs_fullyclad_cookware_how_much_does]。また上記の意見と矛盾するが、Disc bottomedの方が変形に強い、という意見もある[^disc_bottom_vs_fullyclad_cookware_how_much_does]。
+
+### 候補一覧
+
+
 
 [^L38377]: https://www.t-fal.co.jp/pots-pans/stackable/products/ingenio-ih-rouge-unlimited-2100119749/
 [^CS_H2201B]: https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/MA_IB/zt790z634h01f.pdf
