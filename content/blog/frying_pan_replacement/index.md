@@ -108,7 +108,7 @@ CS-H2201Bを使用している。IHヒーターとラジエントヒーターが
 - 鉄の場合は水に浸したままにできない[^can-you-use-soap-on-cast-iron-pans]。洗うのが面倒な時にとりあえず水に浸しておく、というのが出来ないのは辛い。
 - ステンレスの寿命はページによって10年[^how-long-do-stainless-steel-pans-last]から数十年[^how-long-do-stainless-steel-pots-last]とされており、長い。
 - 今使っている一人用鍋がステンレスであり、扱いに慣れている。
-- ステンレス単体だと熱する時間が掛かり、銅やアルミが貼り付いていることが推奨されている[^understanding-stovetop-cookware][^heritage-steel]。
+- ステンレス単体だと熱する時間が掛かり、銅やアルミが貼り付いていることが推奨されているため[^understanding-stovetop-cookware][^heritage-steel]。
 
 #### 厚み
 
