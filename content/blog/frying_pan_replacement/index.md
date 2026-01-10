@@ -179,9 +179,6 @@ GeminiやChatGPTのDeep Researchで調べてもらった結果、以下の候補
 [^L38377]: https://www.t-fal.co.jp/pots-pans/stackable/products/ingenio-ih-rouge-unlimited-2100119749/
 [^L98634]: https://www.t-fal.co.jp/pots-pans/stackable/products/ingenio-handle-2100126741/
 [^CS-H2201B]: https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/MA_IB/zt790z634h01f.pdf
-[^induction_vs_radiant_cooktops]: https://www.reddit.com/r/Cooking/comments/1cfukgs/induction_vs_radiant_cooktops/
-[^radiant_or_induction_cook_top_what_are_your]: https://www.reddit.com/r/Cooking/comments/iupi7q/radiant_or_induction_cook_top_what_are_your/
-[^induction_or_radiant_electric_range_for_cast_iron]: https://www.reddit.com/r/Cooking/comments/1b3decm/induction_or_radiant_electric_range_for_cast_iron/
 [^understanding-stovetop-cookware]: https://forums.egullet.org/topic/25717-understanding-stovetop-cookware/
 [^frying-pan-vs-wok]: https://www.furaipan.com/kaigi/14/0701.shtml
 [^remy]: https://remy.jp/column/fryingpan
