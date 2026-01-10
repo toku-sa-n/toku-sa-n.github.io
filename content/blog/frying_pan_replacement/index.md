@@ -194,7 +194,6 @@ GeminiやChatGPTのDeep Researchで調べてもらった結果、以下の候補
 [^frying-pan-vs-wok]: https://www.furaipan.com/kaigi/14/0701.shtml
 [^remy]: https://remy.jp/column/fryingpan
 [^kyocera-frying-pan-lifetime]: https://kyocera-kitchen.com/blogs/feature/frying-pan-lifespan?srsltid=AfmBOoo__VXoy7laMwplBqVMB08H92LAD06UFv0cawhF2M4x3JeCq-gP
-[^iron-pro-seasoning]: https://iron-pro.jp/seasoning/
 [^can-you-use-soap-on-cast-iron-pans]: https://www.realsimple.com/can-you-use-soap-on-cast-iron-pans-11842550
 [^how-long-do-stainless-steel-pans-last]: https://chopchopusa.com/blogs/news/how-long-do-stainless-steel-pans-last
 [^how-long-do-stainless-steel-pots-last]: https://www.bobsredmill.com/articles/how-long-do-stainless-steel-pots-last
