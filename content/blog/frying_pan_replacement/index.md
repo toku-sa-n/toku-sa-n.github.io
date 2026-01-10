@@ -181,8 +181,8 @@ GeminiやChatGPTのDeep Researchで調べてもらった結果、以下の候補
 |ジオ・プロダクト 浅型両手鍋 25cm|26.8|25.0|7.4|3.4|未記載|1.78|◯|全面7層構造（内側から18-8ステンレス/アルミニウム/アルミニウム合金/アルミニウム/アルミニウム合金/18-0ステンレス）|[^geo-shallowpot]|
 |ビタクラフト・プロ 28cm|28.0|未記載|5.5|未記載|未記載|未記載|◯|全面5層構造（ステンレススティール/1145アルミニウム/3004アルミニウム合金/1145アルミニウム/ステンレススティール）|[^vitacraft-pro-28]|
 |デバイヤー アフィニティ 28cm|28.0|25.5|8.5|5|未記載|2.0|◯|多層ステンレス鋼|[^debuyer-affinity-28]|
-|フィスラー オリジナルプロフィ フライパン 28cm|28.0|22.5|7.0|3.0|7.0（底面）|1.828|◯|18/10ステンレス鋼|[^fissler-opc-28]|
-|フィスラー オリジナルプロフィ サーブパン 28cm|28.0|22.5|7.0|3.0|6.8（底面）|1.792|◯|18/10ステンレス鋼|[^original-profi-serving-pan]|
+|フィスラー オリジナルプロフィ フライパン 28cm|28.0|22.5|7.0|3.0|7.0（底面）|1.828|◯|18/10ステンレス鋼（Cookstarベース：アルミコア封入）|[^fissler-opc-28][^fissler-quality-features]|
+|フィスラー オリジナルプロフィ サーブパン 28cm|28.0|22.5|7.0|3.0|6.8（底面）|1.792|◯|18/10ステンレス鋼（Cookstarベース：アルミコア封入）|[^original-profi-serving-pan][^fissler-quality-features]|
 
 [^L38377]: https://www.t-fal.co.jp/pots-pans/stackable/products/ingenio-ih-rouge-unlimited-2100119749/
 [^L98634]: https://www.t-fal.co.jp/pots-pans/stackable/products/ingenio-handle-2100126741/
@@ -220,3 +220,4 @@ GeminiやChatGPTのDeep Researchで調べてもらった結果、以下の候補
 [^vitacraft-pro-28]: https://www.vitacraft.co.jp/shop/products/detail.php?product_id=1754
 [^debuyer-affinity-28]: https://www.debuyer.com/en/1-806.html
 [^fissler-opc-28]: https://global.fissler.com/en/products/opc2-pan?variant=56735218565469
+[^fissler-quality-features]: https://global.fissler.com/en/blogs/cooking-tips/quality-features
