@@ -275,7 +275,7 @@ GeminiやChatGPTのDeep Researchで調べてもらった結果、以下の候補
 [^disc_bottom_vs_clad_saucepan_for_moderate_home_use]: https://www.reddit.com/r/cookware/comments/1dyktsl/disc_bottom_vs_clad_saucepan_for_moderate_home_use/
 [^disc_bottom_vs_fullyclad_cookware_how_much_does]: https://www.reddit.com/r/cookware/comments/11prssc/disc_bottom_vs_fullyclad_cookware_how_much_does/
 [^pasta-pot]: https://www.roomie.jp/2023/08/1044808/
-[^debuyer-multilayer-or-impact-bonded]: https://www.debuyer.com/en/blog/post/inox-multicouche-triply-5ply-ou-fond-rapporte-que-choisir-.html?utm_source=chatgpt.com
+[^debuyer-multilayer-or-impact-bonded]: https://www.debuyer.com/en/blog/post/inox-multicouche-triply-5ply-ou-fond-rapporte-que-choisir-.html
 [^cladded-sidewalls-vs-disc-bottomed-cookware]: https://www.centurylife.org/cladded-sidewalls-vs-disc-bottomed-cookware-which-is-better/
 [^geo-sautepan]: https://miyazaki-ss.co.jp/product/geoproduct-sautepan/
 [^geo-shallowpot]: https://miyazaki-ss.co.jp/product/geoproduct-shallowpot/
