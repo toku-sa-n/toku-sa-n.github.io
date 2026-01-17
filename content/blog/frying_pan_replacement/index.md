@@ -342,6 +342,8 @@ GeminiやChatGPTのDeep Researchで調べてもらった結果、以下の候補
 |---|---|---|---|---|---|---|---|---|---|
 |ジオ・プロダクト ソテーパン 25cm|26.8|25.0|6.0|2.5|未記載|1.92|◯|全面7層構造（18-8ステンレス/アルミニウム/アルミニウム合金/アルミニウム/アルミニウム合金/18-0ステンレス）|[^geo-sautepan]|
 |ジオ・プロダクト 浅型両手鍋 25cm|26.8|25.0|7.4|3.4|未記載|1.78|◯|全面7層構造（内側から18-8ステンレス/アルミニウム/アルミニウム合金/アルミニウム/アルミニウム合金/18-0ステンレス）|[^geo-shallowpot]|
+|クーベル 27cm 深型|27.0|16.0|8.4|4.0|1.3|1.0|◯|ステンレス3層鋼／セラミック塗装|[^kubell-27deep]|
+|クーベル ソテーパン 27cm|27.0|24.0|6.0|未記載|2.0|1.231|◯|ステンレス3層鋼／セラミック塗装|[^kubell-saute-27]|
 |ビタクラフト プロ フライパン 28cm|28.0|未記載|5.5|未記載|2.5|約1.4（3.1ポンド）|◯|全面5層構造（ステンレススティール/1145アルミニウム/3004アルミニウム合金/1145アルミニウム/ステンレススティール）|[^vitacraft-pro-28][^vitacraft-amazon]|
 |デバイヤー アフィニティ ソテーパン 28cm|28.0|25.5|8.5|5|未記載|2.0|◯|多層ステンレス鋼|[^debuyer-affinity-28]|
 |Demeyere Multiline 7 フライパン 32cm|32.0|26.0|5.9|未記載|3.3|2.29|◯|全面7層構造（18/10ステンレス、7層材）|[^demeyere-multiline-32]|
@@ -381,6 +383,8 @@ GeminiやChatGPTのDeep Researchで調べてもらった結果、以下の候補
 [^cladded-sidewalls-vs-disc-bottomed-cookware]: https://www.centurylife.org/cladded-sidewalls-vs-disc-bottomed-cookware-which-is-better/
 [^geo-sautepan]: https://miyazaki-ss.co.jp/product/geoproduct-sautepan/
 [^geo-shallowpot]: https://miyazaki-ss.co.jp/product/geoproduct-shallowpot/
+[^kubell-27deep]: https://ku-bell.com/products/stainless27deep
+[^kubell-saute-27]: https://ku-bell.com/products/stainlesssaute27?srsltid=AfmBOoqF3P8KAi-rzXtfaXfE6OrLF81w7OYBtULmHyzlZSAEA5gkM7i9
 [^vitacraft-pro-28]: https://www.vitacraft.co.jp/shop/products/detail.php?product_id=1754
 [^vitacraft-hexaply]: https://www.vitacraft.co.jp/lineup/hexaply/
 [^vitacraft-hexaply-rakuten]: https://item.rakuten.co.jp/livingut/4973673361326/
