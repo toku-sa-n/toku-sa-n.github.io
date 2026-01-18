@@ -369,6 +369,10 @@ GeminiやChatGPTのDeep Researchで調べたり、自分で調べたりし、以
 |Demeyere Industry 5 フライパン 32cm|32.0|26.0|5.5|3.75|未記載|1.91|◯|5層構造（18/10ステンレス鋼、アルミコア）|[^zwilling-industry5-32]|
 |Demeyere Multiline 7 フライパン 32cm|32.0|26.0|5.9|未記載|3.3|2.29|◯|全面7層構造（18/10ステンレス、7層材）|[^demeyere-multiline-32]|
 
+ジオ・プロダクトの製品はちょっと直径が小さい。クーベルの製品はちょっと厚みが薄い。デバイヤーやIKEAのやつは取っ手がリベット留めになっている。フィスラーはDisk bottomed。ビタクラフトは部品交換制だったり、蓋が販売されていなかったりする。ただし、両シリーズの交換部品共に、古い製品も含めてかなり広範に対応しているので、交換部品が廃盤になるおそれはなさそう[^vitacraft-washer]。Demeyereのは日本で購入するには輸入代行店経由で買うしか無い。
+
+一番気になっているのはDemeyereのMultilineパン。2kgを少しオーバーしているが、一番分厚く、また上部直径が32cmとあり、表面積も大きい。ただし、日本で取り扱っておらず、輸入代行に頼るしか無い。
+
 [^L38377]: https://www.t-fal.co.jp/pots-pans/stackable/products/ingenio-ih-rouge-unlimited-2100119749/
 [^L98634]: https://www.t-fal.co.jp/pots-pans/stackable/products/ingenio-handle-2100126741/
 [^CS-H2201B]: https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/MA_IB/zt790z634h01f.pdf
@@ -439,3 +443,4 @@ GeminiやChatGPTのDeep Researchで調べたり、自分で調べたりし、以
 [^arai-seisakusho]: https://www.arai-seisakusho.com/
 [^demeyere-catalogue]: https://www.zwilling.com/on/demandware.static/-/Sites-zwilling-dk-Library/default/dw757d9af5/downloads/Demeyere_catalogue_2025.pdf
 [^vitacraft-faq]: https://www.vitacraft.co.jp/howto/faq_stainless.html
+[^vitacraft-washer]: https://www.vitacraft.co.jp/shop/products/detail.php?product_id=92&utm_source=Official&utm_medium=site&utm_campaign=parts
