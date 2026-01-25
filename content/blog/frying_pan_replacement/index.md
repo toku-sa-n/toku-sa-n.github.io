@@ -359,15 +359,17 @@ GeminiやChatGPTのDeep Researchで調べたり、自分で調べたりし、以
 - フィスラーはDisk bottomed
 - ビタクラフトは部品交換制だったり、蓋が販売されていなかったりする
   - ただし交換部品は古い製品も含めかなり広範に対応しているので、廃盤になるおそれはなさそう
-- Demeyereは日本で購入するには輸入代行店経由か、海外Webサイトで購入するしかない
+- Demeyereは日本で購入するには輸入代行店経由か、個人輸入を行う必要がある
 
 #### 現時点で特に気になっているもの
 
 - Demeyere Multiline
   - 2kgを少しオーバーしているが、一番分厚く、上部直径32cmで表面積も大きい
+    - 重さに関しては、今まで使用していたフライパンに水を入れて再現してみたが、問題なさそうだった
   - ただし日本で取扱がなく、輸入代行店でも取り扱っていないため、個人輸入を行うしかない
   - Industryは輸入代行店で取り扱っているものがいくつか見つかった
-- ビタクラフト（次点）
+  - ちなみにMultilineがいけるならRedditでよく話題に上がるProline（2.74kg）もいけるか？と思ったが、水を入れたフライパンで再現したところ流石に重すぎるという結論に至ったのと、Multilineの方がProlineより薄く、温度変化により早く反応したり扱いやすかったりと、もっと汎用性が高いと指摘もあり[^demeyere-frying-pans-review-proline-multiline-industry-ecoline-etc]、Multilineで良さそう。
+- ビタクラフトのVシリーズ or ヘキサプライ（次点）
   - Multilineよりは少し小さいが、深さ以外は今までのフライパンと大きな差はない
   - 蓋を購入できないのは少し不安
   - 交換部品の問題は特になさそう
@@ -444,3 +446,8 @@ GeminiやChatGPTのDeep Researchで調べたり、自分で調べたりし、以
 [^vitacraft-faq]: https://www.vitacraft.co.jp/howto/faq_stainless.html
 [^vitacraft-washer]: https://www.vitacraft.co.jp/shop/products/detail.php?product_id=92&utm_source=Official&utm_medium=site&utm_campaign=parts
 [^donabe-ih]: なお、土鍋に関してはIH対応と謳っていても、使えない場合があるらしい（https://withnews.jp/article/f0241224001qq000000000000000W0bx10701qq000027657A）
+[^nichan-1]: https://kizuna.5ch.net/test/read.cgi/cook/1541618704
+[^nichan-2]: https://kizuna.5ch.net/test/read.cgi/cook/1663287310
+[^nichan-3]: https://kizuna.5ch.net/test/read.cgi/cook/1695666901/
+[^demeyere-proline-32]: https://www.zwilling.com/uk/demeyere-proline-7-32-cm-18%2F10-stainless-steel-frying-pan-silver-40850-939-0/40850-939-0.html?cgid=our-brands_demeyere_pans_proline
+[^demeyere-frying-pans-review-proline-multiline-industry-ecoline-etc]: https://www.kitchenknifeforums.com/threads/demeyere-frying-pans-review-proline-multiline-industry-ecoline-etc.63690/
