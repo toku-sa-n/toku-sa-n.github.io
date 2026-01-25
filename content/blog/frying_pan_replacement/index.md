@@ -376,6 +376,15 @@ GeminiやChatGPTのDeep Researchで調べたり、自分で調べたりし、以
   - Multilineよりは少し小さいが、深さ以外は今までのフライパンと大きな差はない
   - 蓋を購入できないのは少し不安
   - 交換部品の問題は特になさそう
+  - Redditでは全くと言ってよいほど挙がらないが、５ちゃんねるだとよく話題に上がり[^gochan-1][^gochan-2][^gochan-3]、評判も悪くない
+
+### で、どれを買ったの？
+
+DemeyereのMultilineを海外Webサイトで購入した。
+
+表面積の大きさと、分厚さが決め手となった。ビタクラフトの製品も悪くないし、実際に実物で感触を得たが、やはり大量の食材を炒めたく、もっと大きなMultilineの方を選択した。
+
+個人輸入にかかわる保証関連の心配事は、全部飲むことにした。仮に初期不良や輸送中の事故による破損などがあれば、海外まで頑張って送ることにした。苦労したらその時はビタクラフトなどの国内で保証を受けられるものにするかもしれない。
 
 [^L38377]: https://www.t-fal.co.jp/pots-pans/stackable/products/ingenio-ih-rouge-unlimited-2100119749/
 [^L98634]: https://www.t-fal.co.jp/pots-pans/stackable/products/ingenio-handle-2100126741/
@@ -449,8 +458,8 @@ GeminiやChatGPTのDeep Researchで調べたり、自分で調べたりし、以
 [^vitacraft-faq]: https://www.vitacraft.co.jp/howto/faq_stainless.html
 [^vitacraft-washer]: https://www.vitacraft.co.jp/shop/products/detail.php?product_id=92&utm_source=Official&utm_medium=site&utm_campaign=parts
 [^donabe-ih]: なお、土鍋に関してはIH対応と謳っていても、使えない場合があるらしい（https://withnews.jp/article/f0241224001qq000000000000000W0bx10701qq000027657A）
-[^nichan-1]: https://kizuna.5ch.net/test/read.cgi/cook/1541618704
-[^nichan-2]: https://kizuna.5ch.net/test/read.cgi/cook/1663287310
-[^nichan-3]: https://kizuna.5ch.net/test/read.cgi/cook/1695666901/
+[^gochan-1]: https://kizuna.5ch.net/test/read.cgi/cook/1541618704
+[^gochan-2]: https://kizuna.5ch.net/test/read.cgi/cook/1663287310
+[^gochan-3]: https://kizuna.5ch.net/test/read.cgi/cook/1695666901/
 [^demeyere-proline-32]: https://www.zwilling.com/uk/demeyere-proline-7-32-cm-18%2F10-stainless-steel-frying-pan-silver-40850-939-0/40850-939-0.html?cgid=our-brands_demeyere_pans_proline
 [^demeyere-frying-pans-review-proline-multiline-industry-ecoline-etc]: https://www.kitchenknifeforums.com/threads/demeyere-frying-pans-review-proline-multiline-industry-ecoline-etc.63690/
