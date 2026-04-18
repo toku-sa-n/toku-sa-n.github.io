@@ -69,7 +69,7 @@ sudo mount /dev/sdb1 /mnt/gentoo/boot
 
 ```sh
 cd /mnt/gentoo
-sudo wget <Stage 3ファイルのURL>
+sudo wget （Stage 3ファイルのURL）
 sudo tar xpvf stage3-arm64-openrc-20260412T231602Z.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
 ```
 
