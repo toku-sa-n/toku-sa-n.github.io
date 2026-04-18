@@ -70,7 +70,7 @@ sudo mount /dev/sdb1 /mnt/gentoo/boot
 ```sh
 cd /mnt/gentoo
 sudo wget （Stage 3ファイルのURL）
-sudo tar xpvf （Stage 3ファイル） --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
+sudo tar xpvf （Stage 3ファイル） --xattrs-include='*.*' --numeric-owner
 ```
 
 #### `/mnt/gentoo/etc/portage/make.conf`を弄る
