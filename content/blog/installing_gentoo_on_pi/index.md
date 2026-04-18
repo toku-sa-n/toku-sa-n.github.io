@@ -55,6 +55,7 @@ sudo mkfs.ext4 /dev/sdb3
 いつもの通り。
 
 ```sh
+sudo mkdir /mnt/gentoo
 sudo mount /dev/sdb3 /mnt/gentoo
 sudo mkdir /mnt/gentoo/boot
 sudo mount /dev/sdb1 /mnt/gentoo/boot
