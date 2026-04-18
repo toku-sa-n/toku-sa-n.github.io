@@ -6,5 +6,5 @@ build_search_index = false
 title = "備忘録やめた"
 description = "toku-sa-nによる個人ブログ"
 
-[markdown]
-highlight_code = true
+[markdown.highlighting]
+theme = "one-dark-pro"
