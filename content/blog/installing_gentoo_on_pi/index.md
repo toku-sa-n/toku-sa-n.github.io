@@ -87,7 +87,14 @@ sudo tar xpvf （Stage 3ファイル） --xattrs-include='*.*' --numeric-owner
 sudo emerge app-emulation/qemu
 ```
 
-そして`/etc/init.d/qemu-binfmt`を編集し、`QEMU_BINFMT_FLAGS:=OC`となっている部分を`QEMU_BINFMT_FLAGS:=OCF`とする。
+そして`/etc/init.d/qemu-binfmt`を編集し、`QEMU_BINFMT_FLAGS:=OC`となっている部分を`QEMU_BINFMT_FLAGS:=OCF`としたあと、以下のコマンドを実行する。
+
+```sh
+# 場合によってはstartではなくrestartとなる。
+sudo /etc/init.d/qemu-binfmt start
+```
+
+これが一体何をしているのかというと、binfmt_miscというLinuxの仕組みを利用している。詳細は既に存在する解説記事[^binfmt-misc]を読んでいただきたいが、バイナリの最初の部分が特定のバイト列になっている場合に、指定したインタプリタを実行するという機能がある。これを利用し、AArch64のELFファイルを実行する際は、`qemu-aarch64`を使用するよう指定するのが`/etc/init.d/qemu-binfmt restart`の役目。`binfmt_misc`の状況は`/proc/sys/fs/binfmt_misc/`配下にあるファイルで確認できる。`qemu-aarch64`の設定は`/proc/sys/fs/binfmt_misc/qemu-aarch64`で確認できる。ちなみに`QEMU_BINFMT_FLAGS`を`OC`から`OCF`にした理由は、`F`というフラグにある。`F`フラグを使用していない場合は、バイナリを実行する時に初めて`binfmt_misc`に登録したインタプリタが実行されるが、`chroot`の場合だと、`chroot`した先で`/bin/bash`というAArch64バイナリを実行するが、その中で`/usr/bin/qemu-aarch64`を探してしまう。`F`というフラグをつけて`binfmt_misc`に登録すると、その登録時点でインタプリタを開き、該当バイナリを実行する際はその既に開いてあるバイナリを利用するため、このような問題が発生しない。
 
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
@@ -95,3 +102,4 @@ sudo emerge app-emulation/qemu
 [^boot-or-boot-firmware]: https://www.raspberrypi.com/documentation/computers/config_txt.html
 [^rustflags]: https://wiki.gentoo.org/wiki/Rust#Environment_variables
 [^makeopts]: https://wiki.gentoo.org/wiki/MAKEOPTS
+[^binfmt-misc]: https://docs.kernel.org/admin-guide/binfmt-misc.html
