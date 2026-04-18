@@ -17,15 +17,21 @@ date = 2026-04-18
 
 #### パーティションを作る
 
-| パーティション | ファイルシステム | サイズ |
-|----------------|------------------|--------|
-| /dev/sdb1      | vfat             | 512MB  |
+| パーティション | ファイルシステム | サイズ   |
+|----------------|------------------|----------|
+| /dev/sdb1      | vfat             | 512MB    |
+| /dev/sdb2      | swap             | 2GB      |
+| /dev/sdb3      | ext4             | 残り全部 |
 
 Raspberry PiはUEFIを用いて起動するわけではないが、起動可能なパーティションというものが必要[^boot-partition]。その条件は以下の通り。
 - FAT12 or FAT16 or FAT32でフォーマットされている。
 - `start.elf`が含まれている。
 
 `/dev/sdb1`のサイズは自由だが、Raspberry Pi OSイメージを作成するスクリプトが512MBで起動パーティションを作成しているので、それに倣った[^boot-size]。
+
+Swapの大きさに根拠はない。
+
+`/dev/sdb3`のファイルシステムはext4とした。以前のAMD64のハンドブックでもext4が使われていたが、いつからかxfsに書き換わっていた。ただ、ext4では拡張・縮小の両方ができるのに対し、xfsでは拡張しかできないため、ext4とした。
 
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
