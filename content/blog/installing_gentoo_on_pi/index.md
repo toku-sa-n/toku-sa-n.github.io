@@ -70,10 +70,15 @@ sudo mount /dev/sdb1 /mnt/gentoo/boot
 ```sh
 cd /mnt/gentoo
 sudo wget （Stage 3ファイルのURL）
-sudo tar xpvf stage3-arm64-openrc-20260412T231602Z.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
+sudo tar xpvf （Stage 3ファイル） --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
 ```
+
+#### `/mnt/gentoo/etc/portage/make.conf`を弄る
+
+いつもの通り。最近はRustで書かれたプログラムも多いので、`RUSTFLAGS`も適切に設定すると良い。また`MAKEOPTS`をこのファイル内では未設定にすると、自動で値が設定されるようになった[^makeopts]。
 
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
 [^boot-size]: https://github.com/RPi-Distro/pi-gen/blob/d2f70c5af1f007626c52f773f8e22209c4a34d38/export-image/prerun.sh
 [^boot-or-boot-firmware]: https://www.raspberrypi.com/documentation/computers/config_txt.html
+[^makeopts]: https://wiki.gentoo.org/wiki/MAKEOPTS
