@@ -65,11 +65,12 @@ sudo mount /dev/sdb1 /mnt/gentoo/boot
 
 #### ベースシステムをインストールする
 
-いつもどおり。arm64のStage 3ファイルは[]こちらにある](https://www.gentoo.org/downloads/arm64/#stages)。
+いつもどおり。arm64のStage 3ファイルは[こちらにある](https://www.gentoo.org/downloads/arm64/#stages)。
 
 ```sh
 cd /mnt/gentoo
 sudo wget <Stage 3ファイルのURL>
+sudo tar xpvf stage3-arm64-openrc-20260412T231602Z.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
 ```
 
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
