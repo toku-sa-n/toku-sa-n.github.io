@@ -75,10 +75,23 @@ sudo tar xpvf （Stage 3ファイル） --xattrs-include='*.*' --numeric-owner
 
 #### `/mnt/gentoo/etc/portage/make.conf`を弄る
 
-いつもの通り。最近はRustで書かれたプログラムも多いので、`RUSTFLAGS`も適切に設定すると良い。また`MAKEOPTS`をこのファイル内では未設定にすると、自動で値が設定されるようになった[^makeopts]。
+いつもの通り。最近はRustで書かれたプログラムも多いので、`RUSTFLAGS`も適切に設定すると良い[^rustflags]。また`MAKEOPTS`をこのファイル内では未設定にすると、自動で値が設定されるようになった[^makeopts]。
+
+#### `chroot`のための準備
+
+通常ならばここで`chroot`をして子機の中に入るのだが、親機がAMD64で子機がarm64なため、アーキテクチャ違いにより単純には`chroot`できない。そこでQEMUを間接的に実行することで、`chroot`を成功させる。
+
+とりあえず`qemu`をemergeする。
+
+```sh
+sudo emerge app-emulation/qemu
+```
+
+そして`/etc/init.d/qemu-binfmt`を編集し、`QEMU_BINFMT_FLAGS:=OC`となっている部分を`QEMU_BINFMT_FLAGS:=OCF`とする。
 
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
 [^boot-size]: https://github.com/RPi-Distro/pi-gen/blob/d2f70c5af1f007626c52f773f8e22209c4a34d38/export-image/prerun.sh
 [^boot-or-boot-firmware]: https://www.raspberrypi.com/documentation/computers/config_txt.html
+[^rustflags]: https://wiki.gentoo.org/wiki/Rust#Environment_variables
 [^makeopts]: https://wiki.gentoo.org/wiki/MAKEOPTS
