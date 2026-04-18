@@ -63,6 +63,15 @@ sudo mount /dev/sdb1 /mnt/gentoo/boot
 
 なお、Raspberry Pi OSのBookworm以降では、起動パーティションは `/boot/firmware` にあったようだが、それ以前は `/boot` にあったようで、OSのバージョンによって異なっている[^boot-or-boot-firmware]。今回 `/boot` を選んだのは、慣れから。
 
+#### ベースシステムをインストールする
+
+いつもどおり。arm64のStage 3ファイルは[]こちらにある](https://www.gentoo.org/downloads/arm64/#stages)。
+
+```sh
+cd /mnt/gentoo
+sudo wget <Stage 3ファイルのURL>
+```
+
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
 [^boot-size]: https://github.com/RPi-Distro/pi-gen/blob/d2f70c5af1f007626c52f773f8e22209c4a34d38/export-image/prerun.sh
