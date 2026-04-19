@@ -125,11 +125,11 @@ export PS1="(chroot) ${PS1}"
 
 #### パッケージを更新する
 
-いつもどおり
+パッケージを更新するのはいつもどおりだが、`emerge`はいつもどおりには行かない。というのも、単純に`emerge`を実行すると、`qemu: qemu_thread_create: Invalid argument`というエラーが出て失敗してしまう。これは既知の問題のようで[^bug-703278]、これを回避するにはサンドボックス機能を一部無効にする必要がある[^gentoo-linux-cross-build]。ちょっとセキュリティ的には悪いかも。
 
 ```sh
 emerge-webrsync
-emerge -avtuDU @world
+FEATURES="-pid-sandbox -network-sandbox" emerge -avtuDU @world
 ```
 
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
@@ -139,3 +139,5 @@ emerge -avtuDU @world
 [^rustflags]: https://wiki.gentoo.org/wiki/Rust#Environment_variables
 [^makeopts]: https://wiki.gentoo.org/wiki/MAKEOPTS
 [^binfmt-misc]: https://docs.kernel.org/admin-guide/binfmt-misc.html
+[^bug-703278]: https://bugs.gentoo.org/703278
+[^gentoo-linux-cross-build]: https://unagidojyou.com/2025/08-20/gentoo-linux_cross-bulid/
