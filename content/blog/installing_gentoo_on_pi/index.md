@@ -77,7 +77,7 @@ sudo tar xpvf （Stage 3ファイル） --xattrs-include='*.*' --numeric-owner
 
 いつもの通り。最近はRustで書かれたプログラムも多いので、`RUSTFLAGS`も適切に設定すると良い[^rustflags]。また`MAKEOPTS`をこのファイル内では未設定にすると、自動で値が設定されるようになった[^makeopts]。
 
-#### `chroot`のための準備
+#### chrootする
 
 通常ならばここで`chroot`をして子機の中に入るのだが、親機がAMD64で子機がarm64なため、アーキテクチャ違いにより単純には`chroot`できない。そこでQEMUを間接的に実行することで、`chroot`を成功させる。
 
@@ -94,7 +94,43 @@ sudo emerge app-emulation/qemu
 sudo /etc/init.d/qemu-binfmt start
 ```
 
-これが一体何をしているのかというと、binfmt_miscというLinuxの仕組みを利用している。詳細は既に存在する解説記事[^binfmt-misc]を読んでいただきたいが、バイナリの最初の部分が特定のバイト列になっている場合に、指定したインタプリタを実行するという機能がある。これを利用し、AArch64のELFファイルを実行する際は、`qemu-aarch64`を使用するよう指定するのが`/etc/init.d/qemu-binfmt restart`の役目。`binfmt_misc`の状況は`/proc/sys/fs/binfmt_misc/`配下にあるファイルで確認できる。`qemu-aarch64`の設定は`/proc/sys/fs/binfmt_misc/qemu-aarch64`で確認できる。ちなみに`QEMU_BINFMT_FLAGS`を`OC`から`OCF`にした理由は、`F`というフラグにある。`F`フラグを使用していない場合は、バイナリを実行する時に初めて`binfmt_misc`に登録したインタプリタが実行されるが、`chroot`の場合だと、`chroot`した先で`/bin/bash`というAArch64バイナリを実行するが、その中で`/usr/bin/qemu-aarch64`を探してしまう。`F`というフラグをつけて`binfmt_misc`に登録すると、その登録時点でインタプリタを開き、該当バイナリを実行する際はその既に開いてあるバイナリを利用するため、このような問題が発生しない。
+これが一体何をしているのかというと、binfmt_miscというLinuxの仕組みを利用している。詳細は既に存在する解説[^binfmt-misc]を読んでいただきたいが、バイナリの最初の部分が特定のバイト列になっている場合に、指定したインタプリタを実行するという機能がある。これを利用し、AArch64のELFファイルを実行する際は、`qemu-aarch64`を使用するよう指定するのが`/etc/init.d/qemu-binfmt start`の役目。`binfmt_misc`の状況は`/proc/sys/fs/binfmt_misc/`配下にあるファイルで確認できる。`qemu-aarch64`の設定は`/proc/sys/fs/binfmt_misc/qemu-aarch64`で確認できる。ちなみに`QEMU_BINFMT_FLAGS`を`OC`から`OCF`にした理由は、`F`というフラグにある。`F`フラグを使用していない場合は、バイナリを実行する時に初めて`binfmt_misc`に登録したインタプリタが実行されるが、`chroot`の場合だと、`chroot`した先で`/bin/bash`というAArch64バイナリを実行するため、その中で`/usr/bin/qemu-aarch64`を探してしまう。`F`というフラグをつけて`binfmt_misc`に登録すると、その登録時点でインタプリタを開き、該当バイナリを実行する際はその既に開いてあるバイナリを利用するため、このような問題が発生しない。
+
+そして、準備をしてchrootをする。
+
+```sh
+sudo cp --dereferenc /etc/resolv.conf /mnt/gentoo/etc/resolv.conf
+
+sudo mount --rbind /dev /mnt/gentoo/dev
+sudo mount --make-rslave /mnt/gentoo/dev
+sudo mount -t proc /proc /mnt/gentoo/proc
+sudo mount --rbind /sys /mnt/gentoo/sys
+sudo mount --make-rslave /mnt/gentoo/sys
+sudo mount --rbind /tmp /mnt/gentoo/tmp
+sudo mount --bind /run /mnt/gentoo/run 
+sudo mount --rbind /var/tmp /mnt/gentoo/var/tmp
+
+sudo emerge sys-apps/arch-chroot
+sudo arch-chroot /mnt/gentoo
+```
+
+`/tmp`と`/var/tmp`をバインドしているが、これはemerge時にこれらの容量が一杯になってしまったのでこうした記憶がある。正直よく覚えていない。
+
+chrootした先ではいつものやつをやる。
+
+```sh
+. /etc/profile
+export PS1="(chroot) ${PS1}"
+```
+
+#### パッケージを更新する
+
+いつもどおり
+
+```sh
+emerge-webrsync
+emerge -avtuDU @world
+```
 
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
