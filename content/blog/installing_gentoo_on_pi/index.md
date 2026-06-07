@@ -18,12 +18,13 @@ date = 2026-04-18
 #### パーティションを作る
 
 | パーティション | ファイルシステム | パーティションタイプ   | サイズ   |
-|----------------|------------------|------------------------|----------|
+| -------------- | ---------------- | ---------------------- | -------- |
 | /dev/sdb1      | vfat             | Microsoft 基本データ   | 512MB    |
 | /dev/sdb2      | swap             | Linux スワップ         | 2GB      |
 | /dev/sdb3      | ext4             | Linux ファイルシステム | 残り全部 |
 
 Raspberry PiはUEFIを用いて起動するわけではないが、起動可能なパーティションというものが必要[^boot-partition]。その条件は以下の通り。
+
 - FAT12 or FAT16 or FAT32でフォーマットされている。
 - `start.elf`が含まれている。
 
@@ -107,11 +108,10 @@ sudo mount -t proc /proc /mnt/gentoo/proc
 sudo mount --rbind /sys /mnt/gentoo/sys
 sudo mount --make-rslave /mnt/gentoo/sys
 sudo mount --rbind /tmp /mnt/gentoo/tmp
-sudo mount --bind /run /mnt/gentoo/run 
+sudo mount --bind /run /mnt/gentoo/run
 sudo mount --rbind /var/tmp /mnt/gentoo/var/tmp
 
-sudo emerge sys-apps/arch-chroot
-sudo arch-chroot /mnt/gentoo
+sudo chroot /mnt/gentoo
 ```
 
 `/tmp`と`/var/tmp`をバインドしているが、これはemerge時にこれらの容量が一杯になってしまったのでこうした記憶がある。正直よく覚えていない。
@@ -132,12 +132,34 @@ emerge-webrsync
 FEATURES="-pid-sandbox -network-sandbox" emerge -avtuDU @world
 ```
 
+#### PortageをGitで同期する
+
+これは必須ではないが、PortageをGitで同期すると、高速に`emerge --sync`できるので便利[^portage-with-git]。
+
+```sh
+FEATURES="-pid-sandbox -network-sandbox" emerge dev-vcs/git app-eselect/eselect-repository
+eselect repository rm -f gentoo
+eselect repository add gentoo git https://github.com/gentoo-mirror/gentoo
+rm -rf /var/db/repos/gentoo
+emerge --sync
+```
+
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
+
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
+
 [^boot-size]: https://github.com/RPi-Distro/pi-gen/blob/d2f70c5af1f007626c52f773f8e22209c4a34d38/export-image/prerun.sh
+
 [^boot-or-boot-firmware]: https://www.raspberrypi.com/documentation/computers/config_txt.html
+
 [^rustflags]: https://wiki.gentoo.org/wiki/Rust#Environment_variables
+
 [^makeopts]: https://wiki.gentoo.org/wiki/MAKEOPTS
+
 [^binfmt-misc]: https://docs.kernel.org/admin-guide/binfmt-misc.html
+
 [^bug-703278]: https://bugs.gentoo.org/703278
+
 [^gentoo-linux-cross-build]: https://unagidojyou.com/2025/08-20/gentoo-linux_cross-bulid/
+
+[^portage-with-git]: https://wiki.gentoo.org/wiki/Portage_with_Git
