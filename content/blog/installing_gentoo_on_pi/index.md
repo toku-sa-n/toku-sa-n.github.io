@@ -162,6 +162,8 @@ ln -sf ../usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 locale-gen
 ```
 
+そして使用するロケールを設定する。仮想ttyしか扱えないのであれば英語を選択すべきだろうが、SSHで別マシンからアクセスする場合なら、普通にターミナル上で日本語を表示できるはずなので、日本語を選択しても良さそう。
+
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
