@@ -144,6 +144,24 @@ rm -rf /var/db/repos/gentoo
 emerge --sync
 ```
 
+#### タイムゾーンを設定する
+
+相対パスの方が都合が良いらしいものの、絶対パスでもいいっぽい[^handbook-base]。
+
+```sh
+ln -sf ../usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+```
+
+#### ロケールを設定する
+
+`/etc/locale.gen`を編集し、`en_US`と`ja_JP`のコメントアウトを外す。以前は`en_US.UTF-8`のような形式だったはずだが、どうも`UTF-8`の部分が消え去った。ちなみに編集は、外側から`nvim /mnt/gentoo/etc/locale.gen`としても良い。
+
+それができたら、`chroot`の中身で以下を実行する。
+
+```sh
+locale-gen
+```
+
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
@@ -163,3 +181,5 @@ emerge --sync
 [^gentoo-linux-cross-build]: https://unagidojyou.com/2025/08-20/gentoo-linux_cross-bulid/
 
 [^portage-with-git]: https://wiki.gentoo.org/wiki/Portage_with_Git
+
+[^handbook-base]: https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base/ja
