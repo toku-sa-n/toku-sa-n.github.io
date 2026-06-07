@@ -164,6 +164,20 @@ locale-gen
 
 そして使用するロケールを設定する。仮想ttyしか扱えないのであれば英語を選択すべきだろうが、SSHで別マシンからアクセスする場合なら、普通にターミナル上で日本語を表示できるはずなので、日本語を選択しても良さそう。
 
+以下のコマンドの番号は、実際に使用するロケールの番号に応じて変更すること。
+
+```sh
+eselect locale set 5
+```
+
+そして新しいロケールを読み込む。
+
+```sh
+env-update
+. /etc/profile
+export PS1="(chroot) ${PS1}"
+```
+
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
