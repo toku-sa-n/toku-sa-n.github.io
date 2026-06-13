@@ -184,6 +184,17 @@ Raspberry Piでは、通常のLinuxカーネルではなく、パッチを当て
 
 今回は`sys-kernel/raspberrypi-sources`の方を利用する。
 
+```sh
+FEATURES="-pid-sandbox -network-sandbox" emerge -avt raspberrypi-sources
+```
+
+その後、`eselect`によって使用するカーネルのバージョンを指定する。
+
+```sh
+eselect kernel list
+eselect kernel set 1    # 番号は適宜変更すること
+```
+
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
