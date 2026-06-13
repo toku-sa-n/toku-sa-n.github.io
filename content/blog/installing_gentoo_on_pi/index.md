@@ -178,6 +178,12 @@ env-update
 export PS1="(chroot) ${PS1}"
 ```
 
+#### カーネルを設定する
+
+Raspberry Piでは、通常のLinuxカーネルではなく、パッチを当てたものを使用する。したがってGentooでは、`sys-kernel/gentoo-kernel`ではなく、`sys-kernel/raspberrypi-sources`または`sys-kernel/raspberrypi-image`を使う。前者は`sys-kernel/gentoo-sources`と同様にカーネルのソースコードをEmergeし、カーネルを自分でビルドする。後者はビルド済みイメージをEmergeする。
+
+今回は`sys-kernel/raspberrypi-sources`の方を利用する。
+
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
