@@ -201,7 +201,7 @@ eselect kernel set 1    # 番号は適宜変更すること
 cd /usr/src/linux
 ```
 
-通常はここで、`make menuconfig`によってカーネルの設定を行うが、今回は後回しとする。
+通常はここで、`make menuconfig`によってカーネルの設定を行うが、設定ミスによって起動できなくなることをおそれ、デフォルトの設定を利用する。
 
 Raspberry Pi 4BではBCM2711というプロセッサが搭載されている[^pi4-spec]が、それのための設定を適用することができる。
 
@@ -209,7 +209,7 @@ Raspberry Pi 4BではBCM2711というプロセッサが搭載されている[^pi
 make bcm2711_defconfig
 ```
 
-ただし、ルートパーティションで使用しているファイルシステムが組み込みになっているかは確認する必要がある。例えば`CONFIG_XFS_FS`はモジュールとして組み込まれているため、仮にこのファイルシステムをルートパーティションで使用しているならば、これを組み込みにしないと起動に失敗する。
+ただし、ルートパーティションで使用しているファイルシステムが組み込みになっているかは確認する必要がある。例えば`CONFIG_XFS_FS`はモジュールとして組み込まれているため、仮にこのファイルシステムをルートパーティションで使用しているならば、これを組み込みにしないと起動に失敗する。また、デフォルトの設定はかなり様々なオプションが有効になっているので、ビルドに時間がかかる。
 
 ```sh
 grep XFS .config
@@ -226,6 +226,12 @@ CONFIG_XFS_RT=y
 # CONFIG_XFS_WARN is not set
 # CONFIG_XFS_DEBUG is not set
 # CONFIG_VXFS_FS is not set
+```
+
+設定が済んだら、カーネルをビルドする。
+
+```sh
+make -j$(nproc) -l$(nproc)
 ```
 
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
