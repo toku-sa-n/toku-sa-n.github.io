@@ -195,6 +195,20 @@ eselect kernel list
 eselect kernel set 1    # 番号は適宜変更すること
 ```
 
+そしてカーネルのディレクトリに入る。
+
+```sh
+cd /usr/src/linux
+```
+
+通常はここで、`make menuconfig`によってカーネルの設定を行うが、今回は後回しとする。
+
+Raspberry Pi 4BではBCM2711というプロセッサが搭載されている[^pi4-spec]が、それのための設定を適用することができる。
+
+```sh
+make bcm2711_defconfig
+```
+
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
@@ -216,3 +230,5 @@ eselect kernel set 1    # 番号は適宜変更すること
 [^portage-with-git]: https://wiki.gentoo.org/wiki/Portage_with_Git
 
 [^handbook-base]: https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base/ja
+
+[^pi4-spec]: https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/
