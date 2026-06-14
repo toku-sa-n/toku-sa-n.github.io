@@ -215,7 +215,7 @@ make bcm2711_defconfig
 grep XFS .config
 ```
 
-```text
+```sh
 CONFIG_XFS_FS=m
 CONFIG_XFS_SUPPORT_V4=y
 CONFIG_XFS_SUPPORT_ASCII_CI=y
