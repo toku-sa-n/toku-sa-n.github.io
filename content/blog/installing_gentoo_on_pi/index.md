@@ -234,6 +234,16 @@ CONFIG_XFS_RT=y
 make -j$(nproc) -l$(nproc)
 ```
 
+そしてインストールする。
+
+```sh
+make -j$(nproc) -l$(nproc) modules_install
+make -j$(nproc) -l$(nproc) dtbs_install
+make -j$(nproc) -l$(nproc) install
+```
+
+`make dtbs_install`というのは、DTBs（Device Tree Blobs）をインストールするものらしく、それが何なのかよくわかっていないが、公式のマニュアルでビルドやコピーをしているので、それに従っている[^pi4-kernel]。
+
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
@@ -257,3 +267,5 @@ make -j$(nproc) -l$(nproc)
 [^handbook-base]: https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base/ja
 
 [^pi4-spec]: https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/
+
+[^pi4-kernel]: https://www.raspberrypi.com/documentation/computers/linux_kernel.html
