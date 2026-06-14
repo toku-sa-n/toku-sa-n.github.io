@@ -244,7 +244,15 @@ make -j$(nproc) -l$(nproc) install
 
 `make dtbs_install`というのは、DTBs（Device Tree Blobs）をインストールするものらしく、それが何なのかよくわかっていないが、公式のマニュアルでビルドやコピーをしているので、それに従っている[^pi4-kernel]。
 
-#### ビルドの設定をする
+#### ブートローダの設定をする
+
+デスクトップマシンならば、通常はGRUBなどのブートローダを設定するが、Raspberry Piではそれらは使用しない。
+
+まず、`raspberrypi-firmware`をEmergeする。
+
+```sh
+FEATURES="-pid-sandbox -network-sandbox" emerge sys-boot/raspberrypi-firmware
+```
 
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
