@@ -209,6 +209,25 @@ Raspberry Pi 4BではBCM2711というプロセッサが搭載されている[^pi
 make bcm2711_defconfig
 ```
 
+ただし、ルートパーティションで使用しているファイルシステムが組み込みになっているかは確認する必要がある。例えば`CONFIG_XFS_FS`はモジュールとして組み込まれているため、仮にこのファイルシステムをルートパーティションで使用しているならば、これを組み込みにしないと起動に失敗する。
+
+```sh
+grep XFS .config
+```
+
+```text
+CONFIG_XFS_FS=m
+CONFIG_XFS_SUPPORT_V4=y
+CONFIG_XFS_SUPPORT_ASCII_CI=y
+CONFIG_XFS_QUOTA=y
+CONFIG_XFS_POSIX_ACL=y
+CONFIG_XFS_RT=y
+# CONFIG_XFS_ONLINE_SCRUB is not set
+# CONFIG_XFS_WARN is not set
+# CONFIG_XFS_DEBUG is not set
+# CONFIG_VXFS_FS is not set
+```
+
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
