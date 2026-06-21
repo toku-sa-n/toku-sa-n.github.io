@@ -248,7 +248,7 @@ make -j$(nproc) -l$(nproc) install
 
 デスクトップマシンならば、通常はGRUBなどのブートローダを設定するが、Raspberry Piではそれらは使用しない。
 
-まず、`raspberrypi-firmware`をEmergeする。
+まず、`raspberrypi-firmware`をEmergeする。これには、Raspberry Piを起動するために必要なファームウェアが含まれている。
 
 ```sh
 FEATURES="-pid-sandbox -network-sandbox" emerge sys-boot/raspberrypi-firmware
