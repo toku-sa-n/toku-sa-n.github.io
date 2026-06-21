@@ -209,7 +209,7 @@ Raspberry Pi 4BではBCM2711というプロセッサが搭載されている[^pi
 make bcm2711_defconfig
 ```
 
-ただし、ルートパーティションで使用しているファイルシステムが組み込みになっているかは確認する必要がある。例えば`CONFIG_XFS_FS`はモジュールとして組み込まれているため、仮にこのファイルシステムをルートパーティションで使用しているならば、これを組み込みにしないと起動に失敗する。また、デフォルトの設定はかなり様々なオプションが有効になっているので、ビルドに時間がかかる。
+ただし、ルートパーティションで使用しているファイルシステムが組み込みになっているかは確認する必要がある。例えば`CONFIG_XFS_FS`はモジュールとして組み込まれているため、仮にXFSをルートパーティションで使用しているならば、これを組み込みにしないと起動に失敗する。また、デフォルトの設定はかなり様々なオプションが有効になっているので、ビルドに時間がかかる。
 
 ```sh
 grep XFS .config
@@ -254,7 +254,21 @@ make -j$(nproc) -l$(nproc) install
 FEATURES="-pid-sandbox -network-sandbox" emerge sys-boot/raspberrypi-firmware
 ```
 
-このパッケージは `/boot/config.txt` と `/boot/cmdline.txt` もインストールする。
+このパッケージは`/boot/config.txt`と`/boot/cmdline.txt`もインストールする。それぞれ編集する必要がある。
+
+`/boot/config.txt`には、Raspberry Piの設定を書き込む。詳細は公式サイト[^config.txt]を参照してほしい。重要だと思われる設定として、ハートビートの設定がある[^raspi-led][^red-green-led]。赤LEDを点滅させることで、正常に起動していることを確認できる。
+
+以下の設定項目を`/boot/config.txt`に書く。
+
+```
+dtparam=pwr_led_trigger=heartbeat
+```
+
+ちなみに、他にも`dtparam`に設定したい項目がある場合は、カンマ区切りで書く[^dtparam]。
+
+```
+dtparam=pwr_led_trigger=heartbeat,audio=on
+```
 
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
@@ -281,3 +295,11 @@ FEATURES="-pid-sandbox -network-sandbox" emerge sys-boot/raspberrypi-firmware
 [^pi4-spec]: https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/
 
 [^pi4-kernel]: https://www.raspberrypi.com/documentation/computers/linux_kernel.html
+
+[^config.txt]: https://www.raspberrypi.com/documentation/computers/config_txt.html
+
+[^raspi-led]: https://cgbeginner.net/raspi-led/
+
+[^red-green-led]: https://qiita.com/naohiro2g/items/d5385a4e660fd72711b2
+
+[^dtparam]: https://www.raspberrypi.com/documentation/computers/configuration.html#part3.1
