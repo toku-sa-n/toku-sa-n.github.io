@@ -256,19 +256,14 @@ FEATURES="-pid-sandbox -network-sandbox" emerge sys-boot/raspberrypi-firmware
 
 このパッケージは`/boot/config.txt`と`/boot/cmdline.txt`もインストールする。それぞれ編集する必要がある。
 
-`/boot/config.txt`には、Raspberry Piの設定を書き込む。詳細は公式サイト[^config.txt]を参照してほしい。重要だと思われる設定として、ハートビートの設定がある[^raspi-led][^red-green-led]。赤LEDを点滅させることで、正常に起動していることを確認できる。
+`/boot/config.txt`には以下を書き込む[^gentoo-raspi-3][^raspi-led][^red-green-led]。
 
-以下の設定項目を`/boot/config.txt`に書く。
-
-```
+```text
+arm_64bit=1
 dtparam=pwr_led_trigger=heartbeat
 ```
 
-ちなみに、他にも`dtparam`に設定したい項目がある場合は、カンマ区切りで書く[^dtparam]。
-
-```
-dtparam=pwr_led_trigger=heartbeat,audio=on
-```
+最初の行はArm64を使用していることを示す。次の行は、赤のLEDを点滅させる。これは、Raspberry Piが正常に起動しているかを簡単に判断できるようにするため。
 
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
@@ -303,3 +298,5 @@ dtparam=pwr_led_trigger=heartbeat,audio=on
 [^red-green-led]: https://qiita.com/naohiro2g/items/d5385a4e660fd72711b2
 
 [^dtparam]: https://www.raspberrypi.com/documentation/computers/configuration.html#part3.1
+
+[^gentoo-raspi-3]: https://sat-robotics.com/install_gentoo_raspi3/#toc11
