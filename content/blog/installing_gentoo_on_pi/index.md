@@ -256,7 +256,7 @@ FEATURES="-pid-sandbox -network-sandbox" emerge sys-boot/raspberrypi-firmware
 
 このパッケージは`/boot/config.txt`と`/boot/cmdline.txt`もインストールする。それぞれ編集する必要がある。
 
-`/boot/config.txt`には以下を書き込む[^gentoo-raspi-3][^raspi-led][^red-green-led]。
+`/boot/config.txt`には、Raspberry Piの設定を書き込む。今回は以下のようにする[^gentoo-raspi-3][^raspi-led][^red-green-led]。
 
 ```text
 arm_64bit=1
@@ -264,6 +264,12 @@ dtparam=pwr_led_trigger=heartbeat
 ```
 
 最初の行はArm64を使用していることを示す。次の行は、赤のLEDを点滅させる。これは、Raspberry Piが正常に起動しているかを簡単に判断できるようにするため。
+
+`/boot/cmdline.txt`には、Linuxのカーネルパラメータを設定する。ルートパーティションのUUIDやPARTUUIDは`blkid`で調べられる。今回はPARTUUIDを使用する。
+
+```text
+root=PARTUUID=<ルートパーティションのPARTUUID>
+```
 
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
