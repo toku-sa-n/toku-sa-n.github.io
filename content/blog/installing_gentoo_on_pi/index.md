@@ -274,6 +274,7 @@ root=PARTUUID=<ルートパーティションのPARTUUID>
 #### SSHを有効にする
 
 ```sh
+rc-update add dhcpcd default
 rc-update add sshd default
 ```
 
