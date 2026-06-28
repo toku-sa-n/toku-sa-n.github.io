@@ -284,6 +284,16 @@ useradd -m -G wheel -s /bin/bash <ユーザ名>
 passwd <ユーザ名>
 ```
 
+#### マウントを解除する
+
+```sh
+exit
+```
+
+```sh
+sudo umount -R /mnt/gentoo
+```
+
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
