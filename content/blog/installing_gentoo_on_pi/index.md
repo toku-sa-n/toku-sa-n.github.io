@@ -295,6 +295,20 @@ exit
 sudo umount -R /mnt/gentoo
 ```
 
+#### デバッグ
+
+```sh
+scripts/config -e NETCONSOLE
+scripts/config -e NETCONSOLE_EXTENDED_LOG
+scripts/config -e NETCONSOLE_PREPEND_RELEASE
+make olddefconfig
+make -j$(nproc) Image.gz
+```
+
+```text
+root=PARTUUID=<PARTUUID> rootfstype=ext4 rootwait rw debug ignore_loglevel loglevel=8 ip=<空いているIPv4>:::::eth0:off netconsole=+r6665@<ip=で指定しているものと同じIPv4>/eth0,6666@<デスクトップマシンのIPv4>/ff:ff:ff:ff:ff:ff
+```
+
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
 [^boot-partition]: https://www.raspberrypi.com/documentation/computers/config_txt.html#boot_partition
