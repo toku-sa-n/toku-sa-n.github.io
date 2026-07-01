@@ -295,7 +295,7 @@ exit
 sudo umount -R /mnt/gentoo
 ```
 
-#### デバッグ
+#### メモ
 
 ```sh
 scripts/config -e NETCONSOLE
@@ -313,6 +313,8 @@ root=PARTUUID=<PARTUUID> rootfstype=ext4 rootwait rw debug ignore_loglevel logle
 gcc -Q --help=target
 gcc -march=native -Q --help=target
 ```
+
+基本的にQEMU内では最低限のことをやるのが良さそう。
 
 [^arm64-handbook]: [ここ](https://wiki.gentoo.org/wiki/Handbook:Main_Page)曰く、SoCに様々な種類があって全部に対応するのは現実的ではないためらしい。
 
