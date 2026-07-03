@@ -91,7 +91,7 @@ sudo tar xpvf （Stage 3ファイル） --xattrs-include='*.*' --numeric-owner
 {% warning() %}
 AMD64のハンドブックでは、このあとに`/mnt/gentoo/etc/portage/make.conf`を編集しますが、Raspberry Piをインストールする際はこの時点で編集しない方がよいです。
 
-このあとにQEMUを使用して`chroot`しますが、例えば`CFLAGS`に`-march=native`と最適化フラグを設定すると、Raspbery Piのアーキテクチャに適さないバイナリが生成されるおそれがあります。最悪、カーネルパニックが発生し、起動に失敗します。
+このあとにQEMUを使用して`chroot`しますが、例えば`CFLAGS`に`-march=native`と最適化フラグを設定すると、Raspberry PiのCPU機能に合わない最適化がされるおそれがあります。最悪の場合、起動に失敗するおそれがあります。
 
 `make.conf`の最適化は、実機上で起動した後に行うことを推奨します。
 {% end %}
