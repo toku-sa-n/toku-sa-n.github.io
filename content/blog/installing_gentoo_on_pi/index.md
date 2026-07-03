@@ -5,7 +5,17 @@ date = 2026-04-18
 
 ### はじめに
 
-この記事では、Raspberry Pi 4 Model BにGentooをインストールする手順を解説する。
+この記事では、Raspberry Pi 4 Model BにGentooをインストールする手順を解説します。
+
+### 前提
+
+この記事では、以下の前提に沿っています。
+
+- 使用するRaspberry PiはRaspberry P i4 Model Bとします。
+- Raspberry PiはmicroSDカードをストレージとします。
+- Raspberry Pi以外に、親機としてGentooをインストール済みのAMD64マシンを使用します。
+- Raspberry Piはモニタなしのヘッドレス機として運用します。ただし、モニタがあってもインストール手順には影響しないはずです。
+- インストール時、Raspberry Piは有線LANで接続されていますが、最終的にはWi-Fiに接続させます。
 
 [Raspberry Pi Install Guide](https://wiki.gentoo.org/wiki/Raspberry_Pi_Install_Guide)や[AMD64版ハンドブック](https://wiki.gentoo.org/wiki/Handbook:AMD64/ja)などを参考にする。ちなみに、SoCに様々な種類があって全部に対応するのは現実ためではないため、Arm64のハンドブックは存在しないらしい[^arm64-handbook]。
 
