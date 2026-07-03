@@ -80,7 +80,7 @@ sudo mount /dev/sdb1 /mnt/gentoo/boot/firmware
 
 #### ベースシステムをインストールする
 
-これもAMD64と同様です。。arm64のStage 3ファイルは[こちらにあります](https://www.gentoo.org/downloads/arm64/#stages)。
+これもAMD64と同様です。arm64のStage 3ファイルは[こちらにあります](https://www.gentoo.org/downloads/arm64/#stages)。
 
 ```sh
 cd /mnt/gentoo
