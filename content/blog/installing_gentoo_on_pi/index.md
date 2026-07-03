@@ -98,18 +98,17 @@ AMD64のハンドブックでは、このあとに`/mnt/gentoo/etc/portage/make.
 
 #### chrootする
 
-通常ならばここで`chroot`をして子機の中に入るのだが、親機がAMD64で子機がarm64なため、アーキテクチャ違いにより単純には`chroot`できない。そこでQEMUを間接的に実行することで、`chroot`を成功させる。
+AMD64のハンドブックでは、ここで`chroot`をして子機の中に入りますが、親機がAMD64で子機がArm64なため、アーキテクチャの違いにより単純には`chroot`できません。そこで子機のOSをQEMU上で実行することで、`chroot`を成功させます。
 
-とりあえず`qemu`をemergeする。
+まず、`qemu`をEmergeします。
 
 ```sh
 sudo emerge app-emulation/qemu
 ```
 
-そして`/etc/init.d/qemu-binfmt`を編集し、`QEMU_BINFMT_FLAGS:=OC`となっている部分を`QEMU_BINFMT_FLAGS:=OCF`としたあと、以下のコマンドを実行する。
+そして`/etc/init.d/qemu-binfmt`を編集し、`QEMU_BINFMT_FLAGS:=OC`を`QEMU_BINFMT_FLAGS:=OCF`と改変し、以下のコマンドを実行します。なお、`start`は場合によっては`restart`とする必要があるかもしれません。
 
 ```sh
-# 場合によってはstartではなくrestartとなる。
 sudo /etc/init.d/qemu-binfmt start
 ```
 
