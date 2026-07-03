@@ -12,18 +12,19 @@ date = 2026-04-18
 この記事では、以下の前提に沿っています。
 
 - 使用するRaspberry PiはRaspberry P i4 Model Bとします。
-- Raspberry PiはmicroSDカードをストレージとします。
+- Raspberry Piは容量が32GBのmicroSDカードをストレージとします。
 - Raspberry Pi以外に、親機としてGentooをインストール済みのAMD64マシンを使用します。
 - Raspberry Piはモニタなしのヘッドレス機として運用します。ただし、モニタがあってもインストール手順には影響しないはずです。
 - インストール時、Raspberry Piは有線LANで接続されていますが、最終的にはWi-Fiに接続させます。
 
 [Raspberry Pi Install Guide](https://wiki.gentoo.org/wiki/Raspberry_Pi_Install_Guide)や[AMD64版ハンドブック](https://wiki.gentoo.org/wiki/Handbook:AMD64/ja)などを参考にする。ちなみに、SoCに様々な種類があって全部に対応するのは現実ためではないため、Arm64のハンドブックは存在しないらしい[^arm64-handbook]。
 
-### ホストマシンとターゲット機
-
-デスクトップマシンにGentooをインストールする場合とは異なり、LiveUSBを使用するのではなく、既にGentooがインストールされているAMD64マシンにmicroSDカードを接続してインストールする。今回使用しているSDカードは容量が32GB。
-
 ### 手順
+
+以下の資料を参考にしています。ちなみにArm64のハンドブックは、SoCに様々な種類があって全部に対応するのは現実的ではないため、存在しないようです[^arm64-handbook]。
+
+- [Raspberry Pi Install Guide](https://wiki.gentoo.org/wiki/Raspberry_Pi_Install_Guide)
+- [AMD64版ハンドブック](https://wiki.gentoo.org/wiki/Handbook:AMD64/ja)
 
 #### パーティションを作る
 
