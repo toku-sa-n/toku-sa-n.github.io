@@ -112,7 +112,13 @@ sudo emerge app-emulation/qemu
 sudo /etc/init.d/qemu-binfmt start
 ```
 
-これは、`binfmt_misc`というLinuxの仕組みを利用しています。詳細は既に存在する解説[^binfmt-misc]を読んでいただきたいが、バイナリの最初の部分が特定のバイト列になっている場合に、指定したインタプリタを実行するという機能がある。これを利用し、AArch64のELFファイルを実行する際は、`qemu-aarch64`を使用するよう指定するのが`/etc/init.d/qemu-binfmt start`の役目。`binfmt_misc`の状況は`/proc/sys/fs/binfmt_misc/`配下にあるファイルで確認できる。`qemu-aarch64`の設定は`/proc/sys/fs/binfmt_misc/qemu-aarch64`で確認できる。ちなみに`QEMU_BINFMT_FLAGS`を`OC`から`OCF`にした理由は、`F`というフラグにある。`F`フラグを使用していない場合は、バイナリを実行する時に初めて`binfmt_misc`に登録したインタプリタが実行されるが、`chroot`の場合だと、`chroot`した先で`/bin/bash`というAArch64バイナリを実行するため、その中で`/usr/bin/qemu-aarch64`を探してしまう。`F`というフラグをつけて`binfmt_misc`に登録すると、その登録時点でインタプリタを開き、該当バイナリを実行する際はその既に開いてあるバイナリを利用するため、このような問題が発生しない。
+これは、`binfmt_misc`というLinuxの仕組みを利用しています。これは、バイナリの最初の部分が特定のバイト列になっている場合に、指定したインタプリタを実行する機能です。`/etc/init.d/qemu-binfmt start`はこれを利用し、AArch64のELFファイルを実行する際に、`qemu-aarch64`を使用するよう設定するスクリプトです。
+
+`binfmt_misc`の設定状況は`/proc/sys/fs/binfmt_misc/`配下にあるファイルで確認でき、`qemu-aarch64`の場合は`/proc/sys/fs/binfmt_misc/qemu-aarch64`で確認できます。
+
+ちなみに`QEMU_BINFMT_FLAGS`を`OC`から`OCF`にした理由は、`F`というフラグにある。`F`フラグを使用していない場合は、バイナリを実行する時に初めて`binfmt_misc`に登録したインタプリタが実行されるが、`chroot`の場合だと、`chroot`した先で`/bin/bash`というAArch64バイナリを実行するため、その中で`/usr/bin/qemu-aarch64`を探してしまう。`F`というフラグをつけて`binfmt_misc`に登録すると、その登録時点でインタプリタを開き、該当バイナリを実行する際はその既に開いてあるバイナリを利用するため、このような問題が発生しない。
+
+`binfmt_misc`の詳細は、Linuxカーネルのドキュメントページにある解説[^binfmt-misc]を確認してください。
 
 そして、準備をしてchrootをする。
 
