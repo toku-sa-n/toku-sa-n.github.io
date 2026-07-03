@@ -69,7 +69,7 @@ LiveUSBからGentooをインストールする場合は、ここでスワップ�
 
 #### 親機にマウントする
 
-いつもの通りだが、Raspberry Piの場合は起動パーティションを`/boot`ではなく`/boot/firmware`にマウントするのが一般的らしい。
+これもAMD64と同様ですが、Raspberry Piの場合は起動パーティションを`/boot`ではなく`/boot/firmware`にマウントするのが一般的のようです。
 
 ```sh
 sudo mkdir /mnt/gentoo
