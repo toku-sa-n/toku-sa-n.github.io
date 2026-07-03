@@ -96,7 +96,7 @@ AMD64のハンドブックでは、このあとに`/mnt/gentoo/etc/portage/make.
 `make.conf`の最適化は、実機上で起動した後に行うことを推奨します。
 {% end %}
 
-#### chrootする
+#### `chroot`の前準備：QEMUを`binfmt_misc`に登録する
 
 AMD64のハンドブックでは、ここで`chroot`をして子機の中に入りますが、親機がAMD64で子機がArm64なため、アーキテクチャの違いにより単純には`chroot`できません。そこで子機のOSをQEMU上で実行することで、`chroot`を成功させます。
 
@@ -120,7 +120,9 @@ sudo /etc/init.d/qemu-binfmt start
 
 `binfmt_misc`の詳細は、Linuxカーネルのドキュメントページにある解説[^binfmt-misc]を確認してください。
 
-そして、準備をしてchrootをする。
+#### `chroot`する
+
+準備ができたので、`resolv.conf`をコピーし、必要なファイルシステムをマウントしたうえで`chroot`します。
 
 ```sh
 sudo cp --dereferenc /etc/resolv.conf /mnt/gentoo/etc/resolv.conf
@@ -137,7 +139,7 @@ sudo mount --rbind /var/tmp /mnt/gentoo/var/tmp
 sudo chroot /mnt/gentoo
 ```
 
-`/tmp`と`/var/tmp`をバインドしているが、これはemerge時にこれらの容量が一杯になってしまったのでこうした記憶がある。正直よく覚えていない。
+今回は`/tmp`と`/var/tmp`もバインドしています。確かRaspberry Piの中でEmergeをした際にこれらの容量が大きくなりすぎてしまい、microSDが満杯になってしまうのを防ぐための対策のはずですが、正直よく覚えていません。
 
 chrootした先ではいつものやつをやる。
 
