@@ -23,6 +23,8 @@ date = 2026-04-18
 | /dev/sdb2      | swap             | Linux スワップ         | 2GB      |
 | /dev/sdb3      | ext4             | Linux ファイルシステム | 残り全部 |
 
+`/dev/sdbX`はそれぞれの環境に合わせて適宜変更すること。
+
 Raspberry PiはUEFIを用いて起動するわけではないが、起動可能なパーティションというものが必要[^boot-partition]。その条件は以下の通り。
 
 - FAT12 or FAT16 or FAT32でフォーマットされている。
