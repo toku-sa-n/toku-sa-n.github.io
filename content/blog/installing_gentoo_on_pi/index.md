@@ -89,7 +89,8 @@ sudo tar xpvf （Stage 3ファイル） --xattrs-include='*.*' --numeric-owner
 ```
 
 {% warning() %}
-AMD64のハンドブックでは、このあとに`/mnt/gentoo/etc/portage/make.conf`を編集しますが、Raspberry Piをインストールする際は今編集しないでください。
+AMD64のハンドブックでは、このあとに`/mnt/gentoo/etc/portage/make.conf`を編集しますが、Raspberry Piをインストールする際はこの時点で編集しないでください。
+
 {% end %}
 
 #### `/mnt/gentoo/etc/portage/make.conf`を弄る
