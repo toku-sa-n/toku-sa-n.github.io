@@ -141,7 +141,7 @@ sudo chroot /mnt/gentoo
 
 今回は`/tmp`と`/var/tmp`もバインドしています。確かRaspberry Piの中でEmergeをした際にこれらの容量が大きくなりすぎてしまい、microSDが満杯になってしまうのを防ぐための対策のはずですが、正直よく覚えていません。
 
-chrootした先ではいつものやつをやる。
+`chroot`した先では、AMD64の場合と同様に、プロファイルをロードし、プロンプトも変更します。
 
 ```sh
 . /etc/profile
