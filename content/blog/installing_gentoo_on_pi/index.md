@@ -53,16 +53,14 @@ sudo mkfs.ext4 /dev/sdb3
 
 #### 親機にマウントする
 
-いつもの通り。
+いつもの通りだが、Raspberry Piの場合は起動パーティションを`/boot`ではなく`/boot/firmware`にマウントするのが一般的らしい。
 
 ```sh
 sudo mkdir /mnt/gentoo
 sudo mount /dev/sdb3 /mnt/gentoo
-sudo mkdir /mnt/gentoo/boot
-sudo mount /dev/sdb1 /mnt/gentoo/boot
+sudo mkdir -p /mnt/gentoo/boot/firmware
+sudo mount /dev/sdb1 /mnt/gentoo/boot/firmware
 ```
-
-なお、Raspberry Pi OSのBookworm以降では、起動パーティションは `/boot/firmware` にあったようだが、それ以前は `/boot` にあったようで、OSのバージョンによって異なっている[^boot-or-boot-firmware]。今回 `/boot` を選んだのは、慣れから。
 
 #### ベースシステムをインストールする
 
