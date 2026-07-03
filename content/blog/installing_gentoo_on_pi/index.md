@@ -88,6 +88,10 @@ sudo wget （Stage 3ファイルのURL）
 sudo tar xpvf （Stage 3ファイル） --xattrs-include='*.*' --numeric-owner
 ```
 
+{% warning() %}
+AMD64のハンドブックでは、このあとに`/mnt/gentoo/etc/portage/make.conf`を編集しますが、Raspberry Piをインストールする際は今編集しないでください。
+{% end %}
+
 #### `/mnt/gentoo/etc/portage/make.conf`を弄る
 
 いつもの通り。最近はRustで書かれたプログラムも多いので、`RUSTFLAGS`も適切に設定すると良い[^rustflags]。また`MAKEOPTS`をこのファイル内では未設定にすると、自動で値が設定されるようになった[^makeopts]。

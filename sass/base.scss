@@ -215,3 +215,26 @@ code,
 pre {
     font-family: "Fira Code", SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
 }
+
+.warning {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-left: 0.25rem solid #cc6666;
+    background: #2a2222;
+}
+
+.warning__title {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #f0c674;
+}
+
+.warning__body {
+    p {
+        margin: 0.5rem 0 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
