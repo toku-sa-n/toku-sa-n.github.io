@@ -5,7 +5,9 @@ date = 2026-04-18
 
 ### はじめに
 
-[Raspberry Pi Install Guide](https://wiki.gentoo.org/wiki/Raspberry_Pi_Install_Guide)や[AMD64版ハンドブック](https://wiki.gentoo.org/wiki/Handbook:AMD64/ja)などを参考にする。ちなみにハンドブックはないらしい[^arm64-handbook]。
+この記事では、Raspberry Pi 4 Model BにGentooをインストールする手順を解説する。
+
+[Raspberry Pi Install Guide](https://wiki.gentoo.org/wiki/Raspberry_Pi_Install_Guide)や[AMD64版ハンドブック](https://wiki.gentoo.org/wiki/Handbook:AMD64/ja)などを参考にする。ちなみに、SoCに様々な種類があって全部に対応するのは現実ためではないため、Arm64のハンドブックは存在しないらしい[^arm64-handbook]。
 
 ### ホストマシンとターゲット機
 
