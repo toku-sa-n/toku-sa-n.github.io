@@ -106,7 +106,7 @@ AMD64のハンドブックでは、ここで`chroot`をして子機の中に入�
 sudo emerge app-emulation/qemu
 ```
 
-そして`/etc/init.d/qemu-binfmt`を編集し、`QEMU_BINFMT_FLAGS:=OC`を`QEMU_BINFMT_FLAGS:=OCF`と改変し、以下のコマンドを実行します。なお、`start`は場合によっては`restart`とする必要があるかもしれません。
+そして`/etc/init.d/qemu-binfmt`内にある`QEMU_BINFMT_FLAGS:=OC`を`QEMU_BINFMT_FLAGS:=OCF`と改変し、以下のコマンドを実行します。なお、`start`は場合によっては`restart`とする必要があるかもしれません。
 
 ```sh
 sudo /etc/init.d/qemu-binfmt start
