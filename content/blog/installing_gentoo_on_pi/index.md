@@ -93,10 +93,6 @@ AMD64のハンドブックでは、このあとに`/mnt/gentoo/etc/portage/make.
 
 {% end %}
 
-#### `/mnt/gentoo/etc/portage/make.conf`を弄る
-
-いつもの通り。最近はRustで書かれたプログラムも多いので、`RUSTFLAGS`も適切に設定すると良い[^rustflags]。また`MAKEOPTS`をこのファイル内では未設定にすると、自動で値が設定されるようになった[^makeopts]。
-
 #### chrootする
 
 通常ならばここで`chroot`をして子機の中に入るのだが、親機がAMD64で子機がarm64なため、アーキテクチャ違いにより単純には`chroot`できない。そこでQEMUを間接的に実行することで、`chroot`を成功させる。
