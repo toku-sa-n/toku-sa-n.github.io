@@ -320,10 +320,10 @@ dtparam=act_led_trigger=heartbeat
 root=PARTUUID=<ルートパーティションのPARTUUID> rootwait ro
 ```
 
-各パラメータの解説は以下のとおり。
+各パラメータの解説は以下のとおり。[^kernel-parameters]
 
 - `root=PARTUUID=<ルートパーティションのPARTUUID>`：ルートパーティションのPARTUUIDを指定します。PARTUUIDは`blkid`コマンドで確認できます。`PARTUUID=`を`UUID`にし、UUIDを指定しても構いません。
-- `rootwait`：
+- `rootwait`：ルートデバイスを検出するまで無限に待ちます。microSDのようなMMC（MultiMediaCard）は非同期に検出されるため、このオプションがないと起動に失敗する場合があります。
 
 #### SSHを有効にする
 
@@ -407,3 +407,5 @@ gcc -march=native -Q --help=target
 [^gentoo-raspi-3]: https://sat-robotics.com/install_gentoo_raspi3/#toc11
 
 [^silex-dt]: https://www.silex.jp/library/blog/20240529-2
+
+[^kernel-parameters]: https://docs.kernel.org/admin-guide/kernel-parameters.html
