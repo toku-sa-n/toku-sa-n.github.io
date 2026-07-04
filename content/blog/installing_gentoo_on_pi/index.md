@@ -287,7 +287,7 @@ cp arch/arm64/boot/dts/overlays/*.dtb* /boot/firmware/overlays/
 cp arch/arm64/boot/dts/overlays/README /boot/firmware/overlays/
 ```
 
-`make dtbs_install`というのは、DTBs（Device Tree Blobs）をインストールするものらしく、それが何なのかよくわかっていないが、公式のマニュアルでビルドやコピーをしているので、それに従っている[^pi-kernel]。
+Linuxカーネルの`Makefile`におけるターゲットとして`install`や`dtbs_install`が存在しますが、これらを実行してもファイルは正しくインストールされないので、注意してください。
 
 #### ブートローダの設定をする
 
