@@ -150,7 +150,7 @@ export PS1="(chroot) ${PS1}"
 
 #### パッケージを更新する
 
-パッケージを更新するのはいつもどおりだが、`emerge`はいつもどおりには行かない。というのも、単純に`emerge`を実行すると、`qemu: qemu_thread_create: Invalid argument`というエラーが出て失敗してしまう。これは既知の問題のようで[^bug-703278]、これを回避するにはサンドボックス機能を一部無効にする必要がある[^gentoo-linux-cross-build]。ちょっとセキュリティ的には悪いかも。
+これもAMD64の場合と同様です。ただし、既知の問題[^bug-703278]によって、QEMU内で`emerge`を実行するには、サンドボックス機能を一部無効にする必要があります[^gentoo-linux-cross-build]。これを忘れると`qemu: qemu_thread_create: Invalid argument`というエラーが出ます。
 
 ```sh
 emerge-webrsync
