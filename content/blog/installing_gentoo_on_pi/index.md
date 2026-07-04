@@ -343,6 +343,15 @@ FEATURES="-pid-sandbox -network-sandbox" emerge net-misc/chrony
 rc-update add chronyd default
 ```
 
+#### `sudo`をインストール、設定する
+
+ルート権限が必要な場合に備え、`sudo`をインストール、設定します。
+
+```sh
+FEATURES="-pid-sandbox -network-sandbox" emerge app-admin/sudo
+visudo
+```
+
 #### ユーザを登録する
 
 これもAMD64と同様です。
