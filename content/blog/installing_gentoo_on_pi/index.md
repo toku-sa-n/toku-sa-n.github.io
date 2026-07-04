@@ -219,11 +219,11 @@ Raspberry Piでは、通常のLinuxカーネルではなく、パッチを当て
 FEATURES="-pid-sandbox -network-sandbox" emerge -avt raspberrypi-sources
 ```
 
-その後、`eselect`によって使用するカーネルのバージョンを指定する。
+その後、`eselect`によって、`/usr/src/linux`へのシンボリックリンクを張ります。
 
 ```sh
 eselect kernel list
-eselect kernel set 1    # 番号は適宜変更すること
+eselect kernel set 1
 ```
 
 そしてカーネルのディレクトリに入る。
