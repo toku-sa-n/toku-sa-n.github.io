@@ -171,7 +171,7 @@ emerge --sync
 
 #### タイムゾーンを設定する
 
-相対パスの方が都合が良いらしいものの、絶対パスでもいいっぽい[^handbook-base]。
+AMD64の場合と同様です。パスに`../`とあるように、相対パスを使用していますが、絶対パスでもよいとのこと[^handbook-base]。
 
 ```sh
 ln -sf ../usr/share/zoneinfo/Asia/Tokyo /etc/localtime
