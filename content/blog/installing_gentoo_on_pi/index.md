@@ -226,15 +226,15 @@ eselect kernel list
 eselect kernel set 1
 ```
 
-そしてカーネルのディレクトリに入る。
+そしてカーネルのディレクトリに入ります。
 
 ```sh
 cd /usr/src/linux
 ```
 
-通常はここで、`make menuconfig`によってカーネルの設定を行うが、設定ミスによって起動できなくなることをおそれ、デフォルトの設定を利用する。
+通常はここで、`make menuconfig`によってカーネルを設定しますが、設定ミスによって起動できなくなることをおそれ、デフォルトの設定を利用します。
 
-Raspberry Pi 4BではBCM2711というプロセッサが搭載されている[^pi4-spec]が、それのための設定を適用することができる。
+Raspberry Pi 4BではBCM2711というプロセッサが搭載されており[^pi4-spec]、デフォルトの設定が用意されています。
 
 ```sh
 make bcm2711_defconfig
@@ -382,3 +382,5 @@ gcc -march=native -Q --help=target
 [^dtparam]: https://www.raspberrypi.com/documentation/computers/configuration.html#part3.1
 
 [^gentoo-raspi-3]: https://sat-robotics.com/install_gentoo_raspi3/#toc11
+
+[^pi-kernel]: https://www.raspberrypi.com/documentation/computers/linux_kernel.html
