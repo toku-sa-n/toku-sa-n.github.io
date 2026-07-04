@@ -326,7 +326,7 @@ root=PARTUUID=<ルートパーティションのPARTUUID> rootwait ro
 
 #### DHCP・SSHを有効にする
 
-これはAMD64と同様です。まず必要なパッケージをインストールします。ひょっとすると`@system`に含まれているので不要かもしれませんが。
+これはAMD64と同様です。まず必要なパッケージをインストールします。ひょっとすると`@system`に含まれており不要かもしれませんが。
 
 ```sh
 FEATURES="-pid-sandbox -network-sandbox" emerge net-misc/dhcpcd net-misc/openssh
