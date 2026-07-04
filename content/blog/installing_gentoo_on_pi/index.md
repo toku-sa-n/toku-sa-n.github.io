@@ -290,24 +290,29 @@ Linuxカーネルの`Makefile`におけるターゲットとして`install`や`d
 
 #### ブートローダの設定をする
 
-デスクトップマシンの場合は、通常GRUBなどのブートローダをインストールしますが、Raspberry Piでは使用しません。
+デスクトップマシンの場合は、通常GRUBなどのブートローダをインストールしますが、Raspberry Piでは使用しません。代わりに以下のファイルに、起動に必要な設定を書き込みます。
 
-まず、`raspberrypi-firmware`をEmergeする。これには、Raspberry Piを起動するために必要なファームウェアが含まれている。
+- `/boot/firmware/config.txt`：Raspberry Piの設定。
+- `/boot/firmware/cmdline.txt`：Linuxカーネルのカーネルコマンドラインパラメータ。
+
+まず、`raspberrypi-firmware`をEmergeします。これには、Raspberry Piを起動するために必要なファームウェアが含まれています。
 
 ```sh
 FEATURES="-pid-sandbox -network-sandbox" emerge sys-boot/raspberrypi-firmware
 ```
 
-このパッケージは`/boot/config.txt`と`/boot/cmdline.txt`もインストールする。それぞれ編集する必要がある。
+このパッケージは`/boot/firmware/config.txt`と`/boot/firmware/cmdline.txt`も含まれており、これらを編集します。
 
-`/boot/config.txt`には、Raspberry Piの設定を書き込む。今回は以下のようにする[^gentoo-raspi-3][^raspi-led][^red-green-led]。
+`/boot/config.txt`には、以下のように書き込みます。[^gentoo-raspi-3][^raspi-led][^red-green-led]。
 
 ```text
 arm_64bit=1
-dtparam=pwr_led_trigger=heartbeat
+dtparam=act_led_trigger=heartbeat
 ```
 
-最初の行はArm64を使用していることを示す。次の行は、赤のLEDを点滅させる。これは、Raspberry Piが正常に起動しているかを簡単に判断できるようにするため。
+最初の行はArm64を使用していることを示します
+
+。次の行は、赤のLEDを点滅させる。これは、Raspberry Piが正常に起動しているかを簡単に判断できるようにするため。
 
 `/boot/cmdline.txt`には、Linuxのカーネルパラメータを設定する。ルートパーティションのUUIDやPARTUUIDは`blkid`で調べられる。今回はPARTUUIDを使用する。
 
