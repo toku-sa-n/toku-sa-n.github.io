@@ -400,6 +400,16 @@ exit
 sudo umount -R /mnt/gentoo
 ```
 
+#### Raspberry Piを起動する
+
+microSDカードをRaspberry Piに挿入し、Raspberry Piを電源に接続します。しばらくして、緑色のLEDが一定の規則に従って点滅したら、完了です。
+
+この時点で、親機からSSHで接続できるはずです。Raspberry PiのIPアドレスはルータの管理画面などから確認してください。
+
+```sh
+ssh <ユーザ名>@<Raspberry PiのIPアドレス>
+```
+
 #### メモ
 
 ```sh
