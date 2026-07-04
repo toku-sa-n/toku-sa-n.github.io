@@ -234,7 +234,7 @@ cd /usr/src/linux
 
 通常はここで、`make menuconfig`によってカーネルを設定しますが、設定ミスによって起動できなくなることをおそれ、デフォルトの設定を利用します。
 
-Raspberry Pi 4BではBCM2711というプロセッサが搭載されており[^pi4-spec]、デフォルトの設定が用意されています。
+Raspberry Pi 4BではBCM2711というプロセッサが搭載されており[^pi4-spec]、デフォルトの設定が用意されています[^pi-kernel]。
 
 ```sh
 make bcm2711_defconfig
@@ -273,7 +273,7 @@ make -j$(nproc) -l$(nproc) dtbs_install
 make -j$(nproc) -l$(nproc) install
 ```
 
-`make dtbs_install`というのは、DTBs（Device Tree Blobs）をインストールするものらしく、それが何なのかよくわかっていないが、公式のマニュアルでビルドやコピーをしているので、それに従っている[^pi4-kernel]。
+`make dtbs_install`というのは、DTBs（Device Tree Blobs）をインストールするものらしく、それが何なのかよくわかっていないが、公式のマニュアルでビルドやコピーをしているので、それに従っている[^pi-kernel]。
 
 #### ブートローダの設定をする
 
@@ -371,7 +371,7 @@ gcc -march=native -Q --help=target
 
 [^pi4-spec]: https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/
 
-[^pi4-kernel]: https://www.raspberrypi.com/documentation/computers/linux_kernel.html
+[^pi-kernel]: https://www.raspberrypi.com/documentation/computers/linux_kernel.html
 
 [^config.txt]: https://www.raspberrypi.com/documentation/computers/config_txt.html
 
@@ -382,5 +382,3 @@ gcc -march=native -Q --help=target
 [^dtparam]: https://www.raspberrypi.com/documentation/computers/configuration.html#part3.1
 
 [^gentoo-raspi-3]: https://sat-robotics.com/install_gentoo_raspi3/#toc11
-
-[^pi-kernel]: https://www.raspberrypi.com/documentation/computers/linux_kernel.html
