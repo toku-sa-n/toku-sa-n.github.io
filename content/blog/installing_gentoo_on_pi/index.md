@@ -211,9 +211,9 @@ export PS1="(chroot) ${PS1}"
 
 #### カーネルを設定する
 
-Raspberry Piでは、通常のLinuxカーネルではなく、パッチを当てたものを使用する。したがってGentooでは、`sys-kernel/gentoo-kernel`ではなく、`sys-kernel/raspberrypi-sources`または`sys-kernel/raspberrypi-image`を使う。前者は`sys-kernel/gentoo-sources`と同様にカーネルのソースコードをEmergeし、カーネルを自分でビルドする。後者はビルド済みイメージをEmergeする。
+Raspberry Piでは、通常のLinuxカーネルではなく、パッチを当てたものを使用します。したがってGentooでは、`sys-kernel/gentoo-kernel`ではなく、`sys-kernel/raspberrypi-sources`または`sys-kernel/raspberrypi-image`を使用します。前者は`sys-kernel/gentoo-sources`と同様にカーネルのソースコードをEmergeし、カーネルを自分でビルドします。後者はビルド済みイメージです。
 
-今回は`sys-kernel/raspberrypi-sources`の方を利用する。
+今回は`sys-kernel/raspberrypi-sources`を利用します。
 
 ```sh
 FEATURES="-pid-sandbox -network-sandbox" emerge -avt raspberrypi-sources
