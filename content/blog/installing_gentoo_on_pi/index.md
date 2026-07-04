@@ -334,6 +334,15 @@ rc-update add dhcpcd default
 rc-update add sshd default
 ```
 
+#### Chronyを設定する
+
+Raspberry Piの時刻を正しく設定するために、Chronyを設定します。
+
+```sh
+FEATURES="-pid-sandbox -network-sandbox" emerge net-misc/chrony
+rc-update add chronyd default
+```
+
 #### ユーザを登録する
 
 これもAMD64と同様です。
