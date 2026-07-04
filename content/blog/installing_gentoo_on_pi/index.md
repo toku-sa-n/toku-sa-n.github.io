@@ -45,7 +45,7 @@ Raspberry PiはUEFIを用いて起動するわけではないですが、起動�
 - FAT12 or FAT16 or FAT32でフォーマットされていること。
 - `start.elf`が含まれていること。
 
-起動パーティションの大きさは自由ですが、Raspberry Pi OSのイメージを作成するスクリプトが512MBで作成しているので、それに習いました[^boot-size]。またSwapの大きさは適当です。
+起動パーティションの大きさは自由ですが、Raspberry Pi OSのイメージを作成するスクリプトが512MBで作成しているので、それに倣いました[^boot-size]。またSwapの大きさは適当です。
 
 ルートパーティションのファイルシステムはext4としました。現在のAMD64のGentooハンドブックではルートパーティションにXFSを使用しているようですが、以下の理由でext4を採用しました。
 
@@ -277,7 +277,7 @@ make -j$(nproc) modules_install
 cp arch/arm64/Image.gz /boot/firmware/kernel8.img
 ```
 
-そして、DTBs（Device Tree Blobs）というファイル郡をインストールします。DTBには、周辺機器の初期化に必要なパラメータが格納されているようです[^silex-dt]。
+そして、DTBs（Device Tree Blobs）というファイル群をインストールします。DTBには、周辺機器の初期化に必要なパラメータが格納されているようです[^silex-dt]。
 
 ```sh
 cp arch/arm64/boot/dts/broadcom/*.dtb /boot/firmware/
@@ -311,7 +311,7 @@ dtparam=act_led_trigger=heartbeat
 
 最初の行はArm64を使用していることを示します。
 
-次の行は、緑のLEDを点滅させる。これは、Raspberry Piが正常に起動しているかを簡単に判断できるようにするためです。
+その次の行は、緑のLEDを点滅させる設定です。これは、Raspberry Piが正常に起動しているかを簡単に判断できるようにするためです。
 
 `/boot/firmware/cmdline.txt`には、Linuxのカーネルパラメータを設定します。今回は以下のように設定します。
 
@@ -390,7 +390,7 @@ passwd -dl root
 
 #### マウントを解除する
 
-これでRaspberry Piを起動する準備は整いましたので、`chroot`から脱出します。　
+これでRaspberry Piを起動する準備は整いましたので、`chroot`から脱出します。
 
 ```sh
 exit
