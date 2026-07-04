@@ -179,9 +179,9 @@ ln -sf ../usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 #### ロケールを設定する
 
-`/etc/locale.gen`を編集し、`en_US`と`ja_JP`のコメントアウトを外す。以前は`en_US.UTF-8`のような形式だったはずだが、どうも`UTF-8`の部分が消え去った。ちなみに編集は、外側から`nvim /mnt/gentoo/etc/locale.gen`としても良い。
+`/etc/locale.gen`を編集し、`en_US`と`ja_JP`のコメントアウトをします。これは`chroot`の中で行う代わりに、親機から`nvim /mnt/gentoo/etc/locale.gen`としてもよいです。
 
-それができたら、`chroot`の中身で以下を実行する。
+その後、`chroot`内で以下を実行します。
 
 ```sh
 locale-gen
