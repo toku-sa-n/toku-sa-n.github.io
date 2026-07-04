@@ -281,6 +281,7 @@ cp arch/arm64/Image.gz /boot/firmware/kernel8.img
 
 ```sh
 cp arch/arm64/boot/dts/broadcom/*.dtb /boot/firmware/
+mkdir /boot/firmware/overlays
 cp arch/arm64/boot/dts/overlays/*.dtb* /boot/firmware/overlays/
 ```
 
@@ -325,12 +326,20 @@ root=PARTUUID=<ルートパーティションのPARTUUID> rootwait ro
 
 #### DHCP・SSHを有効にする
 
-これはAMD64と同様です。
+これはAMD64と同様です。まず必要なパッケージをインストールします。ひょっとすると`@system`に含まれているので不要かもしれませんが。
+
+```sh
+FEATURES="-pid-sandbox -network-sandbox" emerge net-misc/dhcpcd net-misc/openssh
+```
+
+そしたら`rc-update`で、毎回の起動時にデーモンが起動するように設定します。
 
 ```sh
 rc-update add dhcpcd default
 rc-update add sshd default
 ```
+
+`dhcpcd`は`@system`に入っているはずですが、入っていなければ
 
 #### Chronyを設定する
 
