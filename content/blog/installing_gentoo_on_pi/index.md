@@ -301,7 +301,7 @@ FEATURES="-pid-sandbox -network-sandbox" emerge sys-boot/raspberrypi-firmware
 
 このパッケージは`/boot/firmware/config.txt`と`/boot/firmware/cmdline.txt`も含まれており、これらを編集します。
 
-`/boot/config.txt`には、以下のように書き込みます。[^gentoo-raspi-3][^raspi-led][^red-green-led]。
+`/boot/firmware/config.txt`には、以下のように書き込みます。[^gentoo-raspi-3][^raspi-led][^red-green-led]。
 
 ```text
 arm_64bit=1
@@ -312,7 +312,7 @@ dtparam=act_led_trigger=heartbeat
 
 次の行は、緑のLEDを点滅させる。これは、Raspberry Piが正常に起動しているかを簡単に判断できるようにするためです。
 
-`/boot/cmdline.txt`には、Linuxのカーネルパラメータを設定します。今回は以下のように設定します。
+`/boot/firmware/cmdline.txt`には、Linuxのカーネルパラメータを設定します。今回は以下のように設定します。
 
 ```text
 root=PARTUUID=<ルートパーティションのPARTUUID> rootwait ro
