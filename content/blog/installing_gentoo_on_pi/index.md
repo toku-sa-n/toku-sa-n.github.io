@@ -314,11 +314,16 @@ dtparam=act_led_trigger=heartbeat
 
 次の行は、緑のLEDを点滅させる。これは、Raspberry Piが正常に起動しているかを簡単に判断できるようにするためです。
 
-`/boot/cmdline.txt`には、Linuxのカーネルパラメータを設定します。ルートパーティションのUUIDやPARTUUIDは`blkid`で確認できます。今回はPARTUUIDを使用します。
+`/boot/cmdline.txt`には、Linuxのカーネルパラメータを設定します。今回は以下のように設定します。
 
 ```text
-root=PARTUUID=<ルートパーティションのPARTUUID> rootwait
+root=PARTUUID=<ルートパーティションのPARTUUID> rootwait ro
 ```
+
+各パラメータの解説は以下のとおり。
+
+- `root=PARTUUID=<ルートパーティションのPARTUUID>`：ルートパーティションのPARTUUIDを指定します。PARTUUIDは`blkid`コマンドで確認できます。`PARTUUID=`を`UUID`にし、UUIDを指定しても構いません。
+- `rootwait`：
 
 #### SSHを有効にする
 
