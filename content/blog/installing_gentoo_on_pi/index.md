@@ -343,7 +343,7 @@ useradd -m -G wheel -s /bin/bash <ユーザ名>
 passwd <ユーザ名>
 ```
 
-#### NTP
+#### ルートパスワードを設定する
 
 #### マウントを解除する
 
@@ -354,6 +354,12 @@ exit
 ```sh
 sudo umount -R /mnt/gentoo
 ```
+
+#### NTP
+
+#### tmux
+
+#### ルートパスワードの削除
 
 #### メモ
 
