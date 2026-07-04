@@ -383,9 +383,13 @@ passwd -dl root
 
 #### マウントを解除する
 
+これでRaspberry Piを起動する準備は整いましたので、`chroot`から脱出します。　
+
 ```sh
 exit
 ```
+
+そしてマウントしたファイルシステムを全部アンマウントします。
 
 ```sh
 sudo umount -R /mnt/gentoo
