@@ -317,7 +317,7 @@ dtparam=act_led_trigger=heartbeat
 `/boot/cmdline.txt`には、Linuxのカーネルパラメータを設定します。ルートパーティションのUUIDやPARTUUIDは`blkid`で確認できます。今回はPARTUUIDを使用します。
 
 ```text
-root=PARTUUID=<ルートパーティションのPARTUUID>
+root=PARTUUID=<ルートパーティションのPARTUUID> rootwait
 ```
 
 #### SSHを有効にする
