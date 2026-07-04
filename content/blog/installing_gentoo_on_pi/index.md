@@ -24,7 +24,9 @@ date = 2026-04-18
 - [Raspberry Pi Install Guide](https://wiki.gentoo.org/wiki/Raspberry_Pi_Install_Guide)
 - [AMD64版ハンドブック](https://wiki.gentoo.org/wiki/Handbook:AMD64/ja)
 
-#### パーティションを作成する
+#### 1. Gentooをインストールする
+
+##### パーティションを作成する
 
 `cfdisk`でパーティションを作成します。`fdisk`などの別のツールを使用しても大丈夫です。`/dev/sdb`はご自身の環境に合わせて適宜変更してください。
 
@@ -54,7 +56,7 @@ Raspberry PiはUEFIを用いて起動するわけではないですが、起動�
 
 パーティションタイプはAMD64の場合と同様です。起動パーティションのパーティションタイプをMicrosoft 基本データにしているのはMBRからの個人的な慣習ですが、これにすべきという根拠は見つかりませんでした。
 
-#### ファイルシステムを作成する
+##### ファイルシステムを作成する
 
 AMD64の場合と同様に、ファイルシステムを作成します。
 
@@ -65,7 +67,7 @@ sudo mkfs.ext4 /dev/sdb3
 
 LiveUSBからGentooをインストールする場合は、ここでスワップパーティションを有効にしますが、今回は親機のスワップパーティションを使用するため有効にしません。
 
-#### 親機にマウントする
+##### 親機にマウントする
 
 これもAMD64と同様ですが、Raspberry Piの場合は起動パーティションを`/boot`ではなく`/boot/firmware`にマウントするのが一般的のようです。
 
@@ -76,7 +78,7 @@ sudo mkdir -p /mnt/gentoo/boot/firmware
 sudo mount /dev/sdb1 /mnt/gentoo/boot/firmware
 ```
 
-#### ベースシステムをインストールする
+##### ベースシステムをインストールする
 
 これもAMD64と同様です。Arm64のStage 3ファイルは[こちらにあります](https://www.gentoo.org/downloads/arm64/#stages)。
 
@@ -94,7 +96,7 @@ AMD64のハンドブックでは、このあとに`/mnt/gentoo/etc/portage/make.
 `make.conf`の最適化は、実機上で起動した後に行うことを推奨します。
 {% end %}
 
-#### `chroot`の前準備：QEMUを`binfmt_misc`に登録する
+##### `chroot`の前準備：QEMUを`binfmt_misc`に登録する
 
 AMD64のハンドブックでは、ここで`chroot`をして子機の中に入りますが、親機がAMD64で子機がArm64なため、アーキテクチャの違いにより単純には`chroot`できません。そこで子機のOSをQEMU上で実行することで、`chroot`を成功させます。
 
@@ -118,7 +120,7 @@ sudo /etc/init.d/qemu-binfmt start
 
 `binfmt_misc`の詳細は、Linuxカーネルのドキュメントページにある解説[^binfmt-misc]を確認してください。
 
-#### `chroot`する
+##### `chroot`する
 
 準備ができたので、`resolv.conf`をコピーし、必要なファイルシステムをマウントしたうえで`chroot`します。
 
@@ -146,7 +148,7 @@ sudo chroot /mnt/gentoo
 export PS1="(chroot) ${PS1}"
 ```
 
-#### パッケージを更新する
+##### パッケージを更新する
 
 これもAMD64の場合と同様です。ただし、既知の問題[^bug-703278]によって、QEMU内で`emerge`を実行するには、サンドボックス機能を一部無効にする必要があります[^gentoo-linux-cross-build]。これを忘れると`qemu: qemu_thread_create: Invalid argument`というエラーが出ます。
 
@@ -155,7 +157,7 @@ emerge-webrsync
 FEATURES="-pid-sandbox -network-sandbox" emerge -avtuDU @world
 ```
 
-#### PortageをGitで同期する
+##### PortageをGitで同期する
 
 これは必須ではないのですが、PortageをGitで同期すると、高速に`emerge --sync`できるので便利です[^portage-with-git]。
 
@@ -167,7 +169,7 @@ rm -rf /var/db/repos/gentoo
 emerge --sync
 ```
 
-#### タイムゾーンを設定する
+##### タイムゾーンを設定する
 
 AMD64の場合と同様です。パスに`../`とあるように、相対パスを使用していますが、絶対パスでもよいとのこと[^handbook-base]。ただ、相対パスのほうが都合が良いらしいです。
 
@@ -175,7 +177,7 @@ AMD64の場合と同様です。パスに`../`とあるように、相対パス�
 ln -sf ../usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 ```
 
-#### ロケールを設定する
+##### ロケールを設定する
 
 `/etc/locale.gen`を編集し、`en_US`と`ja_JP`のコメントアウトをします。これは`chroot`の中で行う代わりに、親機から`nvim /mnt/gentoo/etc/locale.gen`としてもよいです。
 
@@ -207,7 +209,7 @@ env-update
 export PS1="(chroot) ${PS1}"
 ```
 
-#### カーネルを設定する
+##### カーネルを設定する
 
 Raspberry Piでは、通常のLinuxカーネルではなく、パッチを当てたものを使用します。したがってGentooでは、`sys-kernel/gentoo-kernel`ではなく、`sys-kernel/raspberrypi-sources`または`sys-kernel/raspberrypi-image`を使用します。前者は`sys-kernel/gentoo-sources`と同様にカーネルのソースコードをEmergeし、カーネルを自分でビルドします。後者はビルド済みイメージです。
 
@@ -287,7 +289,7 @@ cp arch/arm64/boot/dts/overlays/*.dtb* /boot/firmware/overlays/
 
 Linuxカーネルの`Makefile`におけるターゲットとして`install`や`dtbs_install`が存在しますが、これらを実行してもファイルは正しくインストールされないので、注意してください。
 
-#### ブートローダの設定をする
+##### ブートローダの設定をする
 
 デスクトップマシンの場合は、通常GRUBなどのブートローダをインストールしますが、Raspberry Piでは使用しません。代わりに以下のファイルに、起動に必要な設定を書き込みます。
 
@@ -324,7 +326,7 @@ root=PARTUUID=<ルートパーティションのPARTUUID> rootwait ro
 - `root=PARTUUID=<ルートパーティションのPARTUUID>`：ルートパーティションのPARTUUIDを指定します。PARTUUIDは`blkid`コマンドで確認できます。`PARTUUID=`を`UUID`にし、UUIDを指定しても構いません。
 - `rootwait`：ルートデバイスを検出するまで無限に待ちます。microSDのようなMMC（MultiMediaCard）は非同期に検出されるため、このオプションがないと起動に失敗する場合があります。
 
-#### DHCP・SSHを有効にする
+##### DHCP・SSHを有効にする
 
 これはAMD64と同様です。まず必要なパッケージをインストールします。ひょっとすると`@system`に含まれており不要かもしれませんが。
 
@@ -339,7 +341,7 @@ rc-update add dhcpcd default
 rc-update add sshd default
 ```
 
-#### Chronyを設定する
+##### Chronyを設定する
 
 Raspberry Piの時刻を正しく設定するために、Chronyを設定します。
 
@@ -348,7 +350,7 @@ FEATURES="-pid-sandbox -network-sandbox" emerge net-misc/chrony
 rc-update add chronyd default
 ```
 
-#### `sudo`をインストール、設定する
+##### `sudo`をインストール、設定する
 
 ルート権限が必要な場合に備え、`sudo`をインストール、設定します。
 
@@ -357,7 +359,7 @@ FEATURES="-pid-sandbox -network-sandbox" emerge app-admin/sudo
 visudo
 ```
 
-#### ユーザを登録する
+##### ユーザを登録する
 
 これもAMD64と同様です。
 
@@ -366,7 +368,7 @@ useradd -m -G wheel -s /bin/bash <ユーザ名>
 passwd <ユーザ名>
 ```
 
-#### `sudo`が使用できるか確認する
+##### `sudo`が使用できるか確認する
 
 追加したユーザで`sudo`が正しく利用できるかを確認します。
 
@@ -378,7 +380,7 @@ exit
 
 `sudo ls`が実行できれば問題ありません。
 
-#### ルートログインを無効にする
+##### ルートログインを無効にする
 
 `sudo`が使えることを確認したら、ルートログインを無効にします。なお、仮に`sudo`が利用できなくなったとしても、再び親機にマウントすればルートでログインできます。
 
@@ -386,7 +388,7 @@ exit
 passwd -dl root
 ```
 
-#### マウントを解除する
+##### マウントを解除する
 
 これでRaspberry Piを起動する準備は整いましたので、`chroot`から脱出します。
 
@@ -400,7 +402,7 @@ exit
 sudo umount -R /mnt/gentoo
 ```
 
-#### Raspberry Piを起動する
+##### Raspberry Piを起動する
 
 microSDカードをRaspberry Piに挿入し、Raspberry Piを電源に接続します。しばらくして、緑色のLEDが一定の規則に従って点滅したら、完了です。
 
@@ -409,6 +411,8 @@ microSDカードをRaspberry Piに挿入し、Raspberry Piを電源に接続し�
 ```sh
 ssh <ユーザ名>@<Raspberry PiのIPアドレス>
 ```
+
+#### 2. Wi-Fiを有効にする
 
 #### メモ
 
