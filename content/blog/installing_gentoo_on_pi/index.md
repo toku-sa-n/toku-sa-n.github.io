@@ -290,7 +290,7 @@ Linuxカーネルの`Makefile`におけるターゲットとして`install`や`d
 
 #### ブートローダの設定をする
 
-デスクトップマシンならば、通常はGRUBなどのブートローダを設定するが、Raspberry Piではそれらは使用しない。
+デスクトップマシンの場合は、通常GRUBなどのブートローダをインストールしますが、Raspberry Piでは使用しません。
 
 まず、`raspberrypi-firmware`をEmergeする。これには、Raspberry Piを起動するために必要なファームウェアが含まれている。
 
