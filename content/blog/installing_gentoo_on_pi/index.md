@@ -312,7 +312,7 @@ dtparam=act_led_trigger=heartbeat
 
 最初の行はArm64を使用していることを示します
 
-。次の行は、赤のLEDを点滅させる。これは、Raspberry Piが正常に起動しているかを簡単に判断できるようにするため。
+。次の行は、緑のLEDを点滅させる。これは、Raspberry Piが正常に起動しているかを簡単に判断できるようにするためです。
 
 `/boot/cmdline.txt`には、Linuxのカーネルパラメータを設定する。ルートパーティションのUUIDやPARTUUIDは`blkid`で調べられる。今回はPARTUUIDを使用する。
 
