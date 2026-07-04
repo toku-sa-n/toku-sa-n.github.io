@@ -325,7 +325,9 @@ root=PARTUUID=<ルートパーティションのPARTUUID> rootwait ro
 - `root=PARTUUID=<ルートパーティションのPARTUUID>`：ルートパーティションのPARTUUIDを指定します。PARTUUIDは`blkid`コマンドで確認できます。`PARTUUID=`を`UUID`にし、UUIDを指定しても構いません。
 - `rootwait`：ルートデバイスを検出するまで無限に待ちます。microSDのようなMMC（MultiMediaCard）は非同期に検出されるため、このオプションがないと起動に失敗する場合があります。
 
-#### SSHを有効にする
+#### DHCP・SSHを有効にする
+
+これはAMD64と同様です。
 
 ```sh
 rc-update add dhcpcd default
@@ -333,6 +335,8 @@ rc-update add sshd default
 ```
 
 #### ユーザを登録する
+
+これもAMD64と同様です。
 
 ```sh
 useradd -m -G wheel -s /bin/bash <ユーザ名>
