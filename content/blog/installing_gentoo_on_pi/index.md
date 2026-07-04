@@ -159,7 +159,7 @@ FEATURES="-pid-sandbox -network-sandbox" emerge -avtuDU @world
 
 #### PortageをGitで同期する
 
-これは必須ではないが、PortageをGitで同期すると、高速に`emerge --sync`できるので便利[^portage-with-git]。
+これは必須ではないのですが、PortageをGitで同期すると、高速に`emerge --sync`できるので便利です[^portage-with-git]。
 
 ```sh
 FEATURES="-pid-sandbox -network-sandbox" emerge dev-vcs/git app-eselect/eselect-repository
