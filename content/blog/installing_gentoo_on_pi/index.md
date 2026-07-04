@@ -414,6 +414,15 @@ ssh <ユーザ名>@<Raspberry PiのIPアドレス>
 
 #### 2. Wi-Fiを有効にする
 
+##### tmux
+
+##### networkmanager
+
+```sh
+sudo euse -E networkmanager
+sudo emerge -aUD @world
+```
+
 #### メモ
 
 ```sh
