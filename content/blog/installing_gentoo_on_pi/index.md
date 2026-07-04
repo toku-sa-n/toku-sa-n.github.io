@@ -262,15 +262,29 @@ CONFIG_XFS_RT=y
 設定が済んだら、カーネルをビルドします。
 
 ```sh
-make -j$(nproc) -l$(nproc)
+make -j$(nproc)
 ```
 
-そしてインストールする。
+その後、まずモジュールをインストールします。
 
 ```sh
-make -j$(nproc) -l$(nproc) modules_install
-make -j$(nproc) -l$(nproc) dtbs_install
-make -j$(nproc) -l$(nproc) install
+make -j$(nproc) modules_install
+```
+
+ここまではAMD64の場合と同様ですが、ここからが異なります[^pi-kernel]。
+
+まず、カーネルのインストールでは、`make install`を使用せず、代わりにファイルを`cp`でコピーします。Raspberry Piでは、カーネルは`/boot/firmware/kernel8.img`に置きます。
+
+```sh
+cp arch/arm64/Image.gz /boot/firmware/kernel8.img
+```
+
+そして、DTBs（Device Tree Blobs）というファイル郡をインストールします。DTBには、周辺機器の初期化に必要なパラメータが格納されているようです[^silex-dt]。
+
+```sh
+cp arch/arm64/boot/dts/broadcom/*.dtb /boot/firmware/
+cp arch/arm64/boot/dts/overlays/*.dtb* /boot/firmware/overlays/
+cp arch/arm64/boot/dts/overlays/README /boot/firmware/overlays/
 ```
 
 `make dtbs_install`というのは、DTBs（Device Tree Blobs）をインストールするものらしく、それが何なのかよくわかっていないが、公式のマニュアルでビルドやコピーをしているので、それに従っている[^pi-kernel]。
@@ -382,3 +396,5 @@ gcc -march=native -Q --help=target
 [^dtparam]: https://www.raspberrypi.com/documentation/computers/configuration.html#part3.1
 
 [^gentoo-raspi-3]: https://sat-robotics.com/install_gentoo_raspi3/#toc11
+
+[^silex-dt]: https://www.silex.jp/library/blog/20240529-2
