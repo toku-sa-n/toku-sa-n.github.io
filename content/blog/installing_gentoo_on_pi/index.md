@@ -11,7 +11,7 @@ date = 2026-04-18
 
 この記事では、以下の前提に沿っています。
 
-- 使用するRaspberry PiはRaspberry P i4 Model Bとします。
+- 使用するRaspberry PiはRaspberry Pi 4 Model Bとします。
 - Raspberry Piは容量が32GBのmicroSDカードをストレージとします。
 - Raspberry Pi以外に、親機としてGentooをインストール済みのAMD64マシンを使用します。
 - Raspberry Piはモニタなしのヘッドレス機として運用します。ただし、モニタがあってもインストール手順には影響しないはずです。
