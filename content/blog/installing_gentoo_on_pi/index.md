@@ -259,7 +259,7 @@ CONFIG_XFS_RT=y
 # CONFIG_VXFS_FS is not set
 ```
 
-設定が済んだら、カーネルをビルドする。
+設定が済んだら、カーネルをビルドします。
 
 ```sh
 make -j$(nproc) -l$(nproc)
