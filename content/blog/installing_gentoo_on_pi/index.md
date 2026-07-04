@@ -343,6 +343,8 @@ useradd -m -G wheel -s /bin/bash <ユーザ名>
 passwd <ユーザ名>
 ```
 
+#### NTP
+
 #### マウントを解除する
 
 ```sh
