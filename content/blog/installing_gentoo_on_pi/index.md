@@ -123,7 +123,7 @@ sudo /etc/init.d/qemu-binfmt start
 準備ができたので、`resolv.conf`をコピーし、必要なファイルシステムをマウントしたうえで`chroot`します。
 
 ```sh
-sudo cp --dereferenc /etc/resolv.conf /mnt/gentoo/etc/resolv.conf
+sudo cp --dereference /etc/resolv.conf /mnt/gentoo/etc/resolv.conf
 
 sudo mount --rbind /dev /mnt/gentoo/dev
 sudo mount --make-rslave /mnt/gentoo/dev
