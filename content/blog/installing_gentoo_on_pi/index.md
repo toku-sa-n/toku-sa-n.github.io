@@ -332,14 +332,12 @@ root=PARTUUID=<ルートパーティションのPARTUUID> rootwait ro
 FEATURES="-pid-sandbox -network-sandbox" emerge net-misc/dhcpcd net-misc/openssh
 ```
 
-そしたら`rc-update`で、毎回の起動時にデーモンが起動するように設定します。
+その後`rc-update`で、毎回の起動時にデーモンが起動するように設定します。
 
 ```sh
 rc-update add dhcpcd default
 rc-update add sshd default
 ```
-
-`dhcpcd`は`@system`に入っているはずですが、入っていなければ
 
 #### Chronyを設定する
 
