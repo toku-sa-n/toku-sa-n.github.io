@@ -391,12 +391,6 @@ exit
 sudo umount -R /mnt/gentoo
 ```
 
-#### NTP
-
-#### tmux
-
-#### ルートパスワードの削除
-
 #### メモ
 
 ```sh
