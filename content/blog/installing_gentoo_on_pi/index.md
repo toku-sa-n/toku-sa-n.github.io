@@ -284,7 +284,6 @@ cp arch/arm64/Image.gz /boot/firmware/kernel8.img
 ```sh
 cp arch/arm64/boot/dts/broadcom/*.dtb /boot/firmware/
 cp arch/arm64/boot/dts/overlays/*.dtb* /boot/firmware/overlays/
-cp arch/arm64/boot/dts/overlays/README /boot/firmware/overlays/
 ```
 
 Linuxカーネルの`Makefile`におけるターゲットとして`install`や`dtbs_install`が存在しますが、これらを実行してもファイルは正しくインストールされないので、注意してください。
