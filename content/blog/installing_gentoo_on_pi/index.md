@@ -428,6 +428,12 @@ sudo emerge app-misc/tmux
 tmux new -s my-session
 ```
 
+その後、もしSSHセッションが切断されたら、再度SSH接続し、以下のコマンドを実行することでtmuxセッションにアタッチできます。
+
+```sh
+tmux attach -t my-session
+```
+
 ##### NetworkManagerをインストールする
 
 次に、NetworkManagerをインストールします。グローバルなUSEフラグに`networkmanager`というものがあるので、それを有効にしシステム全体を更新したあと、NetworkManagerをインストールします。
