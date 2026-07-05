@@ -434,7 +434,7 @@ tmux new -s my-session
 tmux attach -t my-session
 ```
 
-##### NetworkManagerをインストールする
+##### NetworkManagerをインストールする[^networkmanager]
 
 次に、NetworkManagerをインストールします。グローバルなUSEフラグに`networkmanager`というものがあるので、それを有効にしシステム全体を更新したあと、NetworkManagerをインストールします。
 
@@ -442,6 +442,12 @@ tmux attach -t my-session
 sudo euse -E networkmanager
 sudo emerge -aUD @world
 sudo emerge net-misc/networkmanager
+```
+
+続いてユーザを`plugdev`グループに登録します。これによって、非ルートユーザがシステムのネットワークをNetworkManagerを介して設定できるようになります。
+
+```sh
+sudo gpasswd -a <ユーザ名> plugdev
 ```
 
 #### メモ
@@ -504,3 +510,5 @@ gcc -march=native -Q --help=target
 [^silex-dt]: https://www.silex.jp/library/blog/20240529-2
 
 [^kernel-parameters]: https://docs.kernel.org/admin-guide/kernel-parameters.html
+
+[^networkmanager]: https://wiki.gentoo.org/wiki/NetworkManager
