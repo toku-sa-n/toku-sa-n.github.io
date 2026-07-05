@@ -478,6 +478,12 @@ sudo emerge --deselect net-misc/dhcpcd
 sudo nmcli --ask device wifi connect "<SSID>"
 ```
 
+#### Tailscale
+
+```sh
+sudo emerge net-vpn/tailscale
+```
+
 #### メモ
 
 ```sh
