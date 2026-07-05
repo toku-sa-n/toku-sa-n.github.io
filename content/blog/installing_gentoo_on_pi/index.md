@@ -474,6 +474,10 @@ sudo emerge --deselect net-misc/dhcpcd
 
 その後、
 
+```sh
+sudo nmcli --ask device wifi connect "<SSID>"
+```
+
 #### メモ
 
 ```sh
