@@ -422,6 +422,12 @@ Raspberry Pi上にtmuxをインストールしておくと、SSHセッション�
 sudo emerge app-misc/tmux
 ```
 
+インストールしたら、tmuxセッションを開始します。
+
+```sh
+tmux new -s my-session
+```
+
 ##### networkmanager
 
 ```sh
