@@ -296,7 +296,7 @@ Linuxカーネルの`Makefile`におけるターゲットとして`install`や`d
 - `/boot/firmware/config.txt`：Raspberry Piの設定。
 - `/boot/firmware/cmdline.txt`：Linuxカーネルのカーネルコマンドラインパラメータ。
 
-まず、`raspberrypi-firmware`をEmergeします。これには、Raspberry Piを起動するために必要なファームウェアが含まれています。
+まず、`sys-boot/raspberrypi-firmware`をEmergeします。これには、Raspberry Piを起動するために必要なファームウェアが含まれています。
 
 ```sh
 FEATURES="-pid-sandbox -network-sandbox" emerge sys-boot/raspberrypi-firmware
@@ -432,6 +432,20 @@ tmux new -s my-session
 
 ```sh
 tmux attach -t my-session
+```
+
+##### Wi-Fi用のファームウェアをインストールする
+
+Wi-Fiのファームウェアは`sys-boot/raspberrypi-firmware`ではなく、`sys-firmware/raspberrypi-wifi-ucode`に含まれます。これをインストールします。
+
+```sh
+sudo emerge sys-firmware/raspberrypi-wifi-ucode
+```
+
+インストールしたら、一度Raspberry Piを再起動します。
+
+```sh
+sudo reboot
 ```
 
 ##### NetworkManagerをインストールする[^networkmanager]
