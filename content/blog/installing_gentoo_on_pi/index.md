@@ -484,6 +484,17 @@ sudo nmcli --ask device wifi connect "<SSID>"
 sudo emerge net-vpn/tailscale
 ```
 
+```sh
+sudo rc-update add tailscale default
+sudo rc-service tailscale start
+```
+
+```sh
+sudo tailscale up
+```
+
+`/etc/hostname`でホスト名を指定。
+
 #### メモ
 
 ```sh
