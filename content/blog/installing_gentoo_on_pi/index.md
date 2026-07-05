@@ -490,7 +490,7 @@ sudo rc-service tailscale start
 ```
 
 ```sh
-sudo tailscale up
+sudo tailscale up --ssh
 ```
 
 `/etc/hostname`でホスト名を指定。
