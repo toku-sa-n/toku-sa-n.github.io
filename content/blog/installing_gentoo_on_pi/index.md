@@ -450,6 +450,16 @@ sudo emerge net-misc/networkmanager
 sudo gpasswd -a <ユーザ名> plugdev
 ```
 
+`dhcpcd`はNetworkManagerと衝突するため、ストップしておきます。
+
+```sh
+sudo rc-service dhcpcd stop
+sudo rc-update del dhcpcd default
+sudo emerge --deselect net-misc/dhcpcd
+```
+
+その後、
+
 #### メモ
 
 ```sh
