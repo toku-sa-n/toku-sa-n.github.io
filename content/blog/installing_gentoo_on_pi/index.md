@@ -428,11 +428,14 @@ sudo emerge app-misc/tmux
 tmux new -s my-session
 ```
 
-##### networkmanager
+##### NetworkManagerをインストールする
+
+次に、NetworkManagerをインストールします。グローバルなUSEフラグに`networkmanager`というものがあるので、それを有効にしシステム全体を更新したあと、NetworkManagerをインストールします。
 
 ```sh
 sudo euse -E networkmanager
 sudo emerge -aUD @world
+sudo emerge net-misc/networkmanager
 ```
 
 #### メモ
