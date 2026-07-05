@@ -414,7 +414,13 @@ ssh <ユーザ名>@<Raspberry PiのIPアドレス>
 
 #### 2. Wi-Fiを有効にする
 
-##### tmux
+##### tmuxをインストールする
+
+Raspberry Pi上にtmuxをインストールしておくと、SSHセッションが切断されてもtmux上のプロセスは中断されないので便利です。
+
+```sh
+sudo emerge app-misc/tmux
+```
 
 ##### networkmanager
 
