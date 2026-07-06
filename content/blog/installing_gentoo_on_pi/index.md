@@ -24,6 +24,10 @@ date = 2026-04-18
 - [Raspberry Pi Install Guide](https://wiki.gentoo.org/wiki/Raspberry_Pi_Install_Guide)
 - [AMD64版ハンドブック](https://wiki.gentoo.org/wiki/Handbook:AMD64/ja)
 
+{% warning() %}
+この記事は、筆者が実際にRaspberry Pi 4 Model BへGentooをインストールした際の手順を基にしていますが、一部の手順は未検証です。
+{% end %}
+
 #### 1. Gentooをインストールする
 
 ##### パーティションを作成する
@@ -474,7 +478,7 @@ sudo reboot
 sudo nmcli --ask device wifi connect "<SSID>"
 ```
 
-#### Tailscale
+#### Tailscaleをインストールする
 
 ```sh
 sudo emerge net-vpn/tailscale
