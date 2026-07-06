@@ -326,18 +326,36 @@ root=PARTUUID=<ルートパーティションのPARTUUID> rootwait ro
 - `root=PARTUUID=<ルートパーティションのPARTUUID>`：ルートパーティションのPARTUUIDを指定します。PARTUUIDは`blkid`コマンドで確認できます。`PARTUUID=`を`UUID`にし、UUIDを指定しても構いません。
 - `rootwait`：ルートデバイスを検出するまで無限に待ちます。microSDのようなMMC（MultiMediaCard）は非同期に検出されるため、このオプションがないと起動に失敗する場合があります。
 
-##### DHCP・SSHを有効にする
+##### NetworkManagerをインストールする
 
-これはAMD64と同様です。まず必要なパッケージをインストールします。ひょっとすると`@system`に含まれており不要かもしれませんが。
+次に、NetworkManagerをインストールします。グローバルなUSEフラグに`networkmanager`というものがあるので、それを有効にしシステム全体を更新したあと、NetworkManagerをインストールします。
 
 ```sh
-FEATURES="-pid-sandbox -network-sandbox" emerge net-misc/dhcpcd net-misc/openssh
+sudo euse -E networkmanager
+sudo emerge -aUD @world
+sudo emerge net-misc/networkmanager
+```
+
+続いてユーザを`plugdev`グループに登録します。これによって、非ルートユーザがシステムのネットワークをNetworkManagerを介して設定できるようになります。
+
+```sh
+sudo gpasswd -a <ユーザ名> plugdev
+```
+
+ここで`nmcli`を実行すると、現在のネットワーク設定を確認できます。
+
+##### NetworkManager・SSHを有効にする[^networkmanager]
+
+これはAMD64と同様です。まず必要なパッケージをインストールします。
+
+```sh
+FEATURES="-pid-sandbox -network-sandbox" emerge net-misc/networkmanager net-misc/openssh
 ```
 
 その後`rc-update`で、毎回の起動時にデーモンが起動するように設定します。
 
 ```sh
-rc-update add dhcpcd default
+rc-update add NetworkManager default
 rc-update add sshd default
 ```
 
@@ -448,31 +466,9 @@ sudo emerge sys-firmware/raspberrypi-wifi-ucode
 sudo reboot
 ```
 
-##### NetworkManagerをインストールする[^networkmanager]
+##### Wi-Fiに接続する
 
-次に、NetworkManagerをインストールします。グローバルなUSEフラグに`networkmanager`というものがあるので、それを有効にしシステム全体を更新したあと、NetworkManagerをインストールします。
-
-```sh
-sudo euse -E networkmanager
-sudo emerge -aUD @world
-sudo emerge net-misc/networkmanager
-```
-
-続いてユーザを`plugdev`グループに登録します。これによって、非ルートユーザがシステムのネットワークをNetworkManagerを介して設定できるようになります。
-
-```sh
-sudo gpasswd -a <ユーザ名> plugdev
-```
-
-`dhcpcd`はNetworkManagerと衝突するため、ストップしておきます。
-
-```sh
-sudo rc-service dhcpcd stop
-sudo rc-update del dhcpcd default
-sudo emerge --deselect net-misc/dhcpcd
-```
-
-その後、
+`nmcli`を用いてWi-Fiに接続します。以下のコマンドを実行すると、Wi-Fiネットワークのパスワードを入力するよう求められるので、入力します。
 
 ```sh
 sudo nmcli --ask device wifi connect "<SSID>"
