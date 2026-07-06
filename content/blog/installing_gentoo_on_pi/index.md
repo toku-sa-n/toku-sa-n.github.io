@@ -326,14 +326,14 @@ root=PARTUUID=<ルートパーティションのPARTUUID> rootwait ro
 - `root=PARTUUID=<ルートパーティションのPARTUUID>`：ルートパーティションのPARTUUIDを指定します。PARTUUIDは`blkid`コマンドで確認できます。`PARTUUID=`を`UUID`にし、UUIDを指定しても構いません。
 - `rootwait`：ルートデバイスを検出するまで無限に待ちます。microSDのようなMMC（MultiMediaCard）は非同期に検出されるため、このオプションがないと起動に失敗する場合があります。
 
-##### NetworkManagerをインストールする
+##### NetworkManagerをインストールする[^networkmanager]
 
 次に、NetworkManagerをインストールします。グローバルなUSEフラグに`networkmanager`というものがあるので、それを有効にしシステム全体を更新したあと、NetworkManagerをインストールします。
 
 ```sh
-sudo euse -E networkmanager
-sudo emerge -aUD @world
-sudo emerge net-misc/networkmanager
+euse -E networkmanager
+FEATURES="-pid-sandbox -network-sandbox" emerge -aUD @world
+FEATURES="-pid-sandbox -network-sandbox" emerge net-misc/networkmanager
 ```
 
 続いてユーザを`plugdev`グループに登録します。これによって、非ルートユーザがシステムのネットワークをNetworkManagerを介して設定できるようになります。
@@ -344,7 +344,7 @@ sudo gpasswd -a <ユーザ名> plugdev
 
 ここで`nmcli`を実行すると、現在のネットワーク設定を確認できます。
 
-##### NetworkManager・SSHを有効にする[^networkmanager]
+##### SSHを有効にする
 
 これはAMD64と同様です。まず必要なパッケージをインストールします。
 
