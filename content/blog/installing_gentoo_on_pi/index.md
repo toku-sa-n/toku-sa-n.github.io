@@ -480,9 +480,15 @@ sudo nmcli --ask device wifi connect "<SSID>"
 
 #### Tailscaleをインストールする
 
+##### Tailscaleクライアントをインストールする
+
+Tailscaleクライアントを以下の手順でインストールします。
+
 ```sh
 sudo emerge net-vpn/tailscale
 ```
+
+その後、デーモンを起動し、またRaspberry Piの起動時に自動的に実行されるようにします。
 
 ```sh
 sudo rc-update add tailscale default
