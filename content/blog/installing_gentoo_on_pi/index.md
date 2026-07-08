@@ -51,7 +51,7 @@ Raspberry PiはUEFIを用いて起動するわけではないですが、起動�
 - FAT12 or FAT16 or FAT32でフォーマットされていること。
 - `start.elf`が含まれていること。
 
-起動パーティションの大きさは自由ですが、Raspberry Pi OSのイメージを作成するスクリプトが512MBで作成しているので、それに倣いました[^boot-size]。またSwapの大きさは適当です。
+起動パーティションの大きさは自由ですが、Raspberry Pi OSのイメージを作成するスクリプトが512MBで作成しているので、それに倣いました[^boot-size]。またスワップの大きさは適当です。
 
 ルートパーティションのファイルシステムはext4としました。現在のAMD64のGentooハンドブックではルートパーティションにXFSを使用しているようですが、以下の理由でext4を採用しました。
 
@@ -331,6 +331,18 @@ root=PARTUUID=<ルートパーティションのPARTUUID> rootwait ro
 - `root=PARTUUID=<ルートパーティションのPARTUUID>`：ルートパーティションのPARTUUIDを指定します。PARTUUIDは`blkid`コマンドで確認できます。`PARTUUID=`を`UUID`にし、UUIDを指定しても構いません。
 - `rootwait`：ルートデバイスを検出するまで無限に待ちます。microSDのようなMMC（MultiMediaCard）は非同期に検出されるため、このオプションがないと起動に失敗する場合があります。
 
+##### `/etc/fstab`を書く
+
+これはAMD64と同様です。
+
+```fstab
+PARTUUID=<起動パーティションのPARTUUID>         /boot/firmware  vfat    noatime,fmask=0133,dmask=0022   0   2
+PARTUUID=<スワップパーティションのPARTUUID>     none            swap    sw                              0   0
+PARTUUID=<ルートパーティションのPARTUUID>       /               ext4    noatime                         0   1
+```
+
+ちなみに、しばしば`defaults`が使用される場合がありますが、`noatime`などの他のオプションを使用する場合は、`defaults`を省略しても挙動は同じようです。
+
 ##### NetworkManagerをインストールする[^networkmanager]
 
 次に、NetworkManagerをインストールします。グローバルなUSEフラグに`networkmanager`というものがあるので、それを有効にしシステム全体を更新したあと、NetworkManagerをインストールします。
@@ -341,20 +353,18 @@ FEATURES="-pid-sandbox -network-sandbox" emerge -aUD @world
 FEATURES="-pid-sandbox -network-sandbox" emerge net-misc/networkmanager
 ```
 
-続いてユーザを`plugdev`グループに登録します。これによって、非ルートユーザがシステムのネットワークをNetworkManagerを介して設定できるようになります。
+ここで`nmcli`を実行すると、現在のネットワーク設定を確認できます。
 
 ```sh
-sudo gpasswd -a <ユーザ名> plugdev
+nmcli device status
 ```
-
-ここで`nmcli`を実行すると、現在のネットワーク設定を確認できます。
 
 ##### SSHを有効にする
 
 これはAMD64と同様です。まず必要なパッケージをインストールします。
 
 ```sh
-FEATURES="-pid-sandbox -network-sandbox" emerge net-misc/networkmanager net-misc/openssh
+FEATURES="-pid-sandbox -network-sandbox" emerge net-misc/openssh
 ```
 
 その後`rc-update`で、毎回の起動時にデーモンが起動するように設定します。
@@ -373,6 +383,16 @@ FEATURES="-pid-sandbox -network-sandbox" emerge net-misc/chrony
 rc-update add chronyd default
 ```
 
+##### ホスト名を設定する
+
+これもAMD64と同様です。特にTailscaleを用いる場合は、ホスト名がTailscaleの一覧に表示されるので、重要です。
+
+`/etc/hostname`を編集して、適当なホスト名を付けてください。
+
+```sh
+nano /etc/hostname
+```
+
 ##### `sudo`をインストール、設定する
 
 ルート権限が必要な場合に備え、`sudo`をインストール、設定します。
@@ -384,10 +404,10 @@ visudo
 
 ##### ユーザを登録する
 
-これもAMD64と同様です。
+これもAMD64と同様ですが、NetworkManagerを介して非ルートユーザがシステムのネットワークを設定する場合は`plugdev`グループに属している必要があるため、このグループにも登録します。
 
 ```sh
-useradd -m -G wheel -s /bin/bash <ユーザ名>
+useradd -m -G wheel,plugdev -s /bin/bash <ユーザ名>
 passwd <ユーザ名>
 ```
 
@@ -479,7 +499,7 @@ sudo reboot
 sudo nmcli --ask device wifi connect "<SSID>"
 ```
 
-#### Tailscaleをインストールする
+#### 3. Tailscaleをインストールする
 
 ##### Tailscaleクライアントをインストールする
 
@@ -496,11 +516,17 @@ sudo rc-update add tailscale default
 sudo rc-service tailscale start
 ```
 
+最後に、Tailscaleのクライアントを起動します。`--ssh`を使用することで、Raspberry PiにSSH接続できるようになります。
+
 ```sh
 sudo tailscale up --ssh
 ```
 
-`/etc/hostname`でホスト名を指定。
+また、TailscaleのマジックDNSによって、`ssh`時に単にホスト名を指定することで、ログインできるようになります。
+
+```sh
+ssh <Raspberry Piのホスト名>
+```
 
 #### メモ
 
