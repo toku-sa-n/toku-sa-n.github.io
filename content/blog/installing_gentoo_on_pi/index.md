@@ -264,10 +264,10 @@ CONFIG_XFS_RT=y
 # CONFIG_VXFS_FS is not set
 ```
 
-設定が済んだら、カーネルをビルドします。
+設定が済んだら、カーネルをビルドしますが、ターゲットはRaspberry Piの公式マニュアルに沿って設定します[^pi-kernel]。
 
 ```sh
-make -j$(nproc)
+make -j$(nproc) Image.gz modules dtbs
 ```
 
 その後、まずモジュールをインストールします。
@@ -292,7 +292,9 @@ mkdir /boot/firmware/overlays
 cp arch/arm64/boot/dts/overlays/*.dtb* /boot/firmware/overlays/
 ```
 
+{% warning() %}
 Linuxカーネルの`Makefile`におけるターゲットとして`install`や`dtbs_install`が存在しますが、これらを実行してもファイルは正しくインストールされないので、注意してください。
+{% end %}
 
 ##### ブートローダの設定をする
 
@@ -526,6 +528,32 @@ sudo tailscale up --ssh
 
 ```sh
 ssh <Raspberry Piのホスト名>
+```
+
+#### 4. カーネルの不必要なオプションを無効にする
+
+##### `make localmodconfig`で不要なオプションをあらかた落とす
+
+`make localmodconfig`は、現在の設定と、現在読み込まれているカーネルモジュールを参照し、読み込まれていないモジュールを無効にするよう`.config`を更新します。これによって大部分の不必要な設定が無効になるので、カーネルのビルドも速くなります。
+
+{% warning() %}
+必要なモジュールはあらかじめ有効にしてください。
+{% end %}
+
+```sh
+cd /usr/src/linux
+sudo make localmodconfig
+```
+
+その後は通常通り、カーネルを再度ビルドし、必要なファイルを配置します。
+
+```sh
+sudo make -j$(nproc) Image.gz modules dtbs
+sudo make -j$(nproc) modules_install
+sudo cp arch/arm64/Image.gz /boot/firmware/kernel8.img
+sudo cp arch/arm64/boot/dts/broadcom/*.dtb /boot/firmware/
+sudo mkdir /boot/firmware/overlays
+sudo cp arch/arm64/boot/dts/overlays/*.dtb* /boot/firmware/overlays/
 ```
 
 #### メモ
