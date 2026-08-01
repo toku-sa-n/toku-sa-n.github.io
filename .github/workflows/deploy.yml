@@ -7,6 +7,13 @@ on:
   schedule:
     - cron: '0 0 * * 0'
 
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,11 +41,10 @@ jobs:
       - name: Run Autoprefixer
         run: npx postcss public/*.css --use autoprefixer --replace
 
-      - name: Upload as an artifact
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
-          name: webpage
-          path: public/*
+          path: public/
 
   # There is an action called `reviewdog/action-stylelint`. However, it
   # requires `package.json` even if a project is not managed by npm.  That is
@@ -86,39 +92,23 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     needs: [ build
            , check_css
            , check_python_file_format
            , check_zola
            ]
 
-    if: github.ref == 'refs/heads/main' && github.event_name != 'schedule'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
     steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
-
-      - name: Set the committer information
-        run: |
-          git config --global user.name 'Hiroki Tokunaga'
-          git config --global user.email 'toku-sa-n@users.noreply.github.com'
-
-      - name: Checkout to the `gh-pages` branch
-        run: |
-          git pull
-          git checkout gh-pages
-
-      - name: Clean up the directory
-        run: rm -rf *
-
-      - name: Download the artifact
-        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
-        with:
-          name: webpage
-
-      - name: Commit
-        run: |
-          git add .
-          git diff-index --quiet HEAD || git commit -m 'Deploy the website'
-
-      - name: Push
-        run: git push
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
