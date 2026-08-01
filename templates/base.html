@@ -38,16 +38,13 @@
     <header class="site-header">
       <h1><a href="{{ get_url(path="/") }}">{{ config.title }}</a></h1>
       <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="テーマ切替">
-        <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <use href="{{ get_url(path="icons.svg") }}#moon" />
-          </svg>
-        </span>
-        <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <use href="{{ get_url(path="icons.svg") }}#sun" />
-          </svg>
-        </span>
+        {% for icon in ["moon", "sun"] %}
+          <span class="theme-toggle-icon theme-toggle-icon-{{ icon }}" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <use href="{{ get_url(path="icons.svg") }}#{{ icon }}" />
+            </svg>
+          </span>
+        {% endfor %}
       </button>
     </header>
 
