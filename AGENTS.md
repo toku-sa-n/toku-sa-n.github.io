@@ -24,13 +24,15 @@
 - Keep this guide in English; do not translate AGENTS.md.
 
 ## Testing Guidelines
-- No shared test runner is maintained. Keep code samples lightweight and self-contained inside each post.
+- GitHub Actions runs the Zola build, Stylelint, Black, and `zola check` for pushes, pull requests, and the scheduled build.
+- GitHub Actions deploys successful `main` push builds to GitHub Pages using the official Pages artifact workflow.
+- Keep code samples lightweight and self-contained inside each post.
 
 ## Commit & Pull Request Guidelines
 - Use Conventional Commits (e.g., `docs: add repository guidelines`, `feat: add new post`); keep summaries ≈72 chars.
 - PR description: state why the change is needed; omit what/tests. Link issues; add screenshots if the UI changes.
 - Default to Draft PRs; mark Ready for Review after checks pass.
-- Merge gate: `zola check` passes; run `zola build` when deploying.
+- Merge gate: all GitHub Actions checks pass; also run `zola check` and `zola build` locally before pushing.
 - When you change workflows, commands, or style rules, update `AGENTS.md` in the same PR so contributors stay in sync.
 - Keep PRs single-commit; squash locally. Final commit message matches the PR title (Conventional).
 
@@ -38,4 +40,4 @@
 - Do not edit `public/`; always regenerate with `zola build`.
 - Never commit secrets. Only public-safe values belong in `config.toml`.
 - Keep all files under `licenses/` untouched.
-- CI is absent; treat local build and test results as mandatory checks.
+- GitHub Actions owns automated checks and GitHub Pages deployment; treat local build and test results as mandatory pre-push checks.
