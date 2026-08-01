@@ -2,19 +2,143 @@
 
 @import "include-media";
 
+$content-width: 60rem;
+$main-width: 40rem;
+$theme-toggle-size: 2.6rem;
+
+@mixin theme-toggle-icons($active-icon, $inactive-icon) {
+    .theme-toggle-icon-#{$active-icon} {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        text-shadow: 0 1px 2px rgb(0 0 0 / 18%);
+    }
+
+    .theme-toggle-icon-#{$inactive-icon} {
+        transform: translate(-50%, calc(-50% - 18px));
+        opacity: 0;
+    }
+
+    .theme-toggle:hover {
+        .theme-toggle-icon-#{$active-icon} {
+            transform: translate(-50%, calc(-50% + 16px));
+            opacity: 0;
+        }
+
+        .theme-toggle-icon-#{$inactive-icon} {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+    }
+}
+
+:root {
+    --bg: #f6f7fb;
+    --text: #16181d;
+    --accent: #e07a5f;
+    --card: color-mix(in oklab, var(--bg), white 80%);
+    --code-bg: color-mix(in oklab, var(--bg), var(--text) 2%);
+    --border: color-mix(in oklab, var(--bg), var(--text) 9%);
+}
+
 html {
     font-size: 100%;
 }
 
 body {
-    background: #1d1f21;
-    color: #c5c8c6;
+    background: var(--bg);
+    color: var(--text);
     font-family: "Noto Sans CJK JP", "Noto Sans", sans-serif;
     text-size-adjust: 100%;
+    margin: 0;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-@include media("<desktop") {
-    .container {
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: $content-width;
+    margin: 0 auto 1.5rem;
+    padding: 1.25rem 1rem 0.5rem;
+}
+
+.theme-toggle {
+    border: 1px solid transparent;
+    background: var(--card);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: $theme-toggle-size;
+    height: $theme-toggle-size;
+
+    &:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+    }
+
+    &:hover {
+        transform: translateY(1px);
+        box-shadow: 0 12px 30px rgb(0 0 0 / 12%);
+        background: var(--text);
+        color: var(--bg);
+        border-color: var(--text);
+    }
+}
+
+.theme-toggle-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 14px));
+    transition: transform 0.22s ease, opacity 0.22s ease, color 0.22s ease;
+    opacity: 0;
+
+    svg {
+        width: 1.35rem;
+        height: 1.35rem;
+        display: block;
+        fill: none;
+        stroke: currentcolor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: drop-shadow(0 1px 2px rgb(0 0 0 / 18%));
+    }
+}
+
+[data-theme="dark"] {
+    --bg: #1d1f21;
+    --text: #e5e7eb;
+    --accent: #de935f;
+    --card: color-mix(in oklab, var(--bg), white 2%);
+    --code-bg: color-mix(in oklab, var(--bg), var(--text) 7%);
+    --border: color-mix(in oklab, var(--bg), var(--text) 9%);
+
+    .theme-toggle:not(:hover) {
+        background: var(--code-bg);
+        box-shadow: none;
+    }
+
+    @include theme-toggle-icons("moon", "sun");
+}
+
+[data-theme="light"] {
+    @include theme-toggle-icons("sun", "moon");
+}
+
+.container {
+    @include media("<desktop") {
         display: block;
         margin-left: 1rem;
         margin-right: 1rem;
@@ -23,17 +147,17 @@ body {
             width: 100%;
         }
     }
-}
 
-@include media(">=desktop") {
-    .container {
+    @include media(">=desktop") {
         display: flex;
-        width: 60rem;
+        width: $content-width;
         margin: auto;
     }
+}
 
-    main {
-        width: 40rem;
+main {
+    @include media(">=desktop") {
+        width: $main-width;
         padding-right: 2rem;
     }
 }
@@ -63,7 +187,7 @@ h6 {
 }
 
 a {
-    color: #de935f;
+    color: var(--accent);
     text-decoration: none;
 
     &:hover {
@@ -80,6 +204,14 @@ p {
 }
 
 pre {
-    overflow: scroll;
-    padding: 0.5rem;
+    overflow: auto;
+    padding: 0.75rem 1rem;
+    background: var(--code-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+}
+
+code,
+pre {
+    font-family: "Fira Code", SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
 }

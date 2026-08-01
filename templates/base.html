@@ -1,9 +1,25 @@
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="{{ lang }}" data-theme="dark">
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+
+    <script>
+      // 初期描画前にテーマを決定して FOUC を防ぐ
+      (() => {
+        let stored = null;
+        try {
+          stored = localStorage.getItem('theme');
+        } catch {
+          // Web Storage が利用できない場合は OS 設定を使用する
+        }
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
 
     {% block ogp %}
     {% endblock %}
@@ -19,7 +35,18 @@
   </head>
 
   <body>
-    <h1><a href="{{ get_url(path="/") }}">{{ config.title }}</a></h1>
+    <header class="site-header">
+      <h1><a href="{{ get_url(path="/") }}">{{ config.title }}</a></h1>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="テーマ切替">
+        {% for icon in ["moon", "sun"] %}
+          <span class="theme-toggle-icon theme-toggle-icon-{{ icon }}" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <use href="{{ get_url(path="icons.svg") }}#{{ icon }}" />
+            </svg>
+          </span>
+        {% endfor %}
+      </button>
+    </header>
 
     <div class="container">
       <main>
@@ -32,6 +59,8 @@
         {% endblock %}
       </nav>
     </div>
+
+    <script src="{{ get_url(path="js/theme.js") }}" defer></script>
   </body>
 
 </html>
