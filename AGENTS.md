@@ -33,6 +33,7 @@
 - PR description: state why the change is needed; omit what/tests. Link issues; add screenshots if the UI changes.
 - Default to Draft PRs; mark Ready for Review after checks pass.
 - Merge gate: all GitHub Actions checks pass; also run `zola check` and `zola build` locally before pushing.
+- Pin third-party GitHub Actions to full commit SHAs and note the corresponding release in comments.
 - When you change workflows, commands, or style rules, update `AGENTS.md` in the same PR so contributors stay in sync.
 - Keep PRs single-commit; squash locally. Final commit message matches the PR title (Conventional).
 
