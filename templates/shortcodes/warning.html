@@ -1,0 +1,6 @@
+<aside class="warning" aria-labelledby="warning-{{ nth }}">
+    <strong id="warning-{{ nth }}" class="warning__title">警告</strong>
+    <div class="warning__body">
+        {{ body | markdown | safe }}
+    </div>
+</aside>
